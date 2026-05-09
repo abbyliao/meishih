@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服務項目 — 美事居家長照機構</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans TC',sans-serif;color:#2a1e1e;background:#fff;}
+.ms-nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:#fff;border-bottom:1px solid #e8e0dc;position:sticky;top:0;z-index:20;}
+.ms-nav img{height:50px;object-fit:contain;}
+.ms-nav-links{display:flex;gap:2rem;}
+.ms-nav-links a{font-size:13px;color:#5a4a4a;text-decoration:none;letter-spacing:0.04em;}
+.ms-nav-links a:hover{color:#993556;}
+.ms-nav-active{color:#993556 !important;border-bottom:1px solid #993556;padding-bottom:2px;}
+.ms-nav-cta{font-size:12px;font-weight:500;letter-spacing:0.08em;color:#993556;border:1px solid #993556;background:transparent;padding:8px 20px;cursor:pointer;}
+.ms-page-header{background:#fdf8f4;padding:4rem 2.5rem 3.5rem;border-bottom:1px solid #e8e0dc;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;}
+.ms-page-en{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.22em;color:#993556;text-transform:uppercase;display:block;margin-bottom:0.6rem;}
+.ms-page-h1{font-family:'Noto Serif TC',serif;font-size:2.2rem;font-weight:700;line-height:1.4;}
+.ms-page-desc{font-size:14px;line-height:2;color:#6a5050;}
+.ms-sec{padding:5rem 2.5rem;}
+.ms-sec-alt{background:#fdf8f4;}
+.ms-tag{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.22em;color:#993556;text-transform:uppercase;display:block;margin-bottom:0.5rem;}
+.ms-h2{font-family:'Noto Serif TC',serif;font-size:1.7rem;font-weight:700;line-height:1.5;margin-bottom:0.8rem;}
+.ms-lead{font-size:14px;line-height:2;color:#6a5050;max-width:560px;margin-bottom:2.5rem;}
+.ms-case{display:grid;grid-template-columns:1fr 1fr;border:1px solid #e8e0dc;}
+.ms-case-img{background:#e8d5dc;min-height:280px;}
+.ms-case-img img{width:100%;height:280px;object-fit:cover;display:block;}
+.ms-case-content{padding:3rem;}
+.ms-case-tag{display:inline-block;font-size:11px;letter-spacing:0.1em;color:#993556;border:0.5px solid #993556;padding:3px 10px;margin-bottom:1.2rem;}
+.ms-case-content h3{font-family:'Noto Serif TC',serif;font-size:1.2rem;font-weight:600;margin-bottom:1rem;}
+.ms-case-content p{font-size:13px;line-height:2;color:#6a5050;margin-bottom:1rem;}
+.ms-case-detail{display:flex;flex-direction:column;gap:8px;margin-top:1.2rem;}
+.ms-case-row{display:flex;gap:1rem;font-size:12px;}
+.ms-case-row-label{color:#8a7070;min-width:60px;letter-spacing:0.04em;}
+.ms-case-row-val{color:#4a3838;}
+.ms-svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));border:1px solid #e8e0dc;}
+.ms-svc-item{padding:1.5rem 1.2rem;border-right:1px solid #e8e0dc;border-bottom:1px solid #e8e0dc;}
+.ms-svc-code{font-family:'Cormorant Garamond',serif;font-size:12px;color:#993556;margin-bottom:5px;letter-spacing:0.04em;}
+.ms-svc-name{font-size:13px;font-weight:500;}
+.ms-fee-note{background:#fdf8f4;border-left:3px solid #993556;padding:1rem 1.5rem;font-size:13px;color:#6a5050;line-height:1.9;margin-bottom:2rem;}
+.ms-fee-table{width:100%;border-collapse:collapse;font-size:13px;}
+.ms-fee-table th{background:#fdf8f4;font-size:12px;font-weight:500;letter-spacing:0.06em;padding:12px 16px;border:1px solid #e8e0dc;color:#6a5050;text-align:center;}
+.ms-fee-table th:first-child{text-align:left;}
+.ms-fee-table td{padding:11px 16px;border:1px solid #e8e0dc;vertical-align:middle;}
+.ms-fee-table td:first-child{font-size:12px;color:#6a5050;}
+.ms-fee-table td:nth-child(2){font-weight:500;}
+.ms-fee-table td:not(:first-child){text-align:center;}
+.ms-fee-table tr:hover td{background:#fdf8f4;}
+.ms-fee-subsidized{font-size:11px;color:#993556;font-weight:500;}
+.ms-fee-free{font-size:11px;color:#8a7070;}
+.ms-footer{background:#1e1414;padding:3rem 2.5rem 2rem;}
+.ms-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid #3a2828;margin-bottom:1.5rem;}
+.ms-footer h4{font-size:12px;letter-spacing:0.12em;color:#e8c8c8;font-weight:500;margin-bottom:1rem;}
+.ms-footer p,.ms-footer a{font-size:12px;line-height:2.4;color:#9a7878;text-decoration:none;display:block;}
+.ms-footer-bottom{display:flex;justify-content:space-between;font-size:11px;color:#6a5050;}
+.ms-partner{display:inline-block;margin-top:14px;font-size:11px;color:#993556;letter-spacing:0.1em;border-bottom:1px solid #993556;padding-bottom:2px;text-decoration:none;}
+</style>
+</head>
+<body>
+
+<nav class="ms-nav">
+  <img src="assets/LOGO.PNG" alt="美事居家長照" onerror="this.outerHTML='<span style=\'font-family:Noto Serif TC,serif;font-size:15px;font-weight:600\'>美事居家長照</span>'">
+  <div class="ms-nav-links">
+    <a href="about.html">關於我們</a>
+    <a href="services.html" class="ms-nav-active">服務項目</a>
+    <a href="apply.html">服務申請</a>
+    <a href="news.html">美事消息</a>
+    <a href="contact.html">聯絡我們</a>
+  </div>
+  <button class="ms-nav-cta" onclick="location.href='contact.html'">立即諮詢</button>
+</nav>
+
+<div class="ms-page-header">
+  <div>
+    <span class="ms-page-en">Our Services</span>
+    <h1 class="ms-page-h1">服務項目</h1>
+  </div>
+  <p class="ms-page-desc">提供完整的居家照護服務，依政府公訂價格收費，並提供補助方案，讓每個家庭都能獲得所需的照護。</p>
+</div>
+
+<section class="ms-sec">
+  <span class="ms-tag">Case Sharing</span>
+  <h2 class="ms-h2">個案分享</h2>
+  <p class="ms-lead">真實的服務經驗，讓您更了解美事如何陪伴每一個家庭。</p>
+  <div class="ms-case">
+    <div class="ms-case-img">
+      <img src="assets/case.jpg" alt="居家照護個案示意" onerror="this.style.background='#e8d5dc';this.style.minHeight='280px';this.style.display='block'">
+    </div>
+    <div class="ms-case-content">
+      <span class="ms-case-tag">居家照護</span>
+      <h3>讓遠在他鄉的家屬，也能安心</h3>
+      <p>王爺爺今年 80 歲，獨居於蘆洲，子女在外地工作，無法每日陪伴。家屬透過美事安排每日到府服務，協助日常清潔與餐食照顧，讓長輩在熟悉的家中安心生活。</p>
+      <div class="ms-case-detail">
+        <div class="ms-case-row"><span class="ms-case-row-label">服務對象</span><span class="ms-case-row-val">80 歲獨居長者</span></div>
+        <div class="ms-case-row"><span class="ms-case-row-label">服務內容</span><span class="ms-case-row-val">日常清潔、餐食照顧</span></div>
+        <div class="ms-case-row"><span class="ms-case-row-label">服務頻率</span><span class="ms-case-row-val">每日到府</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ms-sec ms-sec-alt">
+  <span class="ms-tag">Service Items</span>
+  <h2 class="ms-h2">服務項目</h2>
+  <p class="ms-lead">涵蓋身體照護、日常協助、陪同外出等多元服務，依個案需求彈性安排。</p>
+  <div class="ms-svc-grid">
+    <div class="ms-svc-item"><div class="ms-svc-code">BA01</div><div class="ms-svc-name">基本身體清潔（擦澡）</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA02</div><div class="ms-svc-name">基本日常照顧（30分鐘）</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA03</div><div class="ms-svc-name">測量生命徵象</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA04</div><div class="ms-svc-name">餵食或灌食</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA05</div><div class="ms-svc-name">餐食照顧（煮飯）</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA07</div><div class="ms-svc-name">協助沐浴及洗頭</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA08</div><div class="ms-svc-name">足部照顧</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA10</div><div class="ms-svc-name">翻身拍背</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA11</div><div class="ms-svc-name">肢體關節活動</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA12</div><div class="ms-svc-name">協助上下樓梯</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA13</div><div class="ms-svc-name">陪同外出（30分鐘）</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA14</div><div class="ms-svc-name">陪同就醫（90分鐘）</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA15</div><div class="ms-svc-name">家務協助（30分鐘）</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA16</div><div class="ms-svc-name">代購服務</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA17</div><div class="ms-svc-name">協助執行輔助性醫療</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA18</div><div class="ms-svc-name">安全看視（30分鐘）</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA20</div><div class="ms-svc-name">陪伴服務（30分鐘）</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA22</div><div class="ms-svc-name">巡視服務</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA23</div><div class="ms-svc-name">協助洗頭</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">BA24</div><div class="ms-svc-name">協助排泄</div></div>
+    <div class="ms-svc-item"><div class="ms-svc-code">GA09</div><div class="ms-svc-name">居家喘息服務（2小時）</div></div>
+  </div>
+</section>
+
+<section class="ms-sec">
+  <span class="ms-tag">Service Fees</span>
+  <h2 class="ms-h2">服務費用</h2>
+  <p class="ms-lead">依政府公訂價格收費，提供一般戶、中低收入戶及低收入戶補助方案。</p>
+  <div class="ms-fee-note">
+    <i class="ti ti-info-circle" style="font-size:16px;vertical-align:-2px;margin-right:6px;color:#993556"></i>
+    如無政府補助，我們也提供彈性自費選擇，讓您靈活安排所需服務。低收入戶享有全額補助。
+  </div>
+  <table class="ms-fee-table">
+    <thead>
+      <tr>
+        <th style="text-align:left">服務項目</th>
+        <th>全額自費</th>
+        <th>一般戶 16%</th>
+        <th>中低收入戶 5%</th>
+        <th>低收入戶</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>BA01 基本身體清潔（擦澡）</td><td>260 元</td><td><span class="ms-fee-subsidized">41 元</span></td><td><span class="ms-fee-subsidized">13 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA02 基本日常照顧（30分鐘）</td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA03 測量生命徵象</td><td>35 元</td><td><span class="ms-fee-subsidized">5 元</span></td><td><span class="ms-fee-subsidized">1 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA04 餵食或灌食</td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA05 餐食照顧（煮飯）</td><td>310 元</td><td><span class="ms-fee-subsidized">49 元</span></td><td><span class="ms-fee-subsidized">15 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA07 協助沐浴及洗頭</td><td>325 元</td><td><span class="ms-fee-subsidized">52 元</span></td><td><span class="ms-fee-subsidized">16 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA08 足部照顧</td><td>500 元</td><td><span class="ms-fee-subsidized">80 元</span></td><td><span class="ms-fee-subsidized">25 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA10 翻身拍背</td><td>155 元</td><td><span class="ms-fee-subsidized">24 元</span></td><td><span class="ms-fee-subsidized">7 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA11 肢體關節活動</td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA12 協助上下樓梯</td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA13 陪同外出（30分鐘）</td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA14 陪同就醫（90分鐘）</td><td>685 元</td><td><span class="ms-fee-subsidized">109 元</span></td><td><span class="ms-fee-subsidized">34 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA15 家務協助（30分鐘）</td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA16 代購服務</td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA17 協助執行輔助性醫療</td><td>65 元</td><td><span class="ms-fee-subsidized">10 元</span></td><td><span class="ms-fee-subsidized">3 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA18 安全看視（30分鐘）</td><td>200 元</td><td><span class="ms-fee-subsidized">32 元</span></td><td><span class="ms-fee-subsidized">10 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA20 陪伴服務（30分鐘）</td><td>175 元</td><td><span class="ms-fee-subsidized">28 元</span></td><td><span class="ms-fee-subsidized">11 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA22 巡視服務</td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA23 協助洗頭</td><td>200 元</td><td><span class="ms-fee-subsidized">32 元</span></td><td><span class="ms-fee-subsidized">10 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>BA24 協助排泄</td><td>220 元</td><td><span class="ms-fee-subsidized">35 元</span></td><td><span class="ms-fee-subsidized">11 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+      <tr><td>GA09 居家喘息服務（2小時）</td><td>770 元</td><td><span class="ms-fee-subsidized">123 元</span></td><td><span class="ms-fee-subsidized">38 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="ms-footer">
+  <div class="ms-footer-grid">
+    <div>
+      <h4>美事居家長照機構</h4>
+      <p>247 新北市蘆洲區永安南路二段 328 巷 17 弄 8 號</p>
+      <p>02-8286-0162</p>
+      <p>meishih11003@gmail.com</p>
+      <a class="ms-partner" href="#">夥伴專區 →</a>
+    </div>
+    <div>
+      <h4>快速連結</h4>
+      <a href="index.html">首頁</a>
+      <a href="about.html">關於我們</a>
+      <a href="apply.html">服務申請</a>
+      <a href="news.html">美事消息</a>
+    </div>
+    <div>
+      <h4>申請照護服務</h4>
+      <a href="apply.html">線上申請表單</a>
+      <a href="apply.html">長照專線 1966</a>
+      <a href="apply.html">申請資格說明</a>
+    </div>
+  </div>
+  <div class="ms-footer-bottom">
+    <span>© 2025 美事居家長照機構 版權所有</span>
+    <span>新北市政府評鑑通過機構</span>
+  </div>
+</footer>
+
+</body>
+</html>
