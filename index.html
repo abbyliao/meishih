@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美事居家長照機構</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans TC',sans-serif;color:#2a1e1e;background:#fff;}
+
+/* NAV */
+.ms-nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:#fff;border-bottom:1px solid #e8e0dc;position:sticky;top:0;z-index:20;}
+.ms-nav img{height:38px;object-fit:contain;}
+.ms-nav-links{display:flex;gap:2rem;}
+.ms-nav-links a{font-size:13px;color:#5a4a4a;text-decoration:none;letter-spacing:0.04em;}
+.ms-nav-links a:hover{color:#993556;}
+.ms-nav-cta{font-size:12px;font-weight:500;letter-spacing:0.08em;color:#993556;border:1px solid #993556;background:transparent;padding:8px 20px;cursor:pointer;}
+
+/* HERO */
+.ms-hero{display:grid;grid-template-columns:1fr 1fr;height:560px;}
+.ms-hero-left{padding:5rem 3.5rem;display:flex;flex-direction:column;justify-content:center;background:#fdf8f4;}
+.ms-hero-en{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.22em;color:#993556;text-transform:uppercase;margin-bottom:1.6rem;display:block;}
+.ms-hero-slogan{font-family:'Noto Serif TC',serif;font-size:0.95rem;color:#8a6a6a;letter-spacing:0.14em;margin-bottom:0.7rem;}
+.ms-hero h1{font-family:'Noto Serif TC',serif;font-size:2.3rem;font-weight:700;line-height:1.5;color:#2a1e1e;margin-bottom:1.4rem;}
+.ms-hero h1 em{color:#993556;font-style:normal;}
+.ms-hero-body{font-size:14px;line-height:2;color:#6a5050;max-width:340px;margin-bottom:2.5rem;}
+.ms-hero-btns{display:flex;gap:12px;}
+.ms-btn-fill{background:#2a1e1e;color:#fff;font-size:13px;border:none;padding:13px 28px;cursor:pointer;letter-spacing:0.06em;font-family:'Noto Sans TC',sans-serif;}
+.ms-btn-ghost{background:transparent;color:#2a1e1e;font-size:13px;border:1px solid #2a1e1e;padding:13px 28px;cursor:pointer;letter-spacing:0.06em;font-family:'Noto Sans TC',sans-serif;}
+.ms-hero-right{position:relative;overflow:hidden;background:#c8b0a8;}
+.ms-hero-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.85);}
+.ms-hero-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(20,10,10,0.65));padding:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.ms-stat{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:1rem 1.2rem;}
+.ms-stat-num{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:#fff;line-height:1;margin-bottom:3px;}
+.ms-stat-label{font-size:10px;color:rgba(255,255,255,0.75);letter-spacing:0.05em;}
+
+/* SECTIONS */
+.ms-sec{padding:4.5rem 2.5rem;}
+.ms-sec-warm{background:#fdf8f4;}
+.ms-tag{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.22em;color:#993556;text-transform:uppercase;display:block;margin-bottom:0.5rem;}
+.ms-h2{font-family:'Noto Serif TC',serif;font-size:1.7rem;font-weight:700;line-height:1.5;margin-bottom:0.8rem;}
+.ms-lead{font-size:14px;line-height:2;color:#6a5050;max-width:540px;margin-bottom:2.5rem;}
+
+/* WHY */
+.ms-why{display:grid;grid-template-columns:1fr 1fr;border:1px solid #e8e0dc;}
+.ms-why-item{padding:2.2rem 2.5rem;border-right:1px solid #e8e0dc;border-bottom:1px solid #e8e0dc;}
+.ms-why-item:nth-child(2n){border-right:none;}
+.ms-why-item:nth-last-child(-n+2){border-bottom:none;}
+.ms-why-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:#e8d0d8;line-height:1;margin-bottom:0.8rem;}
+.ms-why-item h3{font-size:15px;font-weight:500;margin-bottom:6px;}
+.ms-why-item p{font-size:13px;color:#6a5050;line-height:1.9;}
+
+/* FLOW */
+.ms-flow-grid{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid #e8e0dc;margin-top:2rem;}
+.ms-flow-step{padding:1.8rem 0.8rem;text-align:center;border-right:1px solid #e8e0dc;}
+.ms-flow-step:last-child{border-right:none;}
+.ms-flow-n{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#993556;line-height:1;margin-bottom:8px;}
+.ms-flow-t{font-size:12px;font-weight:500;margin-bottom:5px;}
+.ms-flow-d{font-size:11px;color:#8a7070;line-height:1.6;}
+.ms-flow-note{margin-top:1.5rem;border-left:3px solid #993556;padding:0.9rem 1.4rem;background:#fdf8f4;font-size:13px;color:#6a5050;line-height:1.9;}
+
+/* CTA */
+.ms-cta{background:#2a1e1e;padding:4rem 2.5rem;display:flex;align-items:center;justify-content:space-between;}
+.ms-cta-left h2{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:600;color:#f0e0e0;margin-bottom:0.5rem;}
+.ms-cta-left p{font-size:13px;color:#9a7878;line-height:1.9;}
+.ms-cta-right{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+.ms-cta-btn{background:#993556;color:#fff;font-size:13px;border:none;padding:13px 32px;cursor:pointer;letter-spacing:0.08em;font-family:'Noto Sans TC',sans-serif;white-space:nowrap;}
+.ms-cta-phone{font-size:12px;color:#7a5860;letter-spacing:0.04em;}
+
+/* FOOTER */
+.ms-footer{background:#1e1414;padding:3rem 2.5rem 2rem;}
+.ms-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid #3a2828;margin-bottom:1.5rem;}
+.ms-footer h4{font-size:12px;letter-spacing:0.12em;color:#e8c8c8;font-weight:500;margin-bottom:1rem;}
+.ms-footer p,.ms-footer a{font-size:12px;line-height:2.4;color:#9a7878;text-decoration:none;display:block;}
+.ms-footer-bottom{display:flex;justify-content:space-between;font-size:11px;color:#6a5050;}
+.ms-partner{display:inline-block;margin-top:14px;font-size:11px;color:#993556;letter-spacing:0.1em;border-bottom:1px solid #993556;padding-bottom:2px;cursor:pointer;text-decoration:none;}
+</style>
+</head>
+<body>
+
+<nav class="ms-nav">
+  <img src="assets/logo.png" alt="美事居家長照" onerror="this.outerHTML='<span style=\'font-family:Noto Serif TC,serif;font-size:15px;font-weight:600;letter-spacing:0.08em\'>美事居家長照</span>'">
+  <div class="ms-nav-links">
+    <a href="about.html">關於我們</a>
+    <a href="services.html">服務項目</a>
+    <a href="apply.html">服務申請</a>
+    <a href="news.html">美事消息</a>
+    <a href="contact.html">聯絡我們</a>
+  </div>
+  <button class="ms-nav-cta" onclick="location.href='contact.html'">立即諮詢</button>
+</nav>
+
+<section class="ms-hero">
+  <div class="ms-hero-left">
+    <span class="ms-hero-en">Meishih Long-Term Care · Since 2021</span>
+    <div class="ms-hero-slogan">居家服務，是一件美好的事</div>
+    <h1>專業照護，<br>從此刻<em>陪伴</em>到長遠</h1>
+    <p class="ms-hero-body">五年來陪伴逾 480 個家庭，用嚴謹的制度與溫柔的心，讓長輩在熟悉的家中獲得有品質的照顧。</p>
+    <div class="ms-hero-btns">
+      <button class="ms-btn-fill" onclick="location.href='apply.html'">了解申請方式</button>
+      <button class="ms-btn-ghost" onclick="location.href='services.html'">查看服務項目</button>
+    </div>
+  </div>
+  <div class="ms-hero-right">
+    <img class="ms-hero-img" src="assets/hero.jpg" alt="居家照護">
+    <div class="ms-hero-overlay">
+      <div class="ms-stat"><div class="ms-stat-num">480+</div><div class="ms-stat-label">累積服務家庭</div></div>
+      <div class="ms-stat"><div class="ms-stat-num">5 yr</div><div class="ms-stat-label">深耕長照服務</div></div>
+      <div class="ms-stat"><div class="ms-stat-num">評鑑</div><div class="ms-stat-label">政府評鑑通過</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ms-sec ms-sec-warm">
+  <span class="ms-tag">Why Choose Us</span>
+  <h2 class="ms-h2">選擇美事的理由</h2>
+  <p class="ms-lead">好的居家照護不只是完成任務——而是讓家屬放心、讓長輩安心。每一個細節，都是我們對這份承諾的落實。</p>
+  <div class="ms-why">
+    <div class="ms-why-item">
+      <div class="ms-why-num">01</div>
+      <h3>專業訓練的照護團隊</h3>
+      <p>定期安排外聘專業講師培訓，課程涵蓋身體照護、感染控制、緊急應變等，確保服務品質持續精進。</p>
+    </div>
+    <div class="ms-why-item">
+      <div class="ms-why-num">02</div>
+      <h3>透明清晰的服務流程</h3>
+      <p>從申請評估到正式開案，每個環節清楚說明，讓家屬全程掌握，不必面對不確定的等待。</p>
+    </div>
+    <div class="ms-why-item">
+      <div class="ms-why-num">03</div>
+      <h3>政府評鑑通過機構</h3>
+      <p>嚴格落實政府規範，通過評鑑認可，是您選擇居家照護機構最可靠的品質保證。</p>
+    </div>
+    <div class="ms-why-item">
+      <div class="ms-why-num">04</div>
+      <h3>五年在地深耕服務</h3>
+      <p>深耕新北蘆洲、三重、五股、新莊、泰山，累積逾 480 個家庭的信任，是我們最珍視的成績。</p>
+    </div>
+  </div>
+</section>
+
+<section class="ms-sec">
+  <span class="ms-tag">How to Apply</span>
+  <h2 class="ms-h2">六步驟，讓照顧從容開始</h2>
+  <p class="ms-lead">從第一次聯繫到服務正式開始，我們全程陪伴您走過每一個環節。</p>
+  <div class="ms-flow-grid">
+    <div class="ms-flow-step"><div class="ms-flow-n">01</div><div class="ms-flow-t">聯繫美事</div><div class="ms-flow-d">填寫申請單或撥打美事專線</div></div>
+    <div class="ms-flow-step"><div class="ms-flow-n">02</div><div class="ms-flow-t">衛生局電訪</div><div class="ms-flow-d">確認基本照護需求</div></div>
+    <div class="ms-flow-step"><div class="ms-flow-n">03</div><div class="ms-flow-t">衛生局家訪</div><div class="ms-flow-d">到府評估實際狀況</div></div>
+    <div class="ms-flow-step"><div class="ms-flow-n">04</div><div class="ms-flow-t">個管師家訪</div><div class="ms-flow-d">制定個人化照護計畫</div></div>
+    <div class="ms-flow-step"><div class="ms-flow-n">05</div><div class="ms-flow-t">簽約確認</div><div class="ms-flow-d">美事與您正式簽約</div></div>
+    <div class="ms-flow-step"><div class="ms-flow-n">06</div><div class="ms-flow-t">開始服務</div><div class="ms-flow-d">照服員到府服務</div></div>
+  </div>
+  <div class="ms-flow-note">
+    政府長照申請亦可撥打 <strong>1966</strong> 長照專線。歡迎直接聯繫美事，由我們協助引導後續所有流程。
+  </div>
+</section>
+
+<div class="ms-cta">
+  <div class="ms-cta-left">
+    <h2>準備好開始了嗎？</h2>
+    <p>我們在三重、蘆洲、五股、新莊、泰山，隨時準備為您服務。</p>
+  </div>
+  <div class="ms-cta-right">
+    <button class="ms-cta-btn" onclick="location.href='contact.html'">立即諮詢</button>
+    <span class="ms-cta-phone">或撥打 02-8286-0162</span>
+  </div>
+</div>
+
+<footer class="ms-footer">
+  <div class="ms-footer-grid">
+    <div>
+      <h4>美事居家長照機構</h4>
+      <p>247 新北市蘆洲區永安南路二段 328 巷 17 弄 8 號</p>
+      <p>02-8286-0162</p>
+      <p>meishih11003@gmail.com</p>
+      <a class="ms-partner" href="#">夥伴專區 →</a>
+    </div>
+    <div>
+      <h4>快速連結</h4>
+      <a href="about.html">關於我們</a>
+      <a href="services.html">服務項目</a>
+      <a href="apply.html">服務申請</a>
+      <a href="news.html">美事消息</a>
+    </div>
+    <div>
+      <h4>申請照護服務</h4>
+      <a href="apply.html">線上申請表單</a>
+      <a href="apply.html">長照專線 1966</a>
+      <a href="apply.html">申請資格說明</a>
+    </div>
+  </div>
+  <div class="ms-footer-bottom">
+    <span>© 2025 美事居家長照機構 版權所有</span>
+    <span>新北市政府評鑑通過機構</span>
+  </div>
+</footer>
+
+</body>
+</html>
