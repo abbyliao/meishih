@@ -14,8 +14,7 @@
 /* ==================
    1. 字體載入
    ================== */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&family=DM Serif Display:wght@400;500&family=DM+Serif+Display&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&family=DM+Serif+Display&display=swap');
 /* ==================
    2. 基本設定
    ================== */
@@ -25,6 +24,8 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   color: #2a1e1e;
   background: #fff;
+  font-size: 16px; /* 原本沒設定，預設是16px，手機上加大到18px */
+
 }
 
 
@@ -199,7 +200,9 @@ body {
 
 /* 手機（寬度小於 768px） */
 @media (max-width: 768px) {
-
+ body { font-size: 17px; }
+ .ms-nav-links a { font-size: 15px; }
+   
   /* 隱藏桌機版導覽連結和按鈕 */
   .ms-nav-links { display: none; }
   .ms-nav-cta { display: none; }
