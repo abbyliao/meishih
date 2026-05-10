@@ -43,6 +43,19 @@
 .ms-svc-modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.25rem; color: #8a7070; cursor: pointer; }
 .ms-svc-modal-source { font-size: 0.75rem; color: #b8a0a8; margin-top: 1rem; border-top: 1px solid #e8e0dc; padding-top: 0.8rem; }
 
+
+/* 失能分級表 */
+.ms-cms-wrap { overflow-x: auto; margin-bottom: 2.5rem; }
+.ms-cms-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.ms-cms-table th { background: #2a1e1e; color: #f0e0e0; font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.06em; padding: 12px 16px; border: 1px solid #3a2828; text-align: center; }
+.ms-cms-table th:first-child { text-align: left; }
+.ms-cms-table td { padding: 11px 16px; border: 1px solid #e8e0dc; vertical-align: middle; text-align: center; }
+.ms-cms-table td:first-child { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #993556; font-weight: 400; text-align: center; }
+.ms-cms-table td:nth-child(2) { text-align: left; font-weight: 500; font-size: 0.875rem; }
+.ms-cms-table td:nth-child(3) { font-size: 0.8125rem; color: #6a5050; text-align: left; }
+.ms-cms-table td:nth-child(4) { font-weight: 500; color: #993556; }
+.ms-cms-table tr:hover td { background: #fdf8f4; }
+.ms-cms-note { font-size: 0.8125rem; color: #6a5050; line-height: 1.9; margin-top: 1rem; }
 /* 費用表標題 */
 .ms-fee-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem; }
 .ms-fee-title { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; }
@@ -156,6 +169,38 @@
     </button>
   </div>
   <p class="ms-lead">依政府公訂價格收費，提供一般戶、中低收入戶及低收入戶補助方案。</p>
+  <!-- 失能分級說明 -->
+  <div style="margin-bottom:2.5rem;">
+    <h3 style="font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:600;margin-bottom:0.8rem;color:#2a1e1e;">長照失能等級（CMS）與照顧服務補助額度</h3>
+    <p style="font-size:0.875rem;line-height:2;color:#6a5050;margin-bottom:1.2rem;">政府依個案失能程度分為 1–8 級，等級愈高代表照顧需求愈重，補助額度也愈多。第 1 級無給付，第 2–8 級可申請補助。</p>
+    <div class="ms-cms-wrap">
+      <table class="ms-cms-table">
+        <thead>
+          <tr>
+            <th>等級</th>
+            <th>失能程度</th>
+            <th>說明</th>
+            <th>照顧服務月補助額度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>輕度前期</td><td>失智或衰弱前期，無 ADL 失能</td><td><span style="color:#8a7070;font-size:0.8125rem;">無給付（可使用預防延緩服務）</span></td></tr>
+          <tr><td>2</td><td>輕度</td><td>1–2 項 ADL 失能，或僅 IADL 失能獨居者</td><td>10,020 元</td></tr>
+          <tr><td>3</td><td>輕度</td><td>1–2 項 ADL 失能，情況較嚴重</td><td>16,680 元</td></tr>
+          <tr><td>4</td><td>中度</td><td>3–4 項 ADL 失能</td><td>20,040 元</td></tr>
+          <tr><td>5</td><td>中度</td><td>3–4 項 ADL 失能，情況較嚴重</td><td>23,400 元</td></tr>
+          <tr><td>6</td><td>中度</td><td>3–4 項 ADL 失能，需較多協助</td><td>26,760 元</td></tr>
+          <tr><td>7</td><td>重度</td><td>5 項以上 ADL 失能</td><td>30,120 元</td></tr>
+          <tr><td>8</td><td>極重度</td><td>5 項以上 ADL 完全失能</td><td>36,180 元</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="ms-cms-note">
+      <i class="ti ti-info-circle" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
+      ADL（日常生活活動）包含進食、移位、室內走動、穿衣、洗澡、上廁所等 6 項。補助額度為照顧及專業服務類，實際金額依評估結果及縣市規定為準。資料來源：衛生福利部長照專區。
+    </p>
+  </div>
+
   <div class="ms-fee-note">
     <i class="ti ti-info-circle" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
     如無政府補助，我們也提供彈性自費選擇，讓您靈活安排所需服務。低收入戶享有全額補助。
