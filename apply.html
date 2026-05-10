@@ -9,7 +9,6 @@
 <style>
 /* ==================
    服務申請 專屬樣式
-   rem換算基準：桌機16px、手機18px
    ================== */
 
 .ms-page-header { background: #fdf8f4; padding: 4rem 2.5rem 3.5rem; border-bottom: 1px solid #e8e0dc; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; }
@@ -30,14 +29,23 @@
 .ms-qualify-text p { font-size: 0.8125rem; color: #6a5050; line-height: 1.8; }
 .ms-qualify-note { border-left: 3px solid #993556; padding: 1rem 1.5rem; background: #fdf8f4; font-size: 0.875rem; color: #6a5050; line-height: 1.9; }
 
-/* 申請流程六步驟 */
-.ms-flow { display: grid; grid-template-columns: repeat(6,1fr); border: 1px solid #e8e0dc; margin-top: 2rem; }
-.ms-flow-step { padding: 2rem 1rem; text-align: center; border-right: 1px solid #e8e0dc; }
-.ms-flow-step:last-child { border-right: none; }
-.ms-flow-n { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: #993556; line-height: 1; margin-bottom: 8px; }
-.ms-flow-t { font-size: 0.875rem; font-weight: 500; margin-bottom: 5px; }
-.ms-flow-d { font-size: 0.8125rem; color: #8a7070; line-height: 1.7; }
+/* 申請流程（icon版，同首頁） */
+.ms-flow-wrap { position: relative; display: flex; justify-content: space-between; align-items: flex-start; padding: 0 1rem; }
+.ms-flow-line { position: absolute; top: 2.2rem; left: 3rem; right: 3rem; height: 1px; background: #f4c0d1; z-index: 0; }
+.ms-flow-item { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1; padding: 0 0.5rem; }
+.ms-flow-icon { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 1.5px solid #993556; display: flex; align-items: center; justify-content: center; margin-bottom: 0.6rem; }
+.ms-flow-icon i { font-size: 1.25rem; color: #993556; }
+.ms-flow-icon.active { background: #993556; border-color: #993556; }
+.ms-flow-icon.active i { color: #fff; }
+.ms-flow-num { font-family: 'DM Serif Display', serif; font-size: 0.9rem; color: #c8a0b0; margin-bottom: 4px; }
+.ms-flow-t { font-size: 0.875rem; font-weight: 500; color: #2a1e1e; text-align: center; margin-bottom: 4px; }
+.ms-flow-d { font-size: 0.8125rem; color: #6a5050; line-height: 1.6; text-align: center; }
+.ms-flow-days { position: absolute; top: -1.8rem; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+.ms-flow-days span { font-size: 0.75rem; color: #993556; background: #fce8ef; padding: 2px 8px; border-radius: 10px; letter-spacing: 0.04em; }
 .ms-flow-note { margin-top: 1.5rem; border-left: 3px solid #993556; padding: 0.9rem 1.4rem; background: #fdf8f4; font-size: 0.875rem; color: #6a5050; line-height: 1.9; }
+
+/* 手機版流程預設隱藏 */
+.ms-flow-mobile { display: none; }
 
 /* FAQ */
 .ms-faq { max-width: 720px; }
@@ -61,8 +69,23 @@
   .ms-page-header { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
   .ms-sec { padding: 3rem 1.5rem; }
   .ms-qualify-grid { grid-template-columns: 1fr; }
-  .ms-flow { grid-template-columns: repeat(2,1fr); }
-  .ms-flow-step:nth-child(2n) { border-right: none; }
+  .ms-flow-wrap { display: none; }
+  .ms-flow-mobile { display: flex; flex-direction: column; position: relative; }
+  .ms-flow-mobile::before { content: ''; position: absolute; left: 88px; top: 22px; bottom: 22px; width: 1px; background: #f4c0d1; z-index: 0; }
+  .ms-flow-mobile-item { display: grid; grid-template-columns: 80px 44px 1fr; gap: 8px; align-items: flex-start; padding-bottom: 2rem; position: relative; }
+  .ms-flow-mobile-item:last-child { padding-bottom: 0; }
+  .ms-flow-mobile-days { text-align: right; padding-top: 12px; padding-right: 4px; }
+  .ms-flow-mobile-days span { font-size: 0.6875rem; color: #993556; background: #fce8ef; padding: 2px 6px; border-radius: 8px; display: inline-block; line-height: 1.5; text-align: center; }
+  .ms-flow-mobile-days.empty { height: 44px; }
+  .ms-flow-mobile-icon { display: flex; justify-content: center; position: relative; z-index: 1; }
+  .ms-flow-mobile-icon-wrap { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 1.5px solid #993556; display: flex; align-items: center; justify-content: center; }
+  .ms-flow-mobile-icon-wrap i { font-size: 1.25rem; color: #993556; }
+  .ms-flow-mobile-icon-wrap.active { background: #993556; border-color: #993556; }
+  .ms-flow-mobile-icon-wrap.active i { color: #fff; }
+  .ms-flow-mobile-content { padding-left: 8px; padding-top: 10px; }
+  .ms-flow-mobile-num { font-family: 'DM Serif Display', serif; font-size: 0.85rem; color: #c8a0b0; margin-bottom: 3px; }
+  .ms-flow-mobile-t { font-size: 0.875rem; font-weight: 500; color: #2a1e1e; margin-bottom: 3px; }
+  .ms-flow-mobile-d { font-size: 0.8125rem; color: #6a5050; line-height: 1.6; }
   .ms-cta-block { flex-direction: column; text-align: center; }
   .ms-cta-btn { width: 100%; }
 }
@@ -80,6 +103,7 @@
   <p class="ms-page-desc">從第一次聯繫到服務正式開始，我們全程陪伴您走過每一個環節，讓申請過程簡單無負擔。</p>
 </div>
 
+<!-- 申請資格 -->
 <section class="ms-sec">
   <span class="ms-tag">Eligibility</span>
   <h2 class="ms-h2">申請資格</h2>
@@ -108,17 +132,86 @@
   </div>
 </section>
 
+<!-- 申請流程（icon版） -->
 <section class="ms-sec ms-sec-alt">
   <span class="ms-tag">Application Process</span>
   <h2 class="ms-h2">申請流程</h2>
   <p class="ms-lead">六個清晰步驟，讓照顧從容開始。</p>
-  <div class="ms-flow">
-    <div class="ms-flow-step"><div class="ms-flow-n">01</div><div class="ms-flow-t">聯繫美事</div><div class="ms-flow-d">填寫申請單或撥打美事專線</div></div>
-    <div class="ms-flow-step"><div class="ms-flow-n">02</div><div class="ms-flow-t">衛生局電訪</div><div class="ms-flow-d">確認基本照護需求</div></div>
-    <div class="ms-flow-step"><div class="ms-flow-n">03</div><div class="ms-flow-t">衛生局家訪</div><div class="ms-flow-d">到府評估實際狀況</div></div>
-    <div class="ms-flow-step"><div class="ms-flow-n">04</div><div class="ms-flow-t">個管師家訪</div><div class="ms-flow-d">制定個人化照護計畫</div></div>
-    <div class="ms-flow-step"><div class="ms-flow-n">05</div><div class="ms-flow-t">簽約確認</div><div class="ms-flow-d">美事與您正式簽約</div></div>
-    <div class="ms-flow-step"><div class="ms-flow-n">06</div><div class="ms-flow-t">開始服務</div><div class="ms-flow-d">照服員到府服務</div></div>
+  <div style="position:relative;padding-top:2rem;">
+    <div class="ms-flow-wrap">
+      <div class="ms-flow-line"></div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-icon"><i class="ti ti-file-text"></i></div>
+        <div class="ms-flow-num">01</div>
+        <div class="ms-flow-t">聯繫美事</div>
+        <div class="ms-flow-d">填寫申請單或撥打美事專線</div>
+      </div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-days"><span>約 5–7 工作天</span></div>
+        <div class="ms-flow-icon"><i class="ti ti-phone"></i></div>
+        <div class="ms-flow-num">02</div>
+        <div class="ms-flow-t">衛生局電訪</div>
+        <div class="ms-flow-d">確認基本照護需求</div>
+      </div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-days"><span>約 3–5 工作天</span></div>
+        <div class="ms-flow-icon"><i class="ti ti-home"></i></div>
+        <div class="ms-flow-num">03</div>
+        <div class="ms-flow-t">衛生局家訪</div>
+        <div class="ms-flow-d">到府評估實際狀況</div>
+      </div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-icon"><i class="ti ti-clipboard-list"></i></div>
+        <div class="ms-flow-num">04</div>
+        <div class="ms-flow-t">個管師家訪</div>
+        <div class="ms-flow-d">制定個人化照護計畫</div>
+      </div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-icon"><i class="ti ti-writing"></i></div>
+        <div class="ms-flow-num">05</div>
+        <div class="ms-flow-t">簽約確認</div>
+        <div class="ms-flow-d">美事與您正式簽約</div>
+      </div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-icon active"><i class="ti ti-heart-handshake"></i></div>
+        <div class="ms-flow-num">06</div>
+        <div class="ms-flow-t">開始服務</div>
+        <div class="ms-flow-d">照服員到府服務</div>
+      </div>
+    </div>
+  </div>
+  <!-- 手機版流程 -->
+  <div class="ms-flow-mobile">
+    <div class="ms-flow-mobile-item">
+      <div class="ms-flow-mobile-days empty"></div>
+      <div class="ms-flow-mobile-icon"><div class="ms-flow-mobile-icon-wrap"><i class="ti ti-file-text"></i></div></div>
+      <div class="ms-flow-mobile-content"><div class="ms-flow-mobile-num">01</div><div class="ms-flow-mobile-t">聯繫美事</div><div class="ms-flow-mobile-d">填寫申請單或撥打美事專線</div></div>
+    </div>
+    <div class="ms-flow-mobile-item">
+      <div class="ms-flow-mobile-days"><span>約 5–7<br>工作天</span></div>
+      <div class="ms-flow-mobile-icon"><div class="ms-flow-mobile-icon-wrap"><i class="ti ti-phone"></i></div></div>
+      <div class="ms-flow-mobile-content"><div class="ms-flow-mobile-num">02</div><div class="ms-flow-mobile-t">衛生局電訪</div><div class="ms-flow-mobile-d">確認基本照護需求</div></div>
+    </div>
+    <div class="ms-flow-mobile-item">
+      <div class="ms-flow-mobile-days"><span>約 3–5<br>工作天</span></div>
+      <div class="ms-flow-mobile-icon"><div class="ms-flow-mobile-icon-wrap"><i class="ti ti-home"></i></div></div>
+      <div class="ms-flow-mobile-content"><div class="ms-flow-mobile-num">03</div><div class="ms-flow-mobile-t">衛生局家訪</div><div class="ms-flow-mobile-d">到府評估實際狀況</div></div>
+    </div>
+    <div class="ms-flow-mobile-item">
+      <div class="ms-flow-mobile-days empty"></div>
+      <div class="ms-flow-mobile-icon"><div class="ms-flow-mobile-icon-wrap"><i class="ti ti-clipboard-list"></i></div></div>
+      <div class="ms-flow-mobile-content"><div class="ms-flow-mobile-num">04</div><div class="ms-flow-mobile-t">個管師家訪</div><div class="ms-flow-mobile-d">制定個人化照護計畫</div></div>
+    </div>
+    <div class="ms-flow-mobile-item">
+      <div class="ms-flow-mobile-days empty"></div>
+      <div class="ms-flow-mobile-icon"><div class="ms-flow-mobile-icon-wrap"><i class="ti ti-writing"></i></div></div>
+      <div class="ms-flow-mobile-content"><div class="ms-flow-mobile-num">05</div><div class="ms-flow-mobile-t">簽約確認</div><div class="ms-flow-mobile-d">美事與您正式簽約</div></div>
+    </div>
+    <div class="ms-flow-mobile-item">
+      <div class="ms-flow-mobile-days empty"></div>
+      <div class="ms-flow-mobile-icon"><div class="ms-flow-mobile-icon-wrap active"><i class="ti ti-heart-handshake"></i></div></div>
+      <div class="ms-flow-mobile-content"><div class="ms-flow-mobile-num">06</div><div class="ms-flow-mobile-t">開始服務</div><div class="ms-flow-mobile-d">照服員到府服務</div></div>
+    </div>
   </div>
   <div class="ms-flow-note">
     <i class="ti ti-phone" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
@@ -126,6 +219,7 @@
   </div>
 </section>
 
+<!-- FAQ -->
 <section class="ms-sec">
   <span class="ms-tag">FAQ</span>
   <h2 class="ms-h2">常見問題</h2>

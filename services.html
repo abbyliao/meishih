@@ -9,7 +9,6 @@
 <style>
 /* ==================
    服務項目 專屬樣式
-   rem換算基準：桌機16px、手機18px
    ================== */
 
 .ms-page-header { background: #fdf8f4; padding: 4rem 2.5rem 3.5rem; border-bottom: 1px solid #e8e0dc; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; }
@@ -21,6 +20,44 @@
 .ms-tag { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
 .ms-h2 { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.8rem; }
 .ms-lead { font-size: 0.9375rem; line-height: 2; color: #6a5050; max-width: 560px; margin-bottom: 2.5rem; }
+
+/* 頁面頂端快速跳轉按鈕 */
+.ms-anchors { display: flex; gap: 12px; padding: 1.5rem 2.5rem; background: #fff; border-bottom: 1px solid #e8e0dc; flex-wrap: wrap; }
+.ms-anchor-btn { font-size: 0.875rem; letter-spacing: 0.06em; padding: 8px 20px; border: 1px solid #993556; background: transparent; color: #993556; cursor: pointer; font-family: 'Noto Sans TC', sans-serif; text-decoration: none; display: inline-block; }
+.ms-anchor-btn:hover { background: #993556; color: #fff; }
+
+/* 服務項目格線 */
+.ms-svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); border: 1px solid #e8e0dc; }
+.ms-svc-item { padding: 1.5rem 1.2rem; border-right: 1px solid #e8e0dc; border-bottom: 1px solid #e8e0dc; }
+.ms-svc-code { font-family: 'DM Serif Display', serif; font-size: 0.8125rem; color: #993556; margin-bottom: 5px; letter-spacing: 0.04em; }
+.ms-svc-name { font-size: 0.875rem; font-weight: 500; }
+
+/* 費用表 */
+.ms-fee-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem; }
+.ms-fee-title { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; }
+.ms-fee-info-btn { width: 28px; height: 28px; border-radius: 50%; background: #fce8ef; border: 1px solid #993556; color: #993556; font-size: 0.875rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; }
+
+/* 懸浮說明視窗 */
+.ms-tooltip { display: none; position: absolute; top: 36px; left: 50%; transform: translateX(-50%); background: #2a1e1e; color: #f0e0e0; font-size: 0.8125rem; line-height: 1.8; padding: 1rem 1.2rem; border-radius: 4px; width: 320px; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+.ms-tooltip::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-bottom-color: #2a1e1e; border-top: none; }
+.ms-fee-info-btn.active .ms-tooltip { display: block; }
+
+.ms-fee-note { background: #fdf8f4; border-left: 3px solid #993556; padding: 1rem 1.5rem; font-size: 0.875rem; color: #6a5050; line-height: 1.9; margin-bottom: 2rem; }
+.ms-fee-table-wrap { overflow-x: auto; }
+.ms-fee-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.ms-fee-table th { background: #fdf8f4; font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.06em; padding: 12px 16px; border: 1px solid #e8e0dc; color: #6a5050; text-align: center; }
+.ms-fee-table th:first-child { text-align: left; min-width: 200px; }
+.ms-fee-table th:nth-child(2) { min-width: 80px; }
+.ms-fee-table th:nth-child(3) { min-width: 90px; }
+.ms-fee-table th:nth-child(4) { min-width: 100px; } /* 中低收入戶欄位縮小 */
+.ms-fee-table th:nth-child(5) { min-width: 70px; }
+.ms-fee-table td { padding: 11px 16px; border: 1px solid #e8e0dc; vertical-align: middle; font-size: 0.875rem; }
+.ms-fee-table td:first-child { font-size: 0.8125rem; color: #6a5050; }
+.ms-fee-table td:nth-child(2) { font-weight: 500; }
+.ms-fee-table td:not(:first-child) { text-align: center; }
+.ms-fee-table tr:hover td { background: #fdf8f4; }
+.ms-fee-subsidized { font-size: 0.8125rem; color: #993556; font-weight: 500; }
+.ms-fee-free { font-size: 0.8125rem; color: #8a7070; }
 
 /* 個案分享 */
 .ms-case { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #e8e0dc; }
@@ -35,34 +72,17 @@
 .ms-case-row-label { color: #8a7070; min-width: 60px; letter-spacing: 0.04em; }
 .ms-case-row-val { color: #4a3838; }
 
-/* 服務項目格線 */
-.ms-svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); border: 1px solid #e8e0dc; }
-.ms-svc-item { padding: 1.5rem 1.2rem; border-right: 1px solid #e8e0dc; border-bottom: 1px solid #e8e0dc; }
-.ms-svc-code { font-family: 'DM Serif Display', serif; font-size: 0.8125rem; color: #993556; margin-bottom: 5px; letter-spacing: 0.04em; }
-.ms-svc-name { font-size: 0.875rem; font-weight: 500; }
-
-/* 費用表 */
-.ms-fee-note { background: #fdf8f4; border-left: 3px solid #993556; padding: 1rem 1.5rem; font-size: 0.875rem; color: #6a5050; line-height: 1.9; margin-bottom: 2rem; }
-.ms-fee-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-.ms-fee-table th { background: #fdf8f4; font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.06em; padding: 12px 16px; border: 1px solid #e8e0dc; color: #6a5050; text-align: center; }
-.ms-fee-table th:first-child { text-align: left; }
-.ms-fee-table td { padding: 11px 16px; border: 1px solid #e8e0dc; vertical-align: middle; font-size: 0.875rem; }
-.ms-fee-table td:first-child { font-size: 0.8125rem; color: #6a5050; }
-.ms-fee-table td:nth-child(2) { font-weight: 500; }
-.ms-fee-table td:not(:first-child) { text-align: center; }
-.ms-fee-table tr:hover td { background: #fdf8f4; }
-.ms-fee-subsidized { font-size: 0.8125rem; color: #993556; font-weight: 500; }
-.ms-fee-free { font-size: 0.8125rem; color: #8a7070; }
-
 /* 手機版 RWD */
 @media (max-width: 768px) {
   .ms-page-header { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+  .ms-anchors { padding: 1rem 1.5rem; gap: 8px; }
+  .ms-anchor-btn { font-size: 0.8125rem; padding: 7px 14px; }
   .ms-sec { padding: 3rem 1.5rem; }
   .ms-case { grid-template-columns: 1fr; }
   .ms-case-img img { height: 220px; }
   .ms-case-content { padding: 1.5rem; }
-  .ms-fee-table-wrap { overflow-x: auto; }
-  .ms-fee-table { min-width: 600px; }
+  .ms-fee-table { min-width: 560px; }
+  .ms-tooltip { width: 260px; left: 0; transform: none; }
 }
 </style>
 </head>
@@ -78,28 +98,15 @@
   <p class="ms-page-desc">提供完整的居家照護服務，依政府公訂價格收費，並提供補助方案，讓每個家庭都能獲得所需的照護。</p>
 </div>
 
-<section class="ms-sec">
-  <span class="ms-tag">Case Sharing</span>
-  <h2 class="ms-h2">個案分享</h2>
-  <p class="ms-lead">真實的服務經驗，讓您更了解美事如何陪伴每一個家庭。</p>
-  <div class="ms-case">
-    <div class="ms-case-img">
-      <img src="assets/case.jpg" alt="個案示意" onerror="this.style.background='#e8d5dc';this.style.minHeight='280px';this.style.display='block'">
-    </div>
-    <div class="ms-case-content">
-      <span class="ms-case-tag">居家照護</span>
-      <h3>讓遠在他鄉的家屬，也能安心</h3>
-      <p>王爺爺今年 80 歲，獨居於蘆洲，子女在外地工作，無法每日陪伴。家屬透過美事安排每日到府服務，協助日常清潔與餐食照顧，讓長輩在熟悉的家中安心生活。</p>
-      <div class="ms-case-detail">
-        <div class="ms-case-row"><span class="ms-case-row-label">服務對象</span><span class="ms-case-row-val">80 歲獨居長者</span></div>
-        <div class="ms-case-row"><span class="ms-case-row-label">服務內容</span><span class="ms-case-row-val">日常清潔、餐食照顧</span></div>
-        <div class="ms-case-row"><span class="ms-case-row-label">服務頻率</span><span class="ms-case-row-val">每日到府</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- 快速跳轉錨點按鈕 -->
+<div class="ms-anchors">
+  <a class="ms-anchor-btn" href="#svc-items">服務項目</a>
+  <a class="ms-anchor-btn" href="#svc-fees">服務費用</a>
+  <a class="ms-anchor-btn" href="#svc-case">個案分享</a>
+</div>
 
-<section class="ms-sec ms-sec-alt">
+<!-- 服務項目 -->
+<section class="ms-sec ms-sec-alt" id="svc-items">
   <span class="ms-tag">Service Items</span>
   <h2 class="ms-h2">服務項目</h2>
   <p class="ms-lead">涵蓋身體照護、日常協助、陪同外出等多元服務，依個案需求彈性安排。</p>
@@ -128,9 +135,19 @@
   </div>
 </section>
 
-<section class="ms-sec">
+<!-- 服務費用 -->
+<section class="ms-sec" id="svc-fees">
   <span class="ms-tag">Service Fees</span>
-  <h2 class="ms-h2">服務費用</h2>
+  <!-- 標題加說明按鈕 -->
+  <div class="ms-fee-header">
+    <div class="ms-fee-title">服務費用</div>
+    <button class="ms-fee-info-btn" onclick="toggleTooltip(this)" aria-label="衛服部規定說明">
+      ？
+      <div class="ms-tooltip">
+        依衛生福利部「長期照顧服務給付及支付基準」規定，居家服務費用由政府依失能等級核定補助額度。一般戶自付 16%，中低收入戶自付 5%，低收入戶全額補助。實際補助金額依個案評估結果為準。
+      </div>
+    </button>
+  </div>
   <p class="ms-lead">依政府公訂價格收費，提供一般戶、中低收入戶及低收入戶補助方案。</p>
   <div class="ms-fee-note">
     <i class="ti ti-info-circle" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
@@ -142,8 +159,8 @@
         <tr>
           <th style="text-align:left">服務項目</th>
           <th>全額自費</th>
-          <th>一般戶 16%</th>
-          <th>中低收入戶 5%</th>
+          <th>一般戶<br>16%</th>
+          <th>中低收入戶<br>5%</th>
           <th>低收入戶</th>
         </tr>
       </thead>
@@ -174,7 +191,41 @@
   </div>
 </section>
 
+<!-- 個案分享 -->
+<section class="ms-sec ms-sec-alt" id="svc-case">
+  <span class="ms-tag">Case Sharing</span>
+  <h2 class="ms-h2">個案分享</h2>
+  <p class="ms-lead">真實的服務經驗，讓您更了解美事如何陪伴每一個家庭。</p>
+  <div class="ms-case">
+    <div class="ms-case-img">
+      <img src="assets/case.jpg" alt="個案示意" onerror="this.style.background='#e8d5dc';this.style.minHeight='280px';this.style.display='block'">
+    </div>
+    <div class="ms-case-content">
+      <span class="ms-case-tag">居家照護</span>
+      <h3>讓遠在他鄉的家屬，也能安心</h3>
+      <p>王爺爺今年 80 歲，獨居於蘆洲，子女在外地工作，無法每日陪伴。家屬透過美事安排每日到府服務，協助日常清潔與餐食照顧，讓長輩在熟悉的家中安心生活。</p>
+      <div class="ms-case-detail">
+        <div class="ms-case-row"><span class="ms-case-row-label">服務對象</span><span class="ms-case-row-val">80 歲獨居長者</span></div>
+        <div class="ms-case-row"><span class="ms-case-row-label">服務內容</span><span class="ms-case-row-val">日常清潔、餐食照顧</span></div>
+        <div class="ms-case-row"><span class="ms-case-row-label">服務頻率</span><span class="ms-case-row-val">每日到府</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 頁尾由 common.js 自動載入 -->
 <script src="common.js"></script>
+<script>
+/* 懸浮說明視窗開關 */
+function toggleTooltip(btn) {
+  btn.classList.toggle('active');
+  document.addEventListener('click', function closeTooltip(e) {
+    if (!btn.contains(e.target)) {
+      btn.classList.remove('active');
+      document.removeEventListener('click', closeTooltip);
+    }
+  });
+}
+</script>
 </body>
 </html>
