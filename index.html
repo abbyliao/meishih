@@ -4,97 +4,127 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>美事居家長照機構</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<!-- 共用樣式 -->
+<link rel="stylesheet" href="common.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Noto Sans TC',sans-serif;color:#2a1e1e;background:#fff;}
+/* ==================
+   首頁專屬樣式
+   ================== */
 
-/* NAV */
-.ms-nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:#fff;border-bottom:1px solid #e8e0dc;position:sticky;top:0;z-index:20;}
-.ms-nav img{height:50px;object-fit:contain;}
-.ms-nav a img{height:50px;object-fit:contain;}
-.ms-nav-links{display:flex;gap:2rem;}
-.ms-nav-links a{font-size:13px;color:#5a4a4a;text-decoration:none;letter-spacing:0.04em;}
-.ms-nav-links a:hover{color:#993556;}
-.ms-nav-cta{font-size:12px;font-weight:500;letter-spacing:0.08em;color:#993556;border:1px solid #993556;background:transparent;padding:8px 20px;cursor:pointer;}
+/* Hero 主視覺區 */
+.ms-hero { display: grid; grid-template-columns: 1fr 1fr; height: 560px; }
 
-/* HERO */
-.ms-hero{display:grid;grid-template-columns:1fr 1fr;height:560px;}
-.ms-hero-left{padding:5rem 3.5rem;display:flex;flex-direction:column;justify-content:center;background:#fdf8f4;}
-.ms-hero-en{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.22em;color:#993556;text-transform:uppercase;margin-bottom:1.6rem;display:block;}
-.ms-hero-slogan{font-family:'Noto Serif TC',serif;font-size:0.95rem;color:#8a6a6a;letter-spacing:0.14em;margin-bottom:0.7rem;}
-.ms-hero h1{font-family:'Noto Serif TC',serif;font-size:2.3rem;font-weight:700;line-height:1.5;color:#2a1e1e;margin-bottom:1.4rem;}
-.ms-hero h1 em{color:#993556;font-style:normal;}
-.ms-hero-body{font-size:14px;line-height:2;color:#6a5050;max-width:340px;margin-bottom:2.5rem;}
-.ms-hero-btns{display:flex;gap:12px;}
-.ms-btn-fill{background:#2a1e1e;color:#fff;font-size:13px;border:none;padding:13px 28px;cursor:pointer;letter-spacing:0.06em;font-family:'Noto Sans TC',sans-serif;}
-.ms-btn-ghost{background:transparent;color:#2a1e1e;font-size:13px;border:1px solid #2a1e1e;padding:13px 28px;cursor:pointer;letter-spacing:0.06em;font-family:'Noto Sans TC',sans-serif;}
-.ms-hero-right{position:relative;overflow:hidden;background:#c8b0a8;}
-.ms-hero-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.85);}
-.ms-hero-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(20,10,10,0.65));padding:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
-.ms-stat{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:1rem 1.2rem;}
-.ms-stat-num{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:#fff;line-height:1;margin-bottom:3px;}
-.ms-stat-label{font-size:10px;color:rgba(255,255,255,0.75);letter-spacing:0.05em;}
+/* 左側文字區 */
+.ms-hero-left { padding: 5rem 3.5rem; display: flex; flex-direction: column; justify-content: center; background: #fdf8f4; }
 
-/* SECTIONS */
-.ms-sec{padding:4.5rem 2.5rem;}
-.ms-sec-warm{background:#fdf8f4;}
-.ms-tag{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.22em;color:#993556;text-transform:uppercase;display:block;margin-bottom:0.5rem;}
-.ms-h2{font-family:'Noto Serif TC',serif;font-size:1.7rem;font-weight:700;line-height:1.5;margin-bottom:0.8rem;}
-.ms-lead{font-size:14px;line-height:2;color:#6a5050;max-width:540px;margin-bottom:2.5rem;}
+/* 英文小標籤 */
+.ms-hero-en { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; margin-bottom: 1.6rem; display: block; }
 
-/* WHY */
-.ms-why{display:grid;grid-template-columns:1fr 1fr;border:1px solid #e8e0dc;}
-.ms-why-item{padding:2.2rem 2.5rem;border-right:1px solid #e8e0dc;border-bottom:1px solid #e8e0dc;}
-.ms-why-item:nth-child(2n){border-right:none;}
-.ms-why-item:nth-last-child(-n+2){border-bottom:none;}
-.ms-why-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:#e8d0d8;line-height:1;margin-bottom:0.8rem;}
-.ms-why-item h3{font-size:15px;font-weight:500;margin-bottom:6px;}
-.ms-why-item p{font-size:13px;color:#6a5050;line-height:1.9;}
+/* Slogan */
+.ms-hero-slogan { font-family: 'Noto Serif TC', serif; font-size: 0.95rem; color: #8a6a6a; letter-spacing: 0.14em; margin-bottom: 0.7rem; }
 
-/* FLOW */
-.ms-flow-grid{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid #e8e0dc;margin-top:2rem;}
-.ms-flow-step{padding:1.8rem 0.8rem;text-align:center;border-right:1px solid #e8e0dc;}
-.ms-flow-step:last-child{border-right:none;}
-.ms-flow-n{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#993556;line-height:1;margin-bottom:8px;}
-.ms-flow-t{font-size:12px;font-weight:500;margin-bottom:5px;}
-.ms-flow-d{font-size:11px;color:#8a7070;line-height:1.6;}
-.ms-flow-note{margin-top:1.5rem;border-left:3px solid #993556;padding:0.9rem 1.4rem;background:#fdf8f4;font-size:13px;color:#6a5050;line-height:1.9;}
+/* 主標題 */
+.ms-hero h1 { font-family: 'Noto Serif TC', serif; font-size: 2.3rem; font-weight: 700; line-height: 1.5; color: #2a1e1e; margin-bottom: 1.4rem; }
+.ms-hero h1 em { color: #993556; font-style: normal; }
 
-/* CTA */
-.ms-cta{background:#2a1e1e;padding:4rem 2.5rem;display:flex;align-items:center;justify-content:space-between;}
-.ms-cta-left h2{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:600;color:#f0e0e0;margin-bottom:0.5rem;}
-.ms-cta-left p{font-size:13px;color:#9a7878;line-height:1.9;}
-.ms-cta-right{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
-.ms-cta-btn{background:#993556;color:#fff;font-size:13px;border:none;padding:13px 32px;cursor:pointer;letter-spacing:0.08em;font-family:'Noto Sans TC',sans-serif;white-space:nowrap;}
-.ms-cta-phone{font-size:12px;color:#7a5860;letter-spacing:0.04em;}
+/* 說明文字 */
+.ms-hero-body { font-size: 14px; line-height: 2; color: #6a5050; max-width: 340px; margin-bottom: 2.5rem; }
 
-/* FOOTER */
-.ms-footer{background:#1e1414;padding:3rem 2.5rem 2rem;}
-.ms-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid #3a2828;margin-bottom:1.5rem;}
-.ms-footer h4{font-size:12px;letter-spacing:0.12em;color:#e8c8c8;font-weight:500;margin-bottom:1rem;}
-.ms-footer p,.ms-footer a{font-size:12px;line-height:2.4;color:#9a7878;text-decoration:none;display:block;}
-.ms-footer-bottom{display:flex;justify-content:space-between;font-size:11px;color:#6a5050;}
-.ms-partner{display:inline-block;margin-top:14px;font-size:11px;color:#993556;letter-spacing:0.1em;border-bottom:1px solid #993556;padding-bottom:2px;cursor:pointer;text-decoration:none;}
+/* 按鈕群組 */
+.ms-hero-btns { display: flex; gap: 12px; }
+
+/* 深色填滿按鈕 */
+.ms-btn-fill { background: #2a1e1e; color: #fff; font-size: 13px; border: none; padding: 13px 28px; cursor: pointer; letter-spacing: 0.06em; font-family: 'Noto Sans TC', sans-serif; }
+
+/* 空心按鈕 */
+.ms-btn-ghost { background: transparent; color: #2a1e1e; font-size: 13px; border: 1px solid #2a1e1e; padding: 13px 28px; cursor: pointer; letter-spacing: 0.06em; font-family: 'Noto Sans TC', sans-serif; }
+
+/* 右側照片區 */
+.ms-hero-right { position: relative; overflow: hidden; background: #c8b0a8; }
+.ms-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.85); }
+
+/* 照片上的數據卡片 */
+.ms-hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(20,10,10,0.65)); padding: 2rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+.ms-stat { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); padding: 1rem 1.2rem; }
+.ms-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: #fff; line-height: 1; margin-bottom: 3px; }
+.ms-stat-label { font-size: 10px; color: rgba(255,255,255,0.75); letter-spacing: 0.05em; }
+
+/* 各區塊共用 */
+.ms-sec { padding: 4.5rem 2.5rem; }
+.ms-sec-warm { background: #fdf8f4; }
+.ms-tag { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+.ms-h2 { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.8rem; }
+.ms-lead { font-size: 14px; line-height: 2; color: #6a5050; max-width: 540px; margin-bottom: 2.5rem; }
+
+/* 選擇我們的理由四格 */
+.ms-why { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #e8e0dc; }
+.ms-why-item { padding: 2.2rem 2.5rem; border-right: 1px solid #e8e0dc; border-bottom: 1px solid #e8e0dc; }
+.ms-why-item:nth-child(2n) { border-right: none; }
+.ms-why-item:nth-last-child(-n+2) { border-bottom: none; }
+.ms-why-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #e8d0d8; line-height: 1; margin-bottom: 0.8rem; }
+.ms-why-item h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+.ms-why-item p { font-size: 13px; color: #6a5050; line-height: 1.9; }
+
+/* 申請流程六步驟 */
+.ms-flow-grid { display: grid; grid-template-columns: repeat(6,1fr); border: 1px solid #e8e0dc; margin-top: 2rem; }
+.ms-flow-step { padding: 1.8rem 0.8rem; text-align: center; border-right: 1px solid #e8e0dc; }
+.ms-flow-step:last-child { border-right: none; }
+.ms-flow-n { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #993556; line-height: 1; margin-bottom: 8px; }
+.ms-flow-t { font-size: 12px; font-weight: 500; margin-bottom: 5px; }
+.ms-flow-d { font-size: 11px; color: #8a7070; line-height: 1.6; }
+.ms-flow-note { margin-top: 1.5rem; border-left: 3px solid #993556; padding: 0.9rem 1.4rem; background: #fdf8f4; font-size: 13px; color: #6a5050; line-height: 1.9; }
+
+/* 底部 CTA 呼籲區塊 */
+.ms-cta { background: #2a1e1e; padding: 4rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+.ms-cta-left h2 { font-family: 'Noto Serif TC', serif; font-size: 1.5rem; font-weight: 600; color: #f0e0e0; margin-bottom: 0.5rem; }
+.ms-cta-left p { font-size: 13px; color: #9a7878; line-height: 1.9; }
+.ms-cta-right { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+.ms-cta-btn { background: #993556; color: #fff; font-size: 13px; border: none; padding: 13px 32px; cursor: pointer; letter-spacing: 0.08em; font-family: 'Noto Sans TC', sans-serif; white-space: nowrap; }
+.ms-cta-phone { font-size: 12px; color: #7a5860; letter-spacing: 0.04em; }
+
+/* 手機版 RWD */
+@media (max-width: 768px) {
+  /* Hero 改成單欄 */
+  .ms-hero { grid-template-columns: 1fr; height: auto; }
+  .ms-hero-left { padding: 3rem 1.5rem; }
+  .ms-hero h1 { font-size: 1.8rem; }
+  /* 右側照片縮小 */
+  .ms-hero-right { height: 280px; }
+  /* 數據卡片 */
+  .ms-hero-overlay { grid-template-columns: repeat(3,1fr); padding: 1rem; gap: 6px; }
+  .ms-stat-num { font-size: 1.3rem; }
+  /* 各區塊間距縮小 */
+  .ms-sec { padding: 3rem 1.5rem; }
+  /* 四格改成單欄 */
+  .ms-why { grid-template-columns: 1fr; }
+  .ms-why-item { border-right: none; }
+  .ms-why-item:nth-last-child(-n+2) { border-bottom: 1px solid #e8e0dc; }
+  .ms-why-item:last-child { border-bottom: none; }
+  /* 六步驟改成兩欄 */
+  .ms-flow-grid { grid-template-columns: repeat(2,1fr); }
+  .ms-flow-step:nth-child(2n) { border-right: none; }
+  /* CTA改成單欄 */
+  .ms-cta { flex-direction: column; gap: 2rem; text-align: center; padding: 3rem 1.5rem; }
+  .ms-cta-right { align-items: center; }
+}
+
+/* 平板版 RWD */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ms-hero-left { padding: 3rem 2rem; }
+  .ms-hero h1 { font-size: 2rem; }
+  .ms-flow-grid { grid-template-columns: repeat(3,1fr); }
+  .ms-flow-step:nth-child(3n) { border-right: none; }
+}
 </style>
 </head>
 <body>
 
-<nav class="ms-nav">
-  <img src="assets/LOGO.PNG" alt="美事居家長照" onerror="this.outerHTML='<span style=\'font-family:Noto Serif TC,serif;font-size:15px;font-weight:600;letter-spacing:0.08em\'>美事居家長照</span>'">
-  <div class="ms-nav-links">
-    <a href="about.html">關於我們</a>
-    <a href="services.html">服務項目</a>
-    <a href="apply.html">服務申請</a>
-    <a href="news.html">美事消息</a>
-    <a href="contact.html">聯絡我們</a>
-  </div>
-  <button class="ms-nav-cta" onclick="location.href='contact.html'">立即諮詢</button>
-</nav>
+<!-- 導覽列由 common.js 自動載入 -->
 
+<!-- Hero 主視覺區 -->
 <section class="ms-hero">
+  <!-- 左側：文字與按鈕 -->
   <div class="ms-hero-left">
     <span class="ms-hero-en">Meishih Long-Term Care · Since 2021</span>
     <div class="ms-hero-slogan">居家服務，是一件美好的事</div>
@@ -105,6 +135,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:#2a1e1e;background:#fff;}
       <button class="ms-btn-ghost" onclick="location.href='services.html'">查看服務項目</button>
     </div>
   </div>
+  <!-- 右側：照片（請上傳 assets/hero.jpg） -->
   <div class="ms-hero-right">
     <img class="ms-hero-img" src="assets/hero.jpg" alt="居家照護">
     <div class="ms-hero-overlay">
@@ -115,6 +146,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:#2a1e1e;background:#fff;}
   </div>
 </section>
 
+<!-- 選擇美事的理由 -->
 <section class="ms-sec ms-sec-warm">
   <span class="ms-tag">Why Choose Us</span>
   <h2 class="ms-h2">選擇美事的理由</h2>
@@ -143,6 +175,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:#2a1e1e;background:#fff;}
   </div>
 </section>
 
+<!-- 申請流程六步驟 -->
 <section class="ms-sec">
   <span class="ms-tag">How to Apply</span>
   <h2 class="ms-h2">六步驟，讓照顧從容開始</h2>
@@ -160,6 +193,7 @@ body{font-family:'Noto Sans TC',sans-serif;color:#2a1e1e;background:#fff;}
   </div>
 </section>
 
+<!-- 底部呼籲區塊 -->
 <div class="ms-cta">
   <div class="ms-cta-left">
     <h2>準備好開始了嗎？</h2>
@@ -171,34 +205,9 @@ body{font-family:'Noto Sans TC',sans-serif;color:#2a1e1e;background:#fff;}
   </div>
 </div>
 
-<footer class="ms-footer">
-  <div class="ms-footer-grid">
-    <div>
-      <h4>美事居家長照機構</h4>
-      <p>247 新北市蘆洲區永安南路二段 328 巷 17 弄 8 號</p>
-      <p>02-8286-0162</p>
-      <p>meishih11003@gmail.com</p>
-      <a class="ms-partner" href="#">夥伴專區 →</a>
-    </div>
-    <div>
-      <h4>快速連結</h4>
-      <a href="about.html">關於我們</a>
-      <a href="services.html">服務項目</a>
-      <a href="apply.html">服務申請</a>
-      <a href="news.html">美事消息</a>
-    </div>
-    <div>
-      <h4>申請照護服務</h4>
-      <a href="apply.html">線上申請表單</a>
-      <a href="apply.html">長照專線 1966</a>
-      <a href="apply.html">申請資格說明</a>
-    </div>
-  </div>
-  <div class="ms-footer-bottom">
-    <span>© 2025 美事居家長照機構 版權所有</span>
-    <span>新北市政府評鑑通過機構</span>
-  </div>
-</footer>
+<!-- 頁尾由 common.js 自動載入 -->
 
+<!-- 共用JS（載入導覽列、頁尾、active偵測） -->
+<script src="common.js"></script>
 </body>
 </html>
