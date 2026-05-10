@@ -9,57 +9,60 @@
 <style>
 /* ==================
    聯絡我們 專屬樣式
+   rem換算基準：桌機16px、手機18px
    ================== */
-.ms-page-header{background:#fdf8f4;padding:4rem 2.5rem 3.5rem;border-bottom:1px solid #e8e0dc;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;}
-.ms-page-en{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.22em;color:#993556;text-transform:uppercase;display:block;margin-bottom:0.6rem;}
-.ms-page-h1{font-family:'Noto Serif TC',serif;font-size:2.2rem;font-weight:700;line-height:1.4;}
-.ms-page-desc{font-size:14px;line-height:2;color:#6a5050;}
-.ms-sec{padding:5rem 2.5rem;}
-.ms-tag{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.22em;color:#993556;text-transform:uppercase;display:block;margin-bottom:0.5rem;}
-.ms-h2{font-family:'Noto Serif TC',serif;font-size:1.7rem;font-weight:700;line-height:1.5;margin-bottom:0.8rem;}
+
+.ms-page-header { background: #fdf8f4; padding: 4rem 2.5rem 3.5rem; border-bottom: 1px solid #e8e0dc; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; }
+.ms-page-en { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.6rem; }
+.ms-page-h1 { font-family: 'Noto Serif TC', serif; font-size: 2.2rem; font-weight: 700; line-height: 1.4; }
+.ms-page-desc { font-size: 0.9375rem; line-height: 2; color: #6a5050; }
+.ms-sec { padding: 5rem 2.5rem; }
+.ms-tag { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+.ms-h2 { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.8rem; }
+
 /* 聯絡資訊與表單左右並排 */
-.ms-contact-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid #e8e0dc;}
+.ms-contact-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #e8e0dc; }
+
 /* 左側聯絡資訊 */
-.ms-contact-info{padding:3rem;border-right:1px solid #e8e0dc;}
-.ms-contact-info h3{font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:700;margin-bottom:2rem;}
-.ms-info-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:1.8rem;}
-.ms-info-item:last-child{margin-bottom:0;}
-.ms-info-icon{width:36px;height:36px;border:1px solid #e8e0dc;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.ms-info-label{font-size:11px;color:#8a7070;letter-spacing:0.06em;margin-bottom:3px;}
-.ms-info-val{font-size:14px;font-weight:500;line-height:1.6;}
-.ms-info-sub{font-size:12px;color:#6a5050;margin-top:2px;}
+.ms-contact-info { padding: 3rem; border-right: 1px solid #e8e0dc; }
+.ms-contact-info h3 { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 2rem; }
+.ms-info-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 1.8rem; }
+.ms-info-item:last-child { margin-bottom: 0; }
+.ms-info-icon { width: 36px; height: 36px; border: 1px solid #e8e0dc; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ms-info-label { font-size: 0.75rem; color: #8a7070; letter-spacing: 0.06em; margin-bottom: 3px; }
+.ms-info-val { font-size: 0.9375rem; font-weight: 500; line-height: 1.6; }
+.ms-info-sub { font-size: 0.8125rem; color: #6a5050; margin-top: 2px; }
+
 /* 服務地區標籤 */
-.ms-area-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
-.ms-area-tag{font-size:11px;color:#993556;border:1px solid #993556;padding:3px 10px;letter-spacing:0.04em;}
+.ms-area-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.ms-area-tag { font-size: 0.75rem; color: #993556; border: 1px solid #993556; padding: 3px 10px; letter-spacing: 0.04em; }
+
 /* Google Maps 佔位區 */
-.ms-map-box{margin-top:1.5rem;background:#fdf8f4;border:1px solid #e8e0dc;height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;}
-.ms-map-box p{font-size:12px;color:#6a5050;text-align:center;line-height:1.8;}
-.ms-map-link{font-size:12px;color:#993556;border-bottom:1px solid #993556;padding-bottom:1px;text-decoration:none;}
+.ms-map-box { margin-top: 1.5rem; background: #fdf8f4; border: 1px solid #e8e0dc; height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+.ms-map-box p { font-size: 0.8125rem; color: #6a5050; text-align: center; line-height: 1.8; }
+.ms-map-link { font-size: 0.8125rem; color: #993556; border-bottom: 1px solid #993556; padding-bottom: 1px; text-decoration: none; }
+
 /* 右側諮詢表單 */
-.ms-contact-form{padding:3rem;}
-.ms-contact-form h3{font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:700;margin-bottom:2rem;}
-.ms-form-row{margin-bottom:1.2rem;}
-.ms-form-label{font-size:12px;color:#6a5050;letter-spacing:0.04em;display:block;margin-bottom:6px;}
-.ms-form-input{width:100%;padding:10px 14px;border:1px solid #e8e0dc;background:#fff;font-size:13px;font-family:'Noto Sans TC',sans-serif;color:#2a1e1e;outline:none;}
-.ms-form-input:focus{border-color:#993556;}
-.ms-form-textarea{width:100%;padding:10px 14px;border:1px solid #e8e0dc;background:#fff;font-size:13px;font-family:'Noto Sans TC',sans-serif;color:#2a1e1e;resize:vertical;min-height:120px;outline:none;}
-.ms-form-textarea:focus{border-color:#993556;}
-/* 姓名和電話並排 */
-.ms-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-/* 送出按鈕 */
-.ms-form-submit{width:100%;background:#993556;color:#fff;font-size:13px;font-weight:500;border:none;padding:14px;cursor:pointer;letter-spacing:0.08em;font-family:'Noto Sans TC',sans-serif;margin-top:0.5rem;}
-/* 表單下方1966提示 */
-.ms-form-note{margin-top:1.2rem;border-left:3px solid #993556;padding:0.9rem 1.4rem;background:#fdf8f4;font-size:13px;color:#6a5050;line-height:1.9;}
+.ms-contact-form { padding: 3rem; }
+.ms-contact-form h3 { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 2rem; }
+.ms-form-row { margin-bottom: 1.2rem; }
+.ms-form-label { font-size: 0.8125rem; color: #6a5050; letter-spacing: 0.04em; display: block; margin-bottom: 6px; }
+.ms-form-input { width: 100%; padding: 10px 14px; border: 1px solid #e8e0dc; background: #fff; font-size: 0.9375rem; font-family: 'Noto Sans TC', sans-serif; color: #2a1e1e; outline: none; }
+.ms-form-input:focus { border-color: #993556; }
+.ms-form-textarea { width: 100%; padding: 10px 14px; border: 1px solid #e8e0dc; background: #fff; font-size: 0.9375rem; font-family: 'Noto Sans TC', sans-serif; color: #2a1e1e; resize: vertical; min-height: 120px; outline: none; }
+.ms-form-textarea:focus { border-color: #993556; }
+.ms-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ms-form-submit { width: 100%; background: #993556; color: #fff; font-size: 0.9375rem; font-weight: 500; border: none; padding: 14px; cursor: pointer; letter-spacing: 0.08em; font-family: 'Noto Sans TC', sans-serif; margin-top: 0.5rem; }
+.ms-form-note { margin-top: 1.2rem; border-left: 3px solid #993556; padding: 0.9rem 1.4rem; background: #fdf8f4; font-size: 0.875rem; color: #6a5050; line-height: 1.9; }
+
 /* 手機版 RWD */
-@media(max-width:768px){
-  .ms-page-header{grid-template-columns:1fr;padding:3rem 1.5rem;}
-  .ms-sec{padding:3rem 1.5rem;}
-  /* 左右改成上下排列 */
-  .ms-contact-grid{grid-template-columns:1fr;}
-  .ms-contact-info{border-right:none;border-bottom:1px solid #e8e0dc;padding:2rem 1.5rem;}
-  .ms-contact-form{padding:2rem 1.5rem;}
-  /* 姓名電話改成單欄 */
-  .ms-form-grid{grid-template-columns:1fr;}
+@media (max-width: 768px) {
+  .ms-page-header { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+  .ms-sec { padding: 3rem 1.5rem; }
+  .ms-contact-grid { grid-template-columns: 1fr; }
+  .ms-contact-info { border-right: none; border-bottom: 1px solid #e8e0dc; padding: 2rem 1.5rem; }
+  .ms-contact-form { padding: 2rem 1.5rem; }
+  .ms-form-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -79,38 +82,33 @@
   <span class="ms-tag">Get in Touch</span>
   <h2 class="ms-h2">與美事聯繫</h2>
   <div class="ms-contact-grid">
-    <!-- 左側：聯絡資訊 -->
     <div class="ms-contact-info">
       <h3>聯絡資訊</h3>
-      <!-- 電話 -->
       <div class="ms-info-item">
-        <div class="ms-info-icon"><i class="ti ti-phone" style="font-size:16px;color:#993556"></i></div>
+        <div class="ms-info-icon"><i class="ti ti-phone" style="font-size:1rem;color:#993556"></i></div>
         <div>
           <div class="ms-info-label">電話</div>
           <div class="ms-info-val">02-8286-0162</div>
           <div class="ms-info-sub">週一至週五 09:00 – 18:00</div>
         </div>
       </div>
-      <!-- 信箱 -->
       <div class="ms-info-item">
-        <div class="ms-info-icon"><i class="ti ti-mail" style="font-size:16px;color:#993556"></i></div>
+        <div class="ms-info-icon"><i class="ti ti-mail" style="font-size:1rem;color:#993556"></i></div>
         <div>
           <div class="ms-info-label">電子信箱</div>
           <div class="ms-info-val">meishih11003@gmail.com</div>
         </div>
       </div>
-      <!-- 地址 -->
       <div class="ms-info-item">
-        <div class="ms-info-icon"><i class="ti ti-map-pin" style="font-size:16px;color:#993556"></i></div>
+        <div class="ms-info-icon"><i class="ti ti-map-pin" style="font-size:1rem;color:#993556"></i></div>
         <div>
           <div class="ms-info-label">地址</div>
           <div class="ms-info-val">247 新北市蘆洲區</div>
           <div class="ms-info-sub">永安南路二段 328 巷 17 弄 8 號</div>
         </div>
       </div>
-      <!-- 服務地區 -->
       <div class="ms-info-item">
-        <div class="ms-info-icon"><i class="ti ti-home" style="font-size:16px;color:#993556"></i></div>
+        <div class="ms-info-icon"><i class="ti ti-home" style="font-size:1rem;color:#993556"></i></div>
         <div>
           <div class="ms-info-label">服務地區</div>
           <div class="ms-area-tags">
@@ -122,17 +120,14 @@
           </div>
         </div>
       </div>
-      <!-- Google Maps 佔位（之後可換成實際嵌入地圖） -->
       <div class="ms-map-box">
-        <i class="ti ti-map" style="font-size:32px;color:#c8b0a8"></i>
+        <i class="ti ti-map" style="font-size:2rem;color:#c8b0a8"></i>
         <p>新北市蘆洲區<br>永安南路二段 328 巷 17 弄 8 號</p>
         <a class="ms-map-link" href="https://maps.google.com/?q=新北市蘆洲區永安南路二段328巷17弄8號" target="_blank">在 Google Maps 中開啟 →</a>
       </div>
     </div>
-    <!-- 右側：諮詢表單 -->
     <div class="ms-contact-form">
       <h3>線上諮詢表單</h3>
-      <!-- 姓名和電話並排 -->
       <div class="ms-form-grid">
         <div class="ms-form-row">
           <label class="ms-form-label">姓名</label>
@@ -162,9 +157,8 @@
         <textarea class="ms-form-textarea" placeholder="請描述您的需求或問題，我們將盡快與您聯繫。"></textarea>
       </div>
       <button class="ms-form-submit">送出諮詢</button>
-      <!-- 1966提示 -->
       <div class="ms-form-note">
-        <i class="ti ti-phone" style="font-size:16px;vertical-align:-2px;margin-right:6px;color:#993556"></i>
+        <i class="ti ti-phone" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
         長照申請亦可直接撥打 <strong>1966</strong> 長照專線，或聯繫美事由我們協助引導。
       </div>
     </div>

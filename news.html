@@ -9,49 +9,56 @@
 <style>
 /* ==================
    美事消息 專屬樣式
+   rem換算基準：桌機16px、手機18px
    ================== */
-.ms-page-header{background:#fdf8f4;padding:4rem 2.5rem 3.5rem;border-bottom:1px solid #e8e0dc;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;}
-.ms-page-en{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.22em;color:#993556;text-transform:uppercase;display:block;margin-bottom:0.6rem;}
-.ms-page-h1{font-family:'Noto Serif TC',serif;font-size:2.2rem;font-weight:700;line-height:1.4;}
-.ms-page-desc{font-size:14px;line-height:2;color:#6a5050;}
-.ms-sec{padding:5rem 2.5rem;}
-/* 篩選按鈕列 */
-.ms-filter{display:flex;gap:8px;margin-bottom:2.5rem;flex-wrap:wrap;}
-.ms-filter-btn{font-size:12px;letter-spacing:0.06em;padding:7px 16px;border:1px solid #e8e0dc;background:transparent;color:#6a5050;cursor:pointer;font-family:'Noto Sans TC',sans-serif;}
-.ms-filter-btn.active{border-color:#993556;color:#993556;}
+
+.ms-page-header { background: #fdf8f4; padding: 4rem 2.5rem 3.5rem; border-bottom: 1px solid #e8e0dc; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; }
+.ms-page-en { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.6rem; }
+.ms-page-h1 { font-family: 'Noto Serif TC', serif; font-size: 2.2rem; font-weight: 700; line-height: 1.4; }
+.ms-page-desc { font-size: 0.9375rem; line-height: 2; color: #6a5050; }
+.ms-sec { padding: 5rem 2.5rem; }
+
+/* 篩選按鈕 */
+.ms-filter { display: flex; gap: 8px; margin-bottom: 2.5rem; flex-wrap: wrap; }
+.ms-filter-btn { font-size: 0.8125rem; letter-spacing: 0.06em; padding: 7px 16px; border: 1px solid #e8e0dc; background: transparent; color: #6a5050; cursor: pointer; font-family: 'Noto Sans TC', sans-serif; }
+.ms-filter-btn.active { border-color: #993556; color: #993556; }
+
 /* 置頂精選文章 */
-.ms-featured{display:grid;grid-template-columns:1fr 1fr;border:1px solid #e8e0dc;margin-bottom:2rem;}
-.ms-featured-img{background:#e8d5dc;min-height:260px;}
-.ms-featured-img img{width:100%;height:260px;object-fit:cover;display:block;}
-.ms-featured-content{padding:2.5rem;}
+.ms-featured { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #e8e0dc; margin-bottom: 2rem; }
+.ms-featured-img { background: #e8d5dc; min-height: 260px; }
+.ms-featured-img img { width: 100%; height: 260px; object-fit: cover; display: block; }
+.ms-featured-content { padding: 2.5rem; }
+
 /* 文章分類標籤 */
-.ms-article-cat{display:inline-block;font-size:11px;letter-spacing:0.1em;padding:3px 10px;margin-bottom:1rem;border:0.5px solid;}
-.ms-cat-policy{color:#185fa5;border-color:#185fa5;}
-.ms-cat-event{color:#0f6e56;border-color:#0f6e56;}
-.ms-cat-health{color:#993556;border-color:#993556;}
-.ms-featured-content h3{font-family:'Noto Serif TC',serif;font-size:1.2rem;font-weight:700;line-height:1.5;margin-bottom:0.8rem;}
-.ms-featured-content p{font-size:13px;line-height:2;color:#6a5050;margin-bottom:1.2rem;}
-.ms-article-meta{font-size:11px;color:#8a7070;letter-spacing:0.04em;}
-.ms-read-more{font-size:12px;color:#993556;border-bottom:1px solid #993556;padding-bottom:1px;text-decoration:none;}
+.ms-article-cat { display: inline-block; font-size: 0.75rem; letter-spacing: 0.1em; padding: 3px 10px; margin-bottom: 1rem; border: 0.5px solid; }
+.ms-cat-policy { color: #185fa5; border-color: #185fa5; }
+.ms-cat-event { color: #0f6e56; border-color: #0f6e56; }
+.ms-cat-health { color: #993556; border-color: #993556; }
+
+.ms-featured-content h3 { font-family: 'Noto Serif TC', serif; font-size: 1.2rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.8rem; }
+.ms-featured-content p { font-size: 0.9375rem; line-height: 2; color: #6a5050; margin-bottom: 1.2rem; }
+.ms-article-meta { font-size: 0.75rem; color: #8a7070; letter-spacing: 0.04em; }
+.ms-read-more { font-size: 0.8125rem; color: #993556; border-bottom: 1px solid #993556; padding-bottom: 1px; text-decoration: none; }
+
 /* 文章卡片三欄 */
-.ms-cards{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #e8e0dc;}
-.ms-card{border-right:1px solid #e8e0dc;border-bottom:1px solid #e8e0dc;}
-.ms-card:nth-child(3n){border-right:none;}
-.ms-card-img-placeholder{height:160px;background:#fdf8f4;display:flex;align-items:center;justify-content:center;}
-.ms-card-body{padding:1.5rem;}
-.ms-card-body h3{font-size:14px;font-weight:500;line-height:1.6;margin-bottom:0.5rem;margin-top:0.8rem;}
-.ms-card-body p{font-size:12px;color:#6a5050;line-height:1.8;margin-bottom:1rem;}
-.ms-card-footer{display:flex;justify-content:space-between;align-items:center;}
+.ms-cards { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid #e8e0dc; }
+.ms-card { border-right: 1px solid #e8e0dc; border-bottom: 1px solid #e8e0dc; }
+.ms-card:nth-child(3n) { border-right: none; }
+.ms-card-img-placeholder { height: 160px; background: #fdf8f4; display: flex; align-items: center; justify-content: center; }
+.ms-card-body { padding: 1.5rem; }
+.ms-card-body h3 { font-size: 0.9375rem; font-weight: 500; line-height: 1.6; margin-bottom: 0.5rem; margin-top: 0.8rem; }
+.ms-card-body p { font-size: 0.8125rem; color: #6a5050; line-height: 1.8; margin-bottom: 1rem; }
+.ms-card-footer { display: flex; justify-content: space-between; align-items: center; }
+
 /* 手機版 RWD */
-@media(max-width:768px){
-  .ms-page-header{grid-template-columns:1fr;padding:3rem 1.5rem;}
-  .ms-sec{padding:3rem 1.5rem;}
-  .ms-featured{grid-template-columns:1fr;}
-  .ms-featured-img img{height:200px;}
-  .ms-featured-content{padding:1.5rem;}
-  .ms-cards{grid-template-columns:1fr;}
-  .ms-card{border-right:none;}
-  .ms-card:nth-child(3n){border-right:none;}
+@media (max-width: 768px) {
+  .ms-page-header { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+  .ms-sec { padding: 3rem 1.5rem; }
+  .ms-featured { grid-template-columns: 1fr; }
+  .ms-featured-img img { height: 200px; }
+  .ms-featured-content { padding: 1.5rem; }
+  .ms-cards { grid-template-columns: 1fr; }
+  .ms-card { border-right: none; }
 }
 </style>
 </head>
@@ -68,7 +75,6 @@
 </div>
 
 <section class="ms-sec">
-  <!-- 篩選按鈕 -->
   <div class="ms-filter">
     <button class="ms-filter-btn active" onclick="filterNews(this,'all')">全部</button>
     <button class="ms-filter-btn" onclick="filterNews(this,'policy')">最新政策</button>
@@ -76,7 +82,6 @@
     <button class="ms-filter-btn" onclick="filterNews(this,'health')">健康宣導</button>
   </div>
 
-  <!-- 置頂精選文章 -->
   <div class="ms-featured" id="featured" data-cat="policy">
     <div class="ms-featured-img">
       <img src="assets/news1.png" alt="長照政策" onerror="this.style.background='#e8d5dc';this.style.display='block'">
@@ -92,10 +97,9 @@
     </div>
   </div>
 
-  <!-- 文章卡片列表 -->
   <div class="ms-cards">
     <div class="ms-card" data-cat="event">
-      <div class="ms-card-img-placeholder"><i class="ti ti-calendar-event" style="font-size:36px;color:#c8b0a8"></i></div>
+      <div class="ms-card-img-placeholder"><i class="ti ti-calendar-event" style="font-size:2.25rem;color:#c8b0a8"></i></div>
       <div class="ms-card-body">
         <span class="ms-article-cat ms-cat-event">活動花絮</span>
         <h3>114 年度照服員在職訓練圓滿落幕</h3>
@@ -104,7 +108,7 @@
       </div>
     </div>
     <div class="ms-card" data-cat="health">
-      <div class="ms-card-img-placeholder"><i class="ti ti-heart-rate-monitor" style="font-size:36px;color:#c8b0a8"></i></div>
+      <div class="ms-card-img-placeholder"><i class="ti ti-heart-rate-monitor" style="font-size:2.25rem;color:#c8b0a8"></i></div>
       <div class="ms-card-body">
         <span class="ms-article-cat ms-cat-health">健康宣導</span>
         <h3>天氣轉涼，長者心血管保健提醒</h3>
@@ -113,7 +117,7 @@
       </div>
     </div>
     <div class="ms-card" data-cat="policy">
-      <div class="ms-card-img-placeholder"><i class="ti ti-file-text" style="font-size:36px;color:#c8b0a8"></i></div>
+      <div class="ms-card-img-placeholder"><i class="ti ti-file-text" style="font-size:2.25rem;color:#c8b0a8"></i></div>
       <div class="ms-card-body">
         <span class="ms-article-cat ms-cat-policy">最新政策</span>
         <h3>喘息服務申請資格與補助說明</h3>
@@ -122,7 +126,7 @@
       </div>
     </div>
     <div class="ms-card" data-cat="event">
-      <div class="ms-card-img-placeholder"><i class="ti ti-users" style="font-size:36px;color:#c8b0a8"></i></div>
+      <div class="ms-card-img-placeholder"><i class="ti ti-users" style="font-size:2.25rem;color:#c8b0a8"></i></div>
       <div class="ms-card-body">
         <span class="ms-article-cat ms-cat-event">活動花絮</span>
         <h3>美事福委會成立暨首屆員工聯誼活動</h3>
@@ -131,7 +135,7 @@
       </div>
     </div>
     <div class="ms-card" data-cat="health">
-      <div class="ms-card-img-placeholder"><i class="ti ti-stethoscope" style="font-size:36px;color:#c8b0a8"></i></div>
+      <div class="ms-card-img-placeholder"><i class="ti ti-stethoscope" style="font-size:2.25rem;color:#c8b0a8"></i></div>
       <div class="ms-card-body">
         <span class="ms-article-cat ms-cat-health">健康宣導</span>
         <h3>正確量測血壓，守護長輩健康</h3>
@@ -140,7 +144,7 @@
       </div>
     </div>
     <div class="ms-card" data-cat="policy">
-      <div class="ms-card-img-placeholder"><i class="ti ti-clipboard-list" style="font-size:36px;color:#c8b0a8"></i></div>
+      <div class="ms-card-img-placeholder"><i class="ti ti-clipboard-list" style="font-size:2.25rem;color:#c8b0a8"></i></div>
       <div class="ms-card-body">
         <span class="ms-article-cat ms-cat-policy">最新政策</span>
         <h3>失能評估 CMS 等級說明與服務時數對應</h3>
@@ -154,7 +158,6 @@
 <!-- 頁尾由 common.js 自動載入 -->
 <script src="common.js"></script>
 <script>
-/* 篩選文章功能 */
 function filterNews(btn, cat) {
   document.querySelectorAll('.ms-filter-btn').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');

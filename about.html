@@ -4,24 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>關於我們 — 美事居家長照機構</title>
-<!-- 共用樣式 -->
 <link rel="stylesheet" href="common.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
 /* ==================
    關於我們 專屬樣式
+   rem換算基準：桌機16px、手機18px
    ================== */
 
-/* 頁面頂部標題區 */
 .ms-page-header { background: #fdf8f4; padding: 4rem 2.5rem 3.5rem; border-bottom: 1px solid #e8e0dc; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; }
-.ms-page-en { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.6rem; }
+.ms-page-en { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; /* 11px */ letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.6rem; }
 .ms-page-h1 { font-family: 'Noto Serif TC', serif; font-size: 2.2rem; font-weight: 700; line-height: 1.4; }
-.ms-page-desc { font-size: 14px; line-height: 2; color: #6a5050; }
+.ms-page-desc { font-size: 0.9375rem; /* 15px */ line-height: 2; color: #6a5050; }
 
-/* 各區塊共用 */
 .ms-sec { padding: 5rem 2.5rem; }
 .ms-sec-alt { background: #fdf8f4; }
-.ms-tag { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+.ms-tag { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; /* 11px */ letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
 .ms-h2 { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; margin-bottom: 2rem; }
 
 /* 公司理念圖文並排 */
@@ -29,29 +27,29 @@
 .ms-philosophy-img { position: relative; }
 .ms-philosophy-img img { width: 100%; height: 380px; object-fit: cover; display: block; }
 .ms-philosophy-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(20,10,10,0.6)); padding: 2rem 1.5rem 1.2rem; font-family: 'Noto Serif TC', serif; font-size: 1rem; color: #fff; letter-spacing: 0.12em; }
-.ms-philosophy-text p { font-size: 14px; line-height: 2.2; color: #4a3838; margin-bottom: 1.5rem; }
+.ms-philosophy-text p { font-size: 0.9375rem; /* 15px */ line-height: 2.2; color: #4a3838; margin-bottom: 1.5rem; }
 .ms-philosophy-text p:last-child { margin-bottom: 0; }
 
 /* 核心價值三欄 */
 .ms-values { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid #e8e0dc; margin-top: 2.5rem; }
 .ms-value { padding: 2.5rem 2rem; border-right: 1px solid #e8e0dc; }
 .ms-value:last-child { border-right: none; }
-.ms-value-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #e8d0d8; line-height: 1; margin-bottom: 1rem; }
-.ms-value h3 { font-size: 15px; font-weight: 500; margin-bottom: 8px; }
-.ms-value p { font-size: 13px; color: #6a5050; line-height: 1.9; }
+.ms-value-num { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: #e8d0d8; line-height: 1; margin-bottom: 1rem; }
+.ms-value h3 { font-size: 1rem; /* 16px */ font-weight: 500; margin-bottom: 8px; }
+.ms-value p { font-size: 0.875rem; /* 14px */ color: #6a5050; line-height: 1.9; }
 
 /* 里程碑時間軸 */
 .ms-timeline { max-width: 640px; }
 .ms-tl-item { display: grid; grid-template-columns: 100px 1fr; }
 .ms-tl-left { display: flex; flex-direction: column; align-items: center; }
-.ms-tl-year { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #993556; letter-spacing: 0.06em; white-space: nowrap; padding-top: 0.15rem; }
+.ms-tl-year { font-family: 'DM Serif Display', serif; font-size: 1rem; color: #993556; letter-spacing: 0.06em; white-space: nowrap; padding-top: 0.15rem; }
 .ms-tl-connector { flex: 1; display: flex; flex-direction: column; align-items: center; padding-top: 8px; }
 .ms-tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #993556; flex-shrink: 0; }
 .ms-tl-line { width: 1px; flex: 1; background: #f4c0d1; min-height: 3rem; }
 .ms-tl-item:last-child .ms-tl-line { display: none; }
 .ms-tl-right { padding: 0 0 3rem 2rem; }
-.ms-tl-title { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
-.ms-tl-desc { font-size: 13px; color: #6a5050; line-height: 1.9; }
+.ms-tl-title { font-size: 1rem; /* 16px */ font-weight: 500; margin-bottom: 6px; }
+.ms-tl-desc { font-size: 0.875rem; /* 14px */ color: #6a5050; line-height: 1.9; }
 
 /* 手機版 RWD */
 @media (max-width: 768px) {
@@ -70,7 +68,6 @@
 
 <!-- 導覽列由 common.js 自動載入 -->
 
-<!-- 頁面標題區 -->
 <div class="ms-page-header">
   <div>
     <span class="ms-page-en">About Us</span>
@@ -79,17 +76,14 @@
   <p class="ms-page-desc">居家服務，是一件美好的事。五年來，我們以這份信念陪伴每一個需要照顧的家庭。</p>
 </div>
 
-<!-- 公司理念 -->
 <section class="ms-sec">
   <span class="ms-tag">Our Philosophy</span>
   <h2 class="ms-h2">公司理念</h2>
   <div class="ms-philosophy">
-    <!-- 左側照片（請上傳 assets/about.png） -->
     <div class="ms-philosophy-img">
       <img src="assets/about.png" alt="居家照護" onerror="this.style.background='#e8d5dc';this.style.display='block'">
       <div class="ms-philosophy-caption">讓每一個生命感受到溫暖與尊重</div>
     </div>
-    <!-- 右側文字 -->
     <div class="ms-philosophy-text">
       <p>「美事居家長照」致力於為每位長者提供專業且溫暖的照護，讓他們能夠在熟悉的環境中安享晚年。隨著台灣逐漸邁向高齡社會，我們深刻感受到長照需求的迫切性，並肩負提升長照服務品質的責任。</p>
       <p>我們關注長者的身心健康，確保他們在照護過程中感受到尊嚴與關愛。我們也理解照顧長者對照護者的挑戰，因此我們為照護者提供喘息空間，讓他們能夠得到支持與休息。</p>
@@ -98,7 +92,6 @@
   </div>
 </section>
 
-<!-- 核心價值 -->
 <section class="ms-sec ms-sec-alt">
   <span class="ms-tag">Our Values</span>
   <h2 class="ms-h2">核心價值</h2>
@@ -121,7 +114,6 @@
   </div>
 </section>
 
-<!-- 里程碑時間軸 -->
 <section class="ms-sec">
   <span class="ms-tag">Milestones</span>
   <h2 class="ms-h2">里程碑</h2>
@@ -160,8 +152,6 @@
 </section>
 
 <!-- 頁尾由 common.js 自動載入 -->
-
-<!-- 共用JS -->
 <script src="common.js"></script>
 </body>
 </html>

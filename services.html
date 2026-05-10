@@ -9,59 +9,58 @@
 <style>
 /* ==================
    服務項目 專屬樣式
+   rem換算基準：桌機16px、手機18px
    ================== */
 
 .ms-page-header { background: #fdf8f4; padding: 4rem 2.5rem 3.5rem; border-bottom: 1px solid #e8e0dc; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; }
-.ms-page-en { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.6rem; }
+.ms-page-en { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.6rem; }
 .ms-page-h1 { font-family: 'Noto Serif TC', serif; font-size: 2.2rem; font-weight: 700; line-height: 1.4; }
-.ms-page-desc { font-size: 14px; line-height: 2; color: #6a5050; }
+.ms-page-desc { font-size: 0.9375rem; line-height: 2; color: #6a5050; }
 .ms-sec { padding: 5rem 2.5rem; }
 .ms-sec-alt { background: #fdf8f4; }
-.ms-tag { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+.ms-tag { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
 .ms-h2 { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.8rem; }
-.ms-lead { font-size: 14px; line-height: 2; color: #6a5050; max-width: 560px; margin-bottom: 2.5rem; }
+.ms-lead { font-size: 0.9375rem; line-height: 2; color: #6a5050; max-width: 560px; margin-bottom: 2.5rem; }
 
 /* 個案分享 */
 .ms-case { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #e8e0dc; }
 .ms-case-img { background: #e8d5dc; min-height: 280px; }
 .ms-case-img img { width: 100%; height: 280px; object-fit: cover; display: block; }
 .ms-case-content { padding: 3rem; }
-.ms-case-tag { display: inline-block; font-size: 11px; letter-spacing: 0.1em; color: #993556; border: 0.5px solid #993556; padding: 3px 10px; margin-bottom: 1.2rem; }
+.ms-case-tag { display: inline-block; font-size: 0.75rem; letter-spacing: 0.1em; color: #993556; border: 0.5px solid #993556; padding: 3px 10px; margin-bottom: 1.2rem; }
 .ms-case-content h3 { font-family: 'Noto Serif TC', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; }
-.ms-case-content p { font-size: 13px; line-height: 2; color: #6a5050; margin-bottom: 1rem; }
+.ms-case-content p { font-size: 0.9375rem; line-height: 2; color: #6a5050; margin-bottom: 1rem; }
 .ms-case-detail { display: flex; flex-direction: column; gap: 8px; margin-top: 1.2rem; }
-.ms-case-row { display: flex; gap: 1rem; font-size: 12px; }
+.ms-case-row { display: flex; gap: 1rem; font-size: 0.8125rem; }
 .ms-case-row-label { color: #8a7070; min-width: 60px; letter-spacing: 0.04em; }
 .ms-case-row-val { color: #4a3838; }
 
 /* 服務項目格線 */
 .ms-svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); border: 1px solid #e8e0dc; }
 .ms-svc-item { padding: 1.5rem 1.2rem; border-right: 1px solid #e8e0dc; border-bottom: 1px solid #e8e0dc; }
-.ms-svc-code { font-family: 'Cormorant Garamond', serif; font-size: 12px; color: #993556; margin-bottom: 5px; letter-spacing: 0.04em; }
-.ms-svc-name { font-size: 13px; font-weight: 500; }
+.ms-svc-code { font-family: 'DM Serif Display', serif; font-size: 0.8125rem; color: #993556; margin-bottom: 5px; letter-spacing: 0.04em; }
+.ms-svc-name { font-size: 0.875rem; font-weight: 500; }
 
 /* 費用表 */
-.ms-fee-note { background: #fdf8f4; border-left: 3px solid #993556; padding: 1rem 1.5rem; font-size: 13px; color: #6a5050; line-height: 1.9; margin-bottom: 2rem; }
-.ms-fee-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-.ms-fee-table th { background: #fdf8f4; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; padding: 12px 16px; border: 1px solid #e8e0dc; color: #6a5050; text-align: center; }
+.ms-fee-note { background: #fdf8f4; border-left: 3px solid #993556; padding: 1rem 1.5rem; font-size: 0.875rem; color: #6a5050; line-height: 1.9; margin-bottom: 2rem; }
+.ms-fee-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.ms-fee-table th { background: #fdf8f4; font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.06em; padding: 12px 16px; border: 1px solid #e8e0dc; color: #6a5050; text-align: center; }
 .ms-fee-table th:first-child { text-align: left; }
-.ms-fee-table td { padding: 11px 16px; border: 1px solid #e8e0dc; vertical-align: middle; }
-.ms-fee-table td:first-child { font-size: 12px; color: #6a5050; }
+.ms-fee-table td { padding: 11px 16px; border: 1px solid #e8e0dc; vertical-align: middle; font-size: 0.875rem; }
+.ms-fee-table td:first-child { font-size: 0.8125rem; color: #6a5050; }
 .ms-fee-table td:nth-child(2) { font-weight: 500; }
 .ms-fee-table td:not(:first-child) { text-align: center; }
 .ms-fee-table tr:hover td { background: #fdf8f4; }
-.ms-fee-subsidized { font-size: 11px; color: #993556; font-weight: 500; }
-.ms-fee-free { font-size: 11px; color: #8a7070; }
+.ms-fee-subsidized { font-size: 0.8125rem; color: #993556; font-weight: 500; }
+.ms-fee-free { font-size: 0.8125rem; color: #8a7070; }
 
 /* 手機版 RWD */
 @media (max-width: 768px) {
   .ms-page-header { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
   .ms-sec { padding: 3rem 1.5rem; }
-  /* 個案分享改單欄 */
   .ms-case { grid-template-columns: 1fr; }
   .ms-case-img img { height: 220px; }
   .ms-case-content { padding: 1.5rem; }
-  /* 費用表可橫向捲動 */
   .ms-fee-table-wrap { overflow-x: auto; }
   .ms-fee-table { min-width: 600px; }
 }
@@ -79,13 +78,11 @@
   <p class="ms-page-desc">提供完整的居家照護服務，依政府公訂價格收費，並提供補助方案，讓每個家庭都能獲得所需的照護。</p>
 </div>
 
-<!-- 個案分享 -->
 <section class="ms-sec">
   <span class="ms-tag">Case Sharing</span>
   <h2 class="ms-h2">個案分享</h2>
   <p class="ms-lead">真實的服務經驗，讓您更了解美事如何陪伴每一個家庭。</p>
   <div class="ms-case">
-    <!-- 左側照片（請上傳 assets/case.jpg） -->
     <div class="ms-case-img">
       <img src="assets/case.jpg" alt="個案示意" onerror="this.style.background='#e8d5dc';this.style.minHeight='280px';this.style.display='block'">
     </div>
@@ -102,7 +99,6 @@
   </div>
 </section>
 
-<!-- 服務項目列表 -->
 <section class="ms-sec ms-sec-alt">
   <span class="ms-tag">Service Items</span>
   <h2 class="ms-h2">服務項目</h2>
@@ -132,16 +128,14 @@
   </div>
 </section>
 
-<!-- 服務費用表 -->
 <section class="ms-sec">
   <span class="ms-tag">Service Fees</span>
   <h2 class="ms-h2">服務費用</h2>
   <p class="ms-lead">依政府公訂價格收費，提供一般戶、中低收入戶及低收入戶補助方案。</p>
   <div class="ms-fee-note">
-    <i class="ti ti-info-circle" style="font-size:16px;vertical-align:-2px;margin-right:6px;color:#993556"></i>
+    <i class="ti ti-info-circle" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
     如無政府補助，我們也提供彈性自費選擇，讓您靈活安排所需服務。低收入戶享有全額補助。
   </div>
-  <!-- 手機版可橫向捲動 -->
   <div class="ms-fee-table-wrap">
     <table class="ms-fee-table">
       <thead>

@@ -8,6 +8,12 @@
    3. 導覽列
    4. 頁尾
    5. 響應式設計（RWD）
+   
+   字體單位說明：
+   全站使用 rem 單位，基準為 body font-size。
+   桌機：16px = 1rem
+   手機：18px = 1rem（手機版自動放大）
+   只要調整 body font-size，全站字體同步縮放。
    ========================================== */
 
 
@@ -15,6 +21,8 @@
    1. 字體載入
    ================== */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&family=DM+Serif+Display&display=swap');
+
+
 /* ==================
    2. 基本設定
    ================== */
@@ -24,8 +32,7 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   color: #2a1e1e;
   background: #fff;
-  font-size: 16px; /* 原本沒設定，預設是16px，手機上加大到18px */
-
+  font-size: 16px; /* 桌機基準：16px = 1rem */
 }
 
 
@@ -67,7 +74,7 @@ body {
 
 /* 導覽列連結文字 */
 .ms-nav-links a {
-  font-size: 13px;
+  font-size: 0.875rem; /* 14px */
   color: #5a4a4a;
   text-decoration: none;
   letter-spacing: 0.04em;
@@ -85,7 +92,7 @@ body {
 
 /* 右側立即諮詢按鈕 */
 .ms-nav-cta {
-  font-size: 12px;
+  font-size: 0.8125rem; /* 13px */
   font-weight: 500;
   letter-spacing: 0.08em;
   color: #993556;
@@ -127,7 +134,7 @@ body {
 
 /* 手機版選單連結 */
 .ms-nav-mobile a {
-  font-size: 14px;
+  font-size: 1rem; /* 16px → 手機18px */
   color: #5a4a4a;
   text-decoration: none;
   padding: 0.8rem 0;
@@ -144,7 +151,7 @@ body {
   margin-top: 1rem;
   background: #993556;
   color: #fff;
-  font-size: 13px;
+  font-size: 1rem; /* 16px → 手機18px */
   font-weight: 500;
   border: none;
   padding: 12px;
@@ -160,27 +167,60 @@ body {
    ================== */
 
 /* 頁尾容器 */
-.ms-footer { background: #f5ede6; padding: 3rem 2.5rem 2rem; border-top: 1px solid #e0cfc4; }
-
+.ms-footer {
+  background: #f5ede6;
+  padding: 3rem 2.5rem 2rem;
+  border-top: 1px solid #e0cfc4;
+}
 
 /* 頁尾三欄格線 */
-.ms-footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #e0cfc4; margin-bottom: 1.5rem; }
-
+.ms-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0cfc4;
+  margin-bottom: 1.5rem;
+}
 
 /* 頁尾小標題 */
-.ms-footer h4 { font-size: 14px; letter-spacing: 0.1em; color: #2a1e1e; font-weight: 500; margin-bottom: 1rem; }
-
+.ms-footer h4 {
+  font-size: 0.9375rem; /* 15px */
+  letter-spacing: 0.1em;
+  color: #2a1e1e;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
 
 /* 頁尾文字與連結 */
-.ms-footer p, .ms-footer a { font-size: 13px; line-height: 2.4; color: #6a5050; text-decoration: none; display: block; }
-
+.ms-footer p,
+.ms-footer a {
+  font-size: 0.875rem; /* 14px */
+  line-height: 2.4;
+  color: #6a5050;
+  text-decoration: none;
+  display: block;
+}
 
 /* 頁尾底部版權列 */
-.ms-footer-bottom { display: flex; justify-content: space-between; font-size: 12px; color: #8a7070; }
-
+.ms-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem; /* 13px */
+  color: #8a7070;
+}
 
 /* 夥伴專區入口（低調放置，不對外宣傳） */
-.ms-partner { display: inline-block; margin-top: 14px; font-size: 13px; color: #993556; letter-spacing: 0.1em; border-bottom: 1px solid #993556; padding-bottom: 2px; text-decoration: none; }
+.ms-partner {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.875rem; /* 14px */
+  color: #993556;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #993556;
+  padding-bottom: 2px;
+  text-decoration: none;
+}
 
 
 /* ==================
@@ -189,20 +229,17 @@ body {
 
 /* 平板（寬度小於 1024px） */
 @media (max-width: 1024px) {
-
-  /* 導覽列連結縮小間距 */
   .ms-nav-links { gap: 1.2rem; }
-  .ms-nav-links a { font-size: 12px; }
-
-  /* 頁尾改成兩欄 */
+  .ms-nav-links a { font-size: 0.8125rem; } /* 13px */
   .ms-footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* 手機（寬度小於 768px） */
 @media (max-width: 768px) {
- body { font-size: 17px; }
- .ms-nav-links a { font-size: 15px; }
-   
+
+  /* 手機基準字體：18px = 1rem，全站自動放大 */
+  body { font-size: 18px; }
+
   /* 隱藏桌機版導覽連結和按鈕 */
   .ms-nav-links { display: none; }
   .ms-nav-cta { display: none; }
