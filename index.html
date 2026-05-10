@@ -102,12 +102,23 @@
   .ms-why-item { border-right: none; }
   .ms-why-item:nth-last-child(-n+2) { border-bottom: 1px solid #e8e0dc; }
   .ms-why-item:last-child { border-bottom: none; }
-  .ms-flow-wrap { flex-direction: column; align-items: flex-start; padding: 0; gap: 1.5rem; }
-  .ms-flow-line { display: none; }
-  .ms-flow-item { flex-direction: row; align-items: flex-start; gap: 1rem; width: 100%; flex-wrap: wrap; }  .ms-flow-icon { flex-shrink: 0; }
-  .ms-flow-days { position: static; transform: none; margin-bottom: 8px; display: block; width: 100%; }  .ms-flow-t { text-align: left; }
-  .ms-flow-d { text-align: left; display: block; margin-top: 4px; }  
-  .ms-cta { flex-direction: column; gap: 2rem; text-align: center; padding: 3rem 1.5rem; }
+  .ms-flow-wrap { display: none; }
+  .ms-flow-mobile { display: flex; flex-direction: column; position: relative; }
+  .ms-flow-mobile::before { content: ''; position: absolute; left: 88px; top: 22px; bottom: 22px; width: 1px; background: #f4c0d1; z-index: 0; }
+  .ms-flow-mobile-item { display: grid; grid-template-columns: 80px 44px 1fr; gap: 8px; align-items: flex-start; padding-bottom: 2rem; position: relative; }
+  .ms-flow-mobile-item:last-child { padding-bottom: 0; }
+  .ms-flow-mobile-days { text-align: right; padding-top: 12px; padding-right: 4px; }
+  .ms-flow-mobile-days span { font-size: 9px; color: #993556; background: #fce8ef; padding: 2px 6px; border-radius: 8px; display: inline-block; line-height: 1.5; text-align: center; }
+  .ms-flow-mobile-days.empty { height: 44px; }
+  .ms-flow-mobile-icon { display: flex; justify-content: center; position: relative; z-index: 1; }
+  .ms-flow-mobile-icon-wrap { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 1.5px solid #993556; display: flex; align-items: center; justify-content: center; }
+  .ms-flow-mobile-icon-wrap i { font-size: 20px; color: #993556; }
+  .ms-flow-mobile-icon-wrap.active { background: #993556; border-color: #993556; }
+  .ms-flow-mobile-icon-wrap.active i { color: #fff; }
+  .ms-flow-mobile-content { padding-left: 8px; padding-top: 10px; }
+  .ms-flow-mobile-num { font-family: 'DM Serif Display', serif; font-size: 0.85rem; color: #c8a0b0; margin-bottom: 3px; }
+  .ms-flow-mobile-t { font-size: 13px; font-weight: 500; color: #2a1e1e; margin-bottom: 3px; }
+  .ms-flow-mobile-d { font-size: 12px; color: #6a5050; line-height: 1.6; }  .ms-cta { flex-direction: column; gap: 2rem; text-align: center; padding: 3rem 1.5rem; }
   .ms-cta-right { align-items: center; }
 }
 
