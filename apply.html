@@ -26,6 +26,18 @@
 .ms-anchor-btn { font-size: 0.875rem; letter-spacing: 0.06em; padding: 8px 20px; border: 1px solid #993556; background: transparent; color: #993556; cursor: pointer; font-family: 'Noto Sans TC', sans-serif; text-decoration: none; display: inline-block; }
 .ms-anchor-btn:hover { background: #993556; color: #fff; }
 
+
+/* 長照四包錢 */
+.ms-four-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 2rem; }
+.ms-four-item { border: 1px solid #e8e0dc; padding: 2rem; }
+.ms-four-icon { width: 44px; height: 44px; border-radius: 50%; background: #fce8ef; border: 1.5px solid #993556; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+.ms-four-icon i { font-size: 1.25rem; color: #993556; }
+.ms-four-num { font-family: 'DM Serif Display', serif; font-size: 0.8125rem; color: #993556; letter-spacing: 0.06em; margin-bottom: 4px; }
+.ms-four-title { font-size: 1rem; font-weight: 500; margin-bottom: 8px; color: #2a1e1e; }
+.ms-four-desc { font-size: 0.875rem; line-height: 1.9; color: #6a5050; margin-bottom: 0.8rem; }
+.ms-four-quota { font-size: 0.8125rem; background: #fdf8f4; border-left: 3px solid #993556; padding: 8px 12px; color: #6a5050; line-height: 1.8; }
+.ms-four-quota strong { color: #993556; }
+
 /* 申請資格四格 */
 .ms-qualify-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.5rem; }
 .ms-qualify-item { display: flex; gap: 14px; align-items: flex-start; padding: 1.5rem; border: 1px solid #e8e0dc; }
@@ -112,6 +124,7 @@
 <div class="ms-anchors">
   <a class="ms-anchor-btn" href="#apply-qualify">申請資格</a>
   <a class="ms-anchor-btn" href="#apply-flow">申請流程</a>
+  <a class="ms-anchor-btn" href="#apply-four">長照四包錢</a>
   <a class="ms-anchor-btn" href="#apply-faq">常見問題</a>
 </div>
 
@@ -228,6 +241,48 @@
   <div class="ms-flow-note">
     <i class="ti ti-phone" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
     政府長照申請亦可撥打 <strong>1966</strong> 長照專線。歡迎直接聯繫美事，由我們協助引導後續所有流程。
+  </div>
+</section>
+
+
+<!-- 長照四包錢 -->
+<section class="ms-sec ms-sec-alt" id="apply-four">
+  <span class="ms-tag">Long-Term Care Benefits</span>
+  <h2 class="ms-h2">長照四包錢</h2>
+  <p class="ms-lead">通過失能等級評估（CMS 2級以上）後，政府提供四大類補助，依個案需求彈性使用。</p>
+  <div class="ms-four-grid">
+    <div class="ms-four-item">
+      <div class="ms-four-icon"><i class="ti ti-heart-handshake"></i></div>
+      <div class="ms-four-num">第一包</div>
+      <div class="ms-four-title">照顧及專業服務</div>
+      <div class="ms-four-desc">包含居家服務、日間照顧、家庭托顧等，由照服員到宅協助日常生活照顧，或由物理治療師、職能治療師、護理師等專業人員提供復能指導。</div>
+      <div class="ms-four-quota">月補助額度 <strong>10,020–36,180 元</strong>（依失能等級 2–8 級）<br>一般戶自付 16%，中低收入戶 5%，低收入戶全額補助</div>
+    </div>
+    <div class="ms-four-item">
+      <div class="ms-four-icon"><i class="ti ti-car"></i></div>
+      <div class="ms-four-num">第二包</div>
+      <div class="ms-four-title">交通接送服務</div>
+      <div class="ms-four-desc">協助中重度失能者（CMS 4級以上）往返社區式長照機構或醫療院所，適用定期就醫或復健需求。</div>
+      <div class="ms-four-quota">每趟補助 <strong>1,680–2,400 元</strong>（依縣市距離）<br>一般戶自付 21–30%，中低收入戶 7–10%，低收入戶全額補助</div>
+    </div>
+    <div class="ms-four-item">
+      <div class="ms-four-icon"><i class="ti ti-armchair"></i></div>
+      <div class="ms-four-num">第三包</div>
+      <div class="ms-four-title">輔具及居家無障礙改善</div>
+      <div class="ms-four-desc">補助購買或租借輔具（如輪椅、助行器、氣墊床），以及居家環境改善（如加裝扶手、移除門檻），提升居家安全與生活便利。</div>
+      <div class="ms-four-quota">每 3 年最高補助 <strong>40,000 元</strong><br>一般戶自付 30%，中低收入戶 10%，低收入戶全額補助</div>
+    </div>
+    <div class="ms-four-item">
+      <div class="ms-four-icon"><i class="ti ti-refresh"></i></div>
+      <div class="ms-four-num">第四包</div>
+      <div class="ms-four-title">喘息服務</div>
+      <div class="ms-four-desc">讓家庭照顧者獲得休息空間，可安排長輩至日間照顧中心、巷弄長照站，或由照服員到宅替代照顧（即 GA09 居家喘息服務）。</div>
+      <div class="ms-four-quota">年補助額度 <strong>32,340 元</strong>（CMS 2–6 級）或 <strong>48,510 元</strong>（CMS 7–8 級）<br>一般戶自付 16%，中低收入戶 5%，低收入戶全額補助</div>
+    </div>
+  </div>
+  <div style="margin-top:1.5rem;border-left:3px solid #993556;padding:0.9rem 1.4rem;background:#fdf8f4;font-size:0.875rem;color:#6a5050;line-height:1.9;">
+    <i class="ti ti-info-circle" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
+    四大給付額度彼此獨立，不可相互流用。詳細補助資訊請洽各縣市長期照顧管理中心，或撥打 <strong>1966</strong> 長照專線。
   </div>
 </section>
 
