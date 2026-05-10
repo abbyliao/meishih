@@ -21,6 +21,11 @@
 .ms-h2 { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.8rem; }
 .ms-lead { font-size: 0.9375rem; line-height: 2; color: #6a5050; max-width: 560px; margin-bottom: 2.5rem; }
 
+/* 快速跳轉錨點按鈕 */
+.ms-anchors { display: flex; gap: 12px; padding: 1.5rem 2.5rem; background: #fff; border-bottom: 1px solid #e8e0dc; flex-wrap: wrap; }
+.ms-anchor-btn { font-size: 0.875rem; letter-spacing: 0.06em; padding: 8px 20px; border: 1px solid #993556; background: transparent; color: #993556; cursor: pointer; font-family: 'Noto Sans TC', sans-serif; text-decoration: none; display: inline-block; }
+.ms-anchor-btn:hover { background: #993556; color: #fff; }
+
 /* 申請資格四格 */
 .ms-qualify-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.5rem; }
 .ms-qualify-item { display: flex; gap: 14px; align-items: flex-start; padding: 1.5rem; border: 1px solid #e8e0dc; }
@@ -103,8 +108,15 @@
   <p class="ms-page-desc">從第一次聯繫到服務正式開始，我們全程陪伴您走過每一個環節，讓申請過程簡單無負擔。</p>
 </div>
 
+<!-- 快速跳轉錨點按鈕 -->
+<div class="ms-anchors">
+  <a class="ms-anchor-btn" href="#apply-qualify">申請資格</a>
+  <a class="ms-anchor-btn" href="#apply-flow">申請流程</a>
+  <a class="ms-anchor-btn" href="#apply-faq">常見問題</a>
+</div>
+
 <!-- 申請資格 -->
-<section class="ms-sec">
+<section class="ms-sec" id="apply-qualify">
   <span class="ms-tag">Eligibility</span>
   <h2 class="ms-h2">申請資格</h2>
   <p class="ms-lead">符合以下任一情形，即可申請長照居家服務。</p>
@@ -133,7 +145,7 @@
 </section>
 
 <!-- 申請流程（icon版） -->
-<section class="ms-sec ms-sec-alt">
+<section class="ms-sec ms-sec-alt" id="apply-flow">
   <span class="ms-tag">Application Process</span>
   <h2 class="ms-h2">申請流程</h2>
   <p class="ms-lead">六個清晰步驟，讓照顧從容開始。</p>
@@ -220,7 +232,7 @@
 </section>
 
 <!-- FAQ -->
-<section class="ms-sec">
+<section class="ms-sec" id="apply-faq">
   <span class="ms-tag">FAQ</span>
   <h2 class="ms-h2">常見問題</h2>
   <p class="ms-lead">整理家屬最常詢問的問題，希望能讓您在申請前更安心。</p>
