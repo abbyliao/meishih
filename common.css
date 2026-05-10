@@ -1,0 +1,250 @@
+/* ==========================================
+   美事居家長照機構 — 共用樣式
+   common.css
+   
+   目錄：
+   1. 字體載入
+   2. 基本設定
+   3. 導覽列
+   4. 頁尾
+   5. 響應式設計（RWD）
+   ========================================== */
+
+
+/* ==================
+   1. 字體載入
+   ================== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:wght@400;500&display=swap');
+
+
+/* ==================
+   2. 基本設定
+   ================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  color: #2a1e1e;
+  background: #fff;
+}
+
+
+/* ==================
+   3. 導覽列
+   ================== */
+
+/* 導覽列容器 */
+.ms-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 68px;
+  background: #fff;
+  border-bottom: 1px solid #e8e0dc;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+/* Logo 連結（點擊回首頁） */
+.ms-nav a.ms-nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo 圖片大小 */
+.ms-nav a.ms-nav-logo img {
+  height: 50px;
+  object-fit: contain;
+}
+
+/* 導覽列連結群組 */
+.ms-nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+/* 導覽列連結文字 */
+.ms-nav-links a {
+  font-size: 13px;
+  color: #5a4a4a;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+/* 導覽列連結 hover 效果 */
+.ms-nav-links a:hover { color: #993556; }
+
+/* 目前頁面的連結（自動由 common.js 加上） */
+.ms-nav-links a.ms-nav-active {
+  color: #993556;
+  border-bottom: 1px solid #993556;
+  padding-bottom: 2px;
+}
+
+/* 右側立即諮詢按鈕 */
+.ms-nav-cta {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #993556;
+  border: 1px solid #993556;
+  background: transparent;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* 漢堡選單按鈕（手機版才顯示） */
+.ms-nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+
+/* 漢堡選單三條線 */
+.ms-nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #2a1e1e;
+  transition: all 0.3s;
+}
+
+/* 手機版展開的選單 */
+.ms-nav-mobile {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border-bottom: 1px solid #e8e0dc;
+  padding: 1rem 2rem;
+}
+
+/* 手機版選單連結 */
+.ms-nav-mobile a {
+  font-size: 14px;
+  color: #5a4a4a;
+  text-decoration: none;
+  padding: 0.8rem 0;
+  border-bottom: 0.5px solid #e8e0dc;
+  letter-spacing: 0.04em;
+}
+
+.ms-nav-mobile a:last-child { border-bottom: none; }
+.ms-nav-mobile a:hover { color: #993556; }
+.ms-nav-mobile a.ms-nav-active { color: #993556; }
+
+/* 手機版諮詢按鈕 */
+.ms-nav-mobile-cta {
+  margin-top: 1rem;
+  background: #993556;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  font-family: 'Noto Sans TC', sans-serif;
+  width: 100%;
+}
+
+
+/* ==================
+   4. 頁尾
+   ================== */
+
+/* 頁尾容器 */
+.ms-footer {
+  background: #1e1414;
+  padding: 3rem 2.5rem 2rem;
+}
+
+/* 頁尾三欄格線 */
+.ms-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #3a2828;
+  margin-bottom: 1.5rem;
+}
+
+/* 頁尾小標題 */
+.ms-footer h4 {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: #e8c8c8;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* 頁尾文字與連結 */
+.ms-footer p,
+.ms-footer a {
+  font-size: 12px;
+  line-height: 2.4;
+  color: #9a7878;
+  text-decoration: none;
+  display: block;
+}
+
+/* 頁尾底部版權列 */
+.ms-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #6a5050;
+}
+
+/* 夥伴專區入口（低調放置，不對外宣傳） */
+.ms-partner {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 11px;
+  color: #993556;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #993556;
+  padding-bottom: 2px;
+  text-decoration: none;
+}
+
+
+/* ==================
+   5. 響應式設計（RWD）
+   ================== */
+
+/* 平板（寬度小於 1024px） */
+@media (max-width: 1024px) {
+
+  /* 導覽列連結縮小間距 */
+  .ms-nav-links { gap: 1.2rem; }
+  .ms-nav-links a { font-size: 12px; }
+
+  /* 頁尾改成兩欄 */
+  .ms-footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* 手機（寬度小於 768px） */
+@media (max-width: 768px) {
+
+  /* 隱藏桌機版導覽連結和按鈕 */
+  .ms-nav-links { display: none; }
+  .ms-nav-cta { display: none; }
+
+  /* 顯示漢堡選單按鈕 */
+  .ms-nav-hamburger { display: flex; }
+
+  /* 導覽列左右間距縮小 */
+  .ms-nav { padding: 0 1.5rem; }
+
+  /* 頁尾改成單欄 */
+  .ms-footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .ms-footer { padding: 2.5rem 1.5rem 2rem; }
+  .ms-footer-bottom { flex-direction: column; gap: 6px; }
+}
