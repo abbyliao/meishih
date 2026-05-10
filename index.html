@@ -66,52 +66,22 @@
 .ms-why-item h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
 .ms-why-item p { font-size: 13px; color: #6a5050; line-height: 1.9; }
 
-<!-- 申請流程六步驟 -->
-<section class="ms-sec">
-  <span class="ms-tag">How to Apply</span>
-  <h2 class="ms-h2">六步驟，讓照顧從容開始</h2>
-  <p class="ms-lead">從第一次聯繫到服務正式開始，我們全程陪伴您走過每一個環節。</p>
-  <div style="position:relative;padding-top:2rem;">
-    <div class="ms-flow-wrap">
-      <div class="ms-flow-line"></div>
-      <div class="ms-flow-item">
-        <div class="ms-flow-icon"><i class="ti ti-file-text"></i></div>
-        <div class="ms-flow-num">01</div>
-        <div class="ms-flow-t">聯繫美事</div>
-        <div class="ms-flow-d">填寫申請單或撥打美事專線</div>
-      </div>
-      <div class="ms-flow-item">
-        <div class="ms-flow-days"><span>約 5–7 工作天</span></div>
-        <div class="ms-flow-icon"><i class="ti ti-phone"></i></div>
-        <div class="ms-flow-num">02</div>
-        <div class="ms-flow-t">衛生局電訪</div>
-        <div class="ms-flow-d">確認基本照護需求</div>
-      </div>
-      <div class="ms-flow-item">
-        <div class="ms-flow-days"><span>約 3–5 工作天</span></div>
-        <div class="ms-flow-icon"><i class="ti ti-home"></i></div>
-        <div class="ms-flow-num">03</div>
-        <div class="ms-flow-t">衛生局家訪</div>
-        <div class="ms-flow-d">到府評估實際狀況</div>
-      </div>
-      <div class="ms-flow-item">
-        <div class="ms-flow-icon"><i class="ti ti-clipboard-list"></i></div>
-        <div class="ms-flow-num">04</div>
-        <div class="ms-flow-t">個管師家訪</div>
-        <div class="ms-flow-d">制定個人化照護計畫</div>
-      </div>
-      <div class="ms-flow-item">
-        <div class="ms-flow-icon"><i class="ti ti-writing"></i></div>
-        <div class="ms-flow-num">05</div>
-        <div class="ms-flow-t">簽約確認</div>
-        <div class="ms-flow-d">美事與您正式簽約</div>
-      </div>
-      <div class="ms-flow-item">
-        <div class="ms-flow-icon active"><i class="ti ti-heart-handshake"></i></div>
-        <div class="ms-flow-num">06</div>
-        <div class="ms-flow-t">開始服務</div>
-        <div class="ms-flow-d">照服員到府服務</div>
-      </div>
+/* 申請流程六步驟 */
+.ms-flow-wrap{position:relative;display:flex;justify-content:space-between;align-items:flex-start;padding:0 1rem;}
+.ms-flow-line{position:absolute;top:2.2rem;left:3rem;right:3rem;height:1px;background:#f4c0d1;z-index:0;}
+.ms-flow-item{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;padding:0 0.5rem;}
+.ms-flow-icon{width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid #993556;display:flex;align-items:center;justify-content:center;margin-bottom:0.6rem;}
+.ms-flow-icon i{font-size:20px;color:#993556;}
+.ms-flow-icon.active{background:#993556;border-color:#993556;}
+.ms-flow-icon.active i{color:#fff;}
+.ms-flow-num{font-family:'DM Serif Display',serif;font-size:0.9rem;color:#c8a0b0;margin-bottom:4px;}
+.ms-flow-t{font-size:12px;font-weight:500;color:#2a1e1e;text-align:center;margin-bottom:4px;}
+.ms-flow-d{font-size:10px;color:#6a5050;line-height:1.6;text-align:center;}
+.ms-flow-days{position:absolute;top:-1.8rem;left:50%;transform:translateX(-50%);white-space:nowrap;}
+.ms-flow-days span{font-size:10px;color:#993556;background:#fce8ef;padding:2px 8px;border-radius:10px;letter-spacing:0.04em;}
+.ms-flow-note{margin-top:1.5rem;border-left:3px solid #993556;padding:0.9rem 1.4rem;background:#fdf8f4;font-size:13px;color:#6a5050;line-height:1.9;}
+
+
     </div>
   </div>
   <div class="ms-flow-note">
