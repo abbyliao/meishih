@@ -66,15 +66,58 @@
 .ms-why-item h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
 .ms-why-item p { font-size: 13px; color: #6a5050; line-height: 1.9; }
 
-/* 申請流程六步驟 */
-.ms-flow-grid { display: grid; grid-template-columns: repeat(6,1fr); border: 1px solid #e8e0dc; margin-top: 2rem; }
-.ms-flow-step { padding: 1.8rem 0.8rem; text-align: center; border-right: 1px solid #e8e0dc; }
-.ms-flow-step:last-child { border-right: none; }
-.ms-flow-n { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: #993556; line-height: 1; margin-bottom: 8px; }
-.ms-flow-t { font-size: 12px; font-weight: 500; margin-bottom: 5px; }
-.ms-flow-d { font-size: 11px; color: #8a7070; line-height: 1.6; }
-.ms-flow-note { margin-top: 1.5rem; border-left: 3px solid #993556; padding: 0.9rem 1.4rem; background: #fdf8f4; font-size: 13px; color: #6a5050; line-height: 1.9; }
-
+<!-- 申請流程六步驟 -->
+<section class="ms-sec">
+  <span class="ms-tag">How to Apply</span>
+  <h2 class="ms-h2">六步驟，讓照顧從容開始</h2>
+  <p class="ms-lead">從第一次聯繫到服務正式開始，我們全程陪伴您走過每一個環節。</p>
+  <div style="position:relative;padding-top:2rem;">
+    <div class="ms-flow-wrap">
+      <div class="ms-flow-line"></div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-icon"><i class="ti ti-file-text"></i></div>
+        <div class="ms-flow-num">01</div>
+        <div class="ms-flow-t">聯繫美事</div>
+        <div class="ms-flow-d">填寫申請單或撥打美事專線</div>
+      </div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-days"><span>約 5–7 工作天</span></div>
+        <div class="ms-flow-icon"><i class="ti ti-phone"></i></div>
+        <div class="ms-flow-num">02</div>
+        <div class="ms-flow-t">衛生局電訪</div>
+        <div class="ms-flow-d">確認基本照護需求</div>
+      </div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-days"><span>約 3–5 工作天</span></div>
+        <div class="ms-flow-icon"><i class="ti ti-home"></i></div>
+        <div class="ms-flow-num">03</div>
+        <div class="ms-flow-t">衛生局家訪</div>
+        <div class="ms-flow-d">到府評估實際狀況</div>
+      </div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-icon"><i class="ti ti-clipboard-list"></i></div>
+        <div class="ms-flow-num">04</div>
+        <div class="ms-flow-t">個管師家訪</div>
+        <div class="ms-flow-d">制定個人化照護計畫</div>
+      </div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-icon"><i class="ti ti-writing"></i></div>
+        <div class="ms-flow-num">05</div>
+        <div class="ms-flow-t">簽約確認</div>
+        <div class="ms-flow-d">美事與您正式簽約</div>
+      </div>
+      <div class="ms-flow-item">
+        <div class="ms-flow-icon active"><i class="ti ti-heart-handshake"></i></div>
+        <div class="ms-flow-num">06</div>
+        <div class="ms-flow-t">開始服務</div>
+        <div class="ms-flow-d">照服員到府服務</div>
+      </div>
+    </div>
+  </div>
+  <div class="ms-flow-note">
+    政府長照申請亦可撥打 <strong>1966</strong> 長照專線。歡迎直接聯繫美事，由我們協助引導後續所有流程。
+  </div>
+</section>
 /* 底部 CTA 呼籲區塊 */
 .ms-cta { background: #4a3328; padding: 4rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
 .ms-cta-left h2 { font-family: 'Noto Serif TC', serif; font-size: 1.5rem; font-weight: 600; color: #f0e0d8; margin-bottom: 0.5rem; }
@@ -101,9 +144,12 @@
   .ms-why-item { border-right: none; }
   .ms-why-item:nth-last-child(-n+2) { border-bottom: 1px solid #e8e0dc; }
   .ms-why-item:last-child { border-bottom: none; }
-  /* 六步驟改成兩欄 */
-  .ms-flow-grid { grid-template-columns: repeat(2,1fr); }
-  .ms-flow-step:nth-child(2n) { border-right: none; }
+ /* 手機版流程 */
+.ms-flow-wrap{flex-direction:column;align-items:flex-start;padding:0;gap:1.5rem;}
+.ms-flow-line{display:none;}
+.ms-flow-item{flex-direction:row;align-items:flex-start;gap:1rem;width:100%;}
+.ms-flow-icon{flex-shrink:0;}
+.ms-flow-days{position:static;transform:none;margin-bottom:4px;}
   /* CTA改成單欄 */
   .ms-cta { flex-direction: column; gap: 2rem; text-align: center; padding: 3rem 1.5rem; }
   .ms-cta-right { align-items: center; }
