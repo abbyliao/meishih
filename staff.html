@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>照服員專區 — 美事居家長照機構</title>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+/* ==================
+   照服員專區 專屬樣式
+   ================== */
+.ms-page-header { background: #2a1e1e; padding: 4rem 2.5rem 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; }
+.ms-page-en { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; letter-spacing: 0.22em; color: #f4c0d1; text-transform: uppercase; display: block; margin-bottom: 0.6rem; }
+.ms-page-h1 { font-family: 'Noto Serif TC', serif; font-size: 2.2rem; font-weight: 700; line-height: 1.4; color: #f0e0e0; }
+.ms-page-desc { font-size: 0.9375rem; line-height: 2; color: #c8a898; }
+
+.ms-sec { padding: 5rem 2.5rem; }
+.ms-sec-alt { background: #fdf8f4; }
+.ms-tag { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+.ms-h2 { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.8rem; }
+.ms-lead { font-size: 0.9375rem; line-height: 2; color: #6a5050; max-width: 560px; margin-bottom: 2.5rem; }
+
+/* 快速跳轉 */
+.ms-anchors { display: flex; gap: 12px; padding: 1.5rem 2.5rem; background: #fff; border-bottom: 1px solid #e8e0dc; flex-wrap: wrap; }
+.ms-anchor-btn { font-size: 0.875rem; letter-spacing: 0.06em; padding: 8px 20px; border: 1px solid #993556; background: transparent; color: #993556; cursor: pointer; font-family: 'Noto Sans TC', sans-serif; text-decoration: none; display: inline-block; }
+.ms-anchor-btn:hover { background: #993556; color: #fff; }
+
+/* 服務心得卡片 */
+.ms-story-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.ms-story-card { border: 1px solid #e8e0dc; padding: 2rem; position: relative; }
+.ms-story-quote { font-family: 'DM Serif Display', serif; font-size: 3rem; color: #f4c0d1; line-height: 0.8; margin-bottom: 0.5rem; }
+.ms-story-text { font-size: 0.9375rem; line-height: 2; color: #4a3838; margin-bottom: 1.5rem; font-style: italic; }
+.ms-story-author { display: flex; align-items: center; gap: 12px; }
+.ms-story-avatar { width: 40px; height: 40px; border-radius: 50%; background: #f4c0d1; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 1rem; color: #993556; flex-shrink: 0; }
+.ms-story-name { font-size: 0.875rem; font-weight: 500; color: #2a1e1e; }
+.ms-story-role { font-size: 0.75rem; color: #8a7070; }
+
+/* 招募區塊 */
+.ms-recruit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 2.5rem; }
+.ms-recruit-item { border: 1px solid #e8e0dc; padding: 2rem; }
+.ms-recruit-tag { display: inline-block; font-size: 0.75rem; letter-spacing: 0.1em; color: #993556; border: 0.5px solid #993556; padding: 3px 10px; margin-bottom: 1rem; }
+.ms-recruit-title { font-size: 1rem; font-weight: 500; margin-bottom: 1rem; color: #2a1e1e; }
+.ms-recruit-list { list-style: none; padding: 0; }
+.ms-recruit-list li { font-size: 0.875rem; color: #6a5050; line-height: 1.9; padding-left: 1.2rem; position: relative; }
+.ms-recruit-list li::before { content: '—'; position: absolute; left: 0; color: #993556; }
+.ms-recruit-cta { margin-top: 2.5rem; background: #2a1e1e; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.ms-recruit-cta h3 { font-family: 'Noto Serif TC', serif; font-size: 1.2rem; font-weight: 600; color: #f0e0d8; margin-bottom: 0.4rem; }
+.ms-recruit-cta p { font-size: 0.875rem; color: #c8a898; line-height: 1.9; }
+.ms-recruit-btn { background: #993556; color: #fff; font-size: 0.875rem; font-weight: 500; border: none; padding: 14px 32px; cursor: pointer; letter-spacing: 0.08em; font-family: 'Noto Sans TC', sans-serif; white-space: nowrap; flex-shrink: 0; text-decoration: none; display: inline-block; }
+
+/* 福利一覽 */
+.ms-benefit-grid { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid #e8e0dc; margin-bottom: 2.5rem; }
+.ms-benefit-item { padding: 2rem 1.5rem; border-right: 1px solid #e8e0dc; text-align: center; }
+.ms-benefit-item:last-child { border-right: none; }
+.ms-benefit-icon { width: 48px; height: 48px; border-radius: 50%; background: #fce8ef; border: 1.5px solid #993556; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem; }
+.ms-benefit-icon i { font-size: 1.25rem; color: #993556; }
+.ms-benefit-title { font-size: 0.9375rem; font-weight: 500; margin-bottom: 4px; }
+.ms-benefit-desc { font-size: 0.8125rem; color: #6a5050; line-height: 1.7; }
+
+/* 課程報名表單 */
+.ms-course-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 2.5rem; }
+.ms-course-card { border: 1px solid #e8e0dc; padding: 1.8rem; }
+.ms-course-cat { display: inline-block; font-size: 0.75rem; letter-spacing: 0.1em; padding: 3px 10px; margin-bottom: 0.8rem; border: 0.5px solid; }
+.ms-cat-basic { color: #185fa5; border-color: #185fa5; }
+.ms-cat-advanced { color: #0f6e56; border-color: #0f6e56; }
+.ms-cat-welfare { color: #993556; border-color: #993556; }
+.ms-course-title { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
+.ms-course-meta { font-size: 0.8125rem; color: #8a7070; margin-bottom: 0.8rem; line-height: 1.8; }
+.ms-course-desc { font-size: 0.875rem; color: #6a5050; line-height: 1.9; margin-bottom: 1rem; }
+.ms-course-btn { font-size: 0.8125rem; color: #993556; border: 1px solid #993556; padding: 7px 18px; background: transparent; cursor: pointer; font-family: 'Noto Sans TC', sans-serif; text-decoration: none; display: inline-block; }
+.ms-course-btn:hover { background: #993556; color: #fff; }
+.ms-course-note { border-left: 3px solid #993556; padding: 0.9rem 1.4rem; background: #fdf8f4; font-size: 0.875rem; color: #6a5050; line-height: 1.9; }
+
+/* 手機版 RWD */
+@media (max-width: 768px) {
+  .ms-page-header { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+  .ms-anchors { padding: 1rem 1.5rem; gap: 8px; }
+  .ms-anchor-btn { font-size: 0.8125rem; padding: 7px 14px; }
+  .ms-sec { padding: 3rem 1.5rem; }
+  .ms-story-grid { grid-template-columns: 1fr; }
+  .ms-recruit-grid { grid-template-columns: 1fr; }
+  .ms-benefit-grid { grid-template-columns: repeat(2,1fr); }
+  .ms-benefit-item:nth-child(2) { border-right: none; }
+  .ms-benefit-item:nth-child(3) { border-right: 1px solid #e8e0dc; border-top: 1px solid #e8e0dc; }
+  .ms-benefit-item:nth-child(4) { border-right: none; border-top: 1px solid #e8e0dc; }
+  .ms-course-grid { grid-template-columns: 1fr; }
+  .ms-recruit-cta { flex-direction: column; text-align: center; }
+  .ms-recruit-btn { width: 100%; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- 導覽列由 common.js 自動載入 -->
+
+<!-- 頁面標題（深色背景，區隔一般頁面） -->
+<div class="ms-page-header">
+  <div>
+    <span class="ms-page-en">Staff Zone</span>
+    <h1 class="ms-page-h1">照服員專區</h1>
+  </div>
+  <p class="ms-page-desc">這裡是美事夥伴的專屬空間——分享照護故事、探索職涯機會、持續學習成長。</p>
+</div>
+
+<!-- 快速跳轉 -->
+<div class="ms-anchors">
+  <a class="ms-anchor-btn" href="#staff-stories">服務心得</a>
+  <a class="ms-anchor-btn" href="#staff-recruit">人才招募</a>
+  <a class="ms-anchor-btn" href="#staff-courses">課程報名</a>
+</div>
+
+<!-- 服務心得 -->
+<section class="ms-sec" id="staff-stories">
+  <span class="ms-tag">Stories</span>
+  <h2 class="ms-h2">照服員服務心得</h2>
+  <p class="ms-lead">每一段照顧關係，都是一個值得被記錄的故事。</p>
+  <div class="ms-story-grid">
+    <div class="ms-story-card">
+      <div class="ms-story-quote">"</div>
+      <p class="ms-story-text">剛開始很擔心自己做得不夠好，但慢慢發現，奶奶每次見到我都笑得特別開心。那個笑容讓我覺得，這份工作真的很值得。</p>
+      <div class="ms-story-author">
+        <div class="ms-story-avatar">A</div>
+        <div>
+          <div class="ms-story-name">美芳姐</div>
+          <div class="ms-story-role">照服員・服務年資 3 年</div>
+        </div>
+      </div>
+    </div>
+    <div class="ms-story-card">
+      <div class="ms-story-quote">"</div>
+      <p class="ms-story-text">有一次陪伯伯去回診，醫生說他的狀況比上次好很多。伯伯握著我的手說「謝謝妳」，我差點哭出來。</p>
+      <div class="ms-story-author">
+        <div class="ms-story-avatar">B</div>
+        <div>
+          <div class="ms-story-name">淑惠</div>
+          <div class="ms-story-role">照服員・服務年資 2 年</div>
+        </div>
+      </div>
+    </div>
+    <div class="ms-story-card">
+      <div class="ms-story-quote">"</div>
+      <p class="ms-story-text">在美事工作最好的是，遇到困難有督導可以問，不是自己一個人面對。感覺背後有一個團隊在支持我。</p>
+      <div class="ms-story-author">
+        <div class="ms-story-avatar">C</div>
+        <div>
+          <div class="ms-story-name">雅婷</div>
+          <div class="ms-story-role">照服員・服務年資 1 年</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 人才招募 -->
+<section class="ms-sec ms-sec-alt" id="staff-recruit">
+  <span class="ms-tag">Join Us</span>
+  <h2 class="ms-h2">加入美事團隊</h2>
+  <p class="ms-lead">我們相信，好的照服員值得被好好對待。加入美事，讓我們一起做這件美好的事。</p>
+
+  <!-- 福利一覽 -->
+  <div class="ms-benefit-grid">
+    <div class="ms-benefit-item">
+      <div class="ms-benefit-icon"><i class="ti ti-calendar"></i></div>
+      <div class="ms-benefit-title">彈性排班</div>
+      <div class="ms-benefit-desc">依個人時間彈性安排，兼顧工作與生活</div>
+    </div>
+    <div class="ms-benefit-item">
+      <div class="ms-benefit-icon"><i class="ti ti-school"></i></div>
+      <div class="ms-benefit-title">在職訓練</div>
+      <div class="ms-benefit-desc">定期外聘講師培訓，持續精進照護技能</div>
+    </div>
+    <div class="ms-benefit-item">
+      <div class="ms-benefit-icon"><i class="ti ti-users"></i></div>
+      <div class="ms-benefit-title">督導支持</div>
+      <div class="ms-benefit-desc">專業督導隨時提供協助，不讓你孤單面對</div>
+    </div>
+    <div class="ms-benefit-item">
+      <div class="ms-benefit-icon"><i class="ti ti-gift"></i></div>
+      <div class="ms-benefit-title">福委會福利</div>
+      <div class="ms-benefit-desc">員工福利委員會，定期舉辦員工活動與關懷</div>
+    </div>
+  </div>
+
+  <!-- 職缺說明 -->
+  <div class="ms-recruit-grid">
+    <div class="ms-recruit-item">
+      <span class="ms-recruit-tag">現正招募</span>
+      <div class="ms-recruit-title">居家照服員</div>
+      <ul class="ms-recruit-list">
+        <li>持有照顧服務員結業證書（或願意參加培訓）</li>
+        <li>服務地區：三重、蘆洲、五股、新莊、泰山</li>
+        <li>工作時間：依排班彈性調整</li>
+        <li>薪資：依服務時數計算，另有出勤津貼</li>
+        <li>歡迎新手，提供在職訓練</li>
+      </ul>
+    </div>
+    <div class="ms-recruit-item">
+      <span class="ms-recruit-tag">長期招募</span>
+      <div class="ms-recruit-title">居家服務督導</div>
+      <ul class="ms-recruit-list">
+        <li>具照服員實務經驗 2 年以上</li>
+        <li>負責個案服務品質監督與照服員輔導</li>
+        <li>需具備良好溝通能力與同理心</li>
+        <li>月薪制，另有績效獎金</li>
+        <li>歡迎有志轉型晉升者洽詢</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ms-recruit-cta">
+    <div>
+      <h3>想加入美事嗎？</h3>
+      <p>歡迎來電或傳訊息，我們會盡快與您聯繫。</p>
+    </div>
+    <a class="ms-recruit-btn" href="contact.html">立即應徵</a>
+  </div>
+</section>
+
+<!-- 課程報名 -->
+<section class="ms-sec" id="staff-courses">
+  <span class="ms-tag">Courses</span>
+  <h2 class="ms-h2">課程報名</h2>
+  <p class="ms-lead">持續學習是美事文化的一部分。定期開設各類培訓課程，歡迎照服員夥伴報名參加。</p>
+  <div class="ms-course-grid">
+    <div class="ms-course-card">
+      <span class="ms-course-cat ms-cat-basic">基礎課程</span>
+      <div class="ms-course-title">照顧服務員職前訓練</div>
+      <div class="ms-course-meta">
+        <i class="ti ti-clock" style="font-size:0.875rem;vertical-align:-1px;margin-right:4px;"></i>90 小時&nbsp;&nbsp;
+        <i class="ti ti-calendar" style="font-size:0.875rem;vertical-align:-1px;margin-right:4px;"></i>依開課期程公告
+      </div>
+      <div class="ms-course-desc">依衛生福利部規定，照服員須完成 90 小時職前訓練並取得結業證書，方可執業。課程涵蓋身體照顧、生活照顧、家務服務及相關法規。</div>
+      <a class="ms-course-btn" href="contact.html">詢問報名</a>
+    </div>
+    <div class="ms-course-card">
+      <span class="ms-course-cat ms-cat-advanced">進階課程</span>
+      <div class="ms-course-title">移位技巧與輔具使用</div>
+      <div class="ms-course-meta">
+        <i class="ti ti-clock" style="font-size:0.875rem;vertical-align:-1px;margin-right:4px;"></i>6 小時&nbsp;&nbsp;
+        <i class="ti ti-calendar" style="font-size:0.875rem;vertical-align:-1px;margin-right:4px;"></i>不定期開班
+      </div>
+      <div class="ms-course-desc">由外聘專業講師講授正確移位技巧，降低照服員職業傷害風險，並介紹常見輔具的正確使用方式，保障長輩與照服員的安全。</div>
+      <a class="ms-course-btn" href="contact.html">詢問報名</a>
+    </div>
+    <div class="ms-course-card">
+      <span class="ms-course-cat ms-cat-advanced">進階課程</span>
+      <div class="ms-course-title">感染控制與緊急應變</div>
+      <div class="ms-course-meta">
+        <i class="ti ti-clock" style="font-size:0.875rem;vertical-align:-1px;margin-right:4px;"></i>4 小時&nbsp;&nbsp;
+        <i class="ti ti-calendar" style="font-size:0.875rem;vertical-align:-1px;margin-right:4px;"></i>每季開班</div>
+      <div class="ms-course-desc">學習居家環境的感染控制原則、個人防護裝備使用，以及居家緊急狀況的判斷與應對，提升服務安全性。</div>
+      <a class="ms-course-btn" href="contact.html">詢問報名</a>
+    </div>
+    <div class="ms-course-card">
+      <span class="ms-course-cat ms-cat-welfare">在職訓練</span>
+      <div class="ms-course-title">失智症照護專題</div>
+      <div class="ms-course-meta">
+        <i class="ti ti-clock" style="font-size:0.875rem;vertical-align:-1px;margin-right:4px;"></i>3 小時&nbsp;&nbsp;
+        <i class="ti ti-calendar" style="font-size:0.875rem;vertical-align:-1px;margin-right:4px;"></i>不定期開班
+      </div>
+      <div class="ms-course-desc">了解失智症的行為症狀與溝通技巧，學習如何在居家環境中提供安全、有尊嚴的照護，減少照護過程中的衝突與壓力。</div>
+      <a class="ms-course-btn" href="contact.html">詢問報名</a>
+    </div>
+  </div>
+  <div class="ms-course-note">
+    <i class="ti ti-info-circle" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
+    課程開班資訊將於美事消息公告，或直接聯繫美事詢問。依衛服部規定，照服員每 6 年須修滿 120 積分在職訓練。
+  </div>
+</section>
+
+<!-- 頁尾由 common.js 自動載入 -->
+<script src="common.js"></script>
+</body>
+</html>
