@@ -176,7 +176,7 @@ body {
 /* 頁尾三欄格線 */
 .ms-footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid #e0cfc4;
@@ -231,7 +231,7 @@ body {
 @media (max-width: 1024px) {
   .ms-nav-links { gap: 1.2rem; }
   .ms-nav-links a { font-size: 0.8125rem; } /* 13px */
-  .ms-footer-grid { grid-template-columns: 1fr 1fr; }
+  .ms-footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
 }
 
 /* 手機（寬度小於 768px） */
