@@ -1,3 +1,9 @@
+js/* Favicon */
+var favicon = document.createElement('link');
+favicon.rel = 'icon';
+favicon.type = 'image/png';
+favicon.href = 'favicon.png';
+document.head.appendChild(favicon);
 /* ==========================================
    美事居家長照機構 — 共用JavaScript
    common.js
