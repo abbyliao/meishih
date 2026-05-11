@@ -32,7 +32,7 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   color: #2a1e1e;
   background: #fff;
-  font-size: 16px; /* 桌機基準：16px = 1rem */
+  font-size: 18px; /* 桌機基準：18px = 1rem */
 }
 
 
@@ -238,7 +238,7 @@ body {
 @media (max-width: 768px) {
 
   /* 手機基準字體：18px = 1rem，全站自動放大 */
-  body { font-size: 18px; }
+  body { font-size: 19px; }
 
   /* 隱藏桌機版導覽連結和按鈕 */
   .ms-nav-links { display: none; }
