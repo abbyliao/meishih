@@ -25,38 +25,20 @@
 .ms-anchor-btn { font-size: 0.875rem; letter-spacing: 0.06em; padding: 8px 20px; border: 1px solid #993556; background: transparent; color: #993556; cursor: pointer; font-family: 'Noto Sans TC', sans-serif; text-decoration: none; display: inline-block; }
 .ms-anchor-btn:hover { background: #993556; color: #fff; }
 
-/* 服務項目格線（可點擊） */
-.ms-svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); border: 1px solid #e8e0dc; }
-.ms-svc-item { padding: 1.5rem 1.2rem; border-right: 1px solid #e8e0dc; border-bottom: 1px solid #e8e0dc; cursor: pointer; position: relative; transition: background 0.2s; }
-.ms-svc-item:hover { background: #fdf8f4; }
-.ms-svc-code { font-family: 'DM Serif Display', serif; font-size: 0.8125rem; color: #993556; margin-bottom: 5px; letter-spacing: 0.04em; }
-.ms-svc-name { font-size: 0.875rem; font-weight: 500; }
-.ms-svc-hint { font-size: 0.6875rem; color: #b8a0a8; margin-top: 4px; }
-
-/* 服務項目懸浮說明視窗 */
-.ms-svc-modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 50; align-items: center; justify-content: center; padding: 1rem; }
-.ms-svc-modal-overlay.open { display: flex; }
-.ms-svc-modal { background: #fff; max-width: 480px; width: 100%; padding: 2rem; position: relative; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
-.ms-svc-modal-code { font-family: 'DM Serif Display', serif; font-size: 0.8125rem; color: #993556; letter-spacing: 0.06em; margin-bottom: 4px; }
-.ms-svc-modal-title { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: #2a1e1e; }
-.ms-svc-modal-body { font-size: 0.875rem; line-height: 2; color: #6a5050; }
-.ms-svc-modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.25rem; color: #8a7070; cursor: pointer; }
-.ms-svc-modal-source { font-size: 0.75rem; color: #b8a0a8; margin-top: 1rem; border-top: 1px solid #e8e0dc; padding-top: 0.8rem; }
-
-
-/* 失能分級表 */
-.ms-cms-wrap { overflow-x: auto; margin-bottom: 2.5rem; }
+/* 失能等級表 */
+.ms-cms-wrap { overflow-x: auto; }
 .ms-cms-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
 .ms-cms-table th { background: #2a1e1e; color: #f0e0e0; font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.06em; padding: 12px 16px; border: 1px solid #3a2828; text-align: center; }
-.ms-cms-table th:first-child { text-align: left; }
+.ms-cms-table th:first-child, .ms-cms-table th:nth-child(2) { text-align: left; }
 .ms-cms-table td { padding: 11px 16px; border: 1px solid #e8e0dc; vertical-align: middle; text-align: center; }
-.ms-cms-table td:first-child { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #993556; font-weight: 400; text-align: center; }
-.ms-cms-table td:nth-child(2) { text-align: left; font-weight: 500; font-size: 0.875rem; }
+.ms-cms-table td:first-child { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: #993556; text-align: center; }
+.ms-cms-table td:nth-child(2) { font-weight: 500; text-align: left; }
 .ms-cms-table td:nth-child(3) { font-size: 0.8125rem; color: #6a5050; text-align: left; }
 .ms-cms-table td:nth-child(4) { font-weight: 500; color: #993556; }
 .ms-cms-table tr:hover td { background: #fdf8f4; }
-.ms-cms-note { font-size: 0.8125rem; color: #6a5050; line-height: 1.9; margin-top: 1rem; }
-/* 費用表標題 */
+.ms-cms-nopay { font-size: 0.75rem; color: #8a7070; }
+
+/* 服務費用表（可點擊） */
 .ms-fee-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem; }
 .ms-fee-title { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; }
 .ms-fee-info-btn { width: 28px; height: 28px; border-radius: 50%; background: #fce8ef; border: 1px solid #993556; color: #993556; font-size: 0.875rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; }
@@ -73,13 +55,25 @@
 .ms-fee-table th:nth-child(3) { min-width: 90px; }
 .ms-fee-table th:nth-child(4) { min-width: 100px; }
 .ms-fee-table th:nth-child(5) { min-width: 70px; }
-.ms-fee-table td { padding: 11px 16px; border: 1px solid #e8e0dc; vertical-align: middle; font-size: 0.875rem; }
-.ms-fee-table td:first-child { font-size: 0.8125rem; color: #6a5050; }
-.ms-fee-table td:nth-child(2) { font-weight: 500; }
+.ms-fee-table td { padding: 11px 16px; border: 1px solid #e8e0dc; vertical-align: middle; }
 .ms-fee-table td:not(:first-child) { text-align: center; }
 .ms-fee-table tr:hover td { background: #fdf8f4; }
+/* 服務項目名稱可點擊 */
+.ms-svc-link { font-size: 0.8125rem; color: #2a1e1e; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+.ms-svc-link:hover { color: #993556; }
+.ms-svc-link i { font-size: 0.75rem; color: #993556; flex-shrink: 0; }
 .ms-fee-subsidized { font-size: 0.8125rem; color: #993556; font-weight: 500; }
 .ms-fee-free { font-size: 0.8125rem; color: #8a7070; }
+
+/* 服務說明 Modal */
+.ms-svc-modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 50; align-items: center; justify-content: center; padding: 1rem; }
+.ms-svc-modal-overlay.open { display: flex; }
+.ms-svc-modal { background: #fff; max-width: 480px; width: 100%; padding: 2rem; position: relative; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+.ms-svc-modal-code { font-family: 'DM Serif Display', serif; font-size: 0.8125rem; color: #993556; letter-spacing: 0.06em; margin-bottom: 4px; }
+.ms-svc-modal-title { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: #2a1e1e; }
+.ms-svc-modal-body { font-size: 0.875rem; line-height: 2; color: #6a5050; }
+.ms-svc-modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.25rem; color: #8a7070; cursor: pointer; }
+.ms-svc-modal-source { font-size: 0.75rem; color: #b8a0a8; margin-top: 1rem; border-top: 1px solid #e8e0dc; padding-top: 0.8rem; }
 
 /* 個案分享 */
 .ms-case { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #e8e0dc; }
@@ -100,11 +94,12 @@
   .ms-anchors { padding: 1rem 1.5rem; gap: 8px; }
   .ms-anchor-btn { font-size: 0.8125rem; padding: 7px 14px; }
   .ms-sec { padding: 3rem 1.5rem; }
+  .ms-cms-table { min-width: 560px; }
+  .ms-fee-table { min-width: 560px; }
+  .ms-tooltip { width: 260px; left: 0; transform: none; }
   .ms-case { grid-template-columns: 1fr; }
   .ms-case-img img { height: 220px; }
   .ms-case-content { padding: 1.5rem; }
-  .ms-fee-table { min-width: 560px; }
-  .ms-tooltip { width: 260px; left: 0; transform: none; }
   .ms-svc-modal { padding: 1.5rem; }
 }
 </style>
@@ -123,42 +118,45 @@
 
 <!-- 快速跳轉 -->
 <div class="ms-anchors">
-  <a class="ms-anchor-btn" href="#svc-items">服務項目</a>
+  <a class="ms-anchor-btn" href="#svc-cms">失能等級</a>
   <a class="ms-anchor-btn" href="#svc-fees">服務費用</a>
   <a class="ms-anchor-btn" href="#svc-case">個案分享</a>
 </div>
 
-<!-- 服務項目 -->
-<section class="ms-sec ms-sec-alt" id="svc-items">
-  <span class="ms-tag">Service Items</span>
-  <h2 class="ms-h2">服務項目</h2>
-  <p class="ms-lead">涵蓋身體照護、日常協助、陪同外出等多元服務，依個案需求彈性安排。點擊項目可查看衛服部規範說明。</p>
-  <div class="ms-svc-grid">
-    <div class="ms-svc-item" onclick="openModal('BA01','基本身體清潔（擦澡）','協助進行床上擦澡，包含梳理頭髮、穿脫衣服、排泄物清理（含更換尿片、倒尿袋）等。本組合以1日使用1組合為原則，必要時得早晚各使用1組合。同一時段不可併同申報BA07及BA23。')"><div class="ms-svc-code">BA01</div><div class="ms-svc-name">基本身體清潔（擦澡）</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA02','基本日常照顧（30分鐘）','協助翻身、移位、上下床、刷牙洗臉、穿脫衣服、如廁、更換尿片、倒尿桶、清洗便桶、刮鬍子、修剪指甲、協助服藥、整理床舖等日常生活照顧。以每30分鐘為1給付單位，1日限使用3小時。')"><div class="ms-svc-code">BA02</div><div class="ms-svc-name">基本日常照顧（30分鐘）</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA03','測量生命徵象','測量體溫、脈搏、呼吸、血壓等生命徵象。本組合係為獨立於其他服務所提供，若屬於服務提供前後的觀察，則不適用此組合。')"><div class="ms-svc-code">BA03</div><div class="ms-svc-name">測量生命徵象</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA04','餵食或灌食','協助進食或鼻胃管灌食，包含備餐後的餵食、管灌食品的加熱及灌食等。')"><div class="ms-svc-code">BA04</div><div class="ms-svc-name">餵食或灌食</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA05','餐食照顧（煮飯）','在案家備餐，包含備餐一次及餐後用具、餐具善後工作及清潔，或準備一日所需之管灌飲食。單純加熱飯菜屬BA04範圍。')"><div class="ms-svc-code">BA05</div><div class="ms-svc-name">餐食照顧（煮飯）</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA07','協助沐浴及洗頭','協助或引導至浴間、穿脫衣服、全身淋浴、坐浴或盆浴、洗頭、排泄物清理等。本組合已包含BA01及BA23內容，同一時段不可併同申報。')"><div class="ms-svc-code">BA07</div><div class="ms-svc-name">協助沐浴及洗頭</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA08','足部照顧','評估趾甲及足部皮膚、趾甲及其周圍修剪、足部長繭處之處理、足部按摩及保養、轉介必要之醫療處置及紀錄。本組合服務應由完成衛生福利部認可訓練之人員提供。')"><div class="ms-svc-code">BA08</div><div class="ms-svc-name">足部照顧</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA10','翻身拍背','包含扣背、震顫、翻身及相關照顧指導，協助長期臥床者預防褥瘡，並視需要協助排痰。')"><div class="ms-svc-code">BA10</div><div class="ms-svc-name">翻身拍背</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA11','肢體關節活動','協助上肢、下肢被動運動，或督促長照需要者進行主動運動或站立練習，依衛生福利部所定指引執行，以避免關節肌肉攣縮。')"><div class="ms-svc-code">BA11</div><div class="ms-svc-name">肢體關節活動</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA12','協助上下樓梯','協助上或下樓梯、協助輪椅搬運上或下樓梯，適用於一層樓以上（含）者，包含住家內及2樓以上之家門口至1樓。不適用於使用電梯、爬梯機、樓梯升降椅者。')"><div class="ms-svc-code">BA12</div><div class="ms-svc-name">協助上下樓梯</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA13','陪同外出（30分鐘）','安排外出工具、陪同外出並注意安全，每30分鐘為一單位。外出目的包括：購物、社交活動、辦理事務、參與宗教活動、用餐、散步、定期復健或洗腎等。')"><div class="ms-svc-code">BA13</div><div class="ms-svc-name">陪同外出（30分鐘）</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA14','陪同就醫（90分鐘）','協助掛號（含預約）、長照需要者準備、陪同就診、聽取及轉知醫囑與注意事項。以90分鐘為一給付單位。')"><div class="ms-svc-code">BA14</div><div class="ms-svc-name">陪同就醫（90分鐘）</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA15','家務協助（30分鐘）','協助與長照需要者日常生活相關之家務，如清潔整理等，每30分鐘為一給付單位。服務範圍以長照需要者日常使用之空間為主。')"><div class="ms-svc-code">BA15</div><div class="ms-svc-name">家務協助（30分鐘）</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA16','代購服務','代購、代領或代送長照需要者物品或辦理事務為主，距離自案家出門起算5公里內適用本組合。若包含長照對象以外家人物品，補助金額僅支付50%。')"><div class="ms-svc-code">BA16</div><div class="ms-svc-name">代購服務</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA17','協助執行輔助性醫療','協助執行由醫療人員指導之輔助性醫療照護，如協助更換造廔袋、協助執行簡易復健動作等，須經照管中心評估核定。')"><div class="ms-svc-code">BA17</div><div class="ms-svc-name">協助執行輔助性醫療</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA18','安全看視（30分鐘）','於長照需要者身旁進行安全看視，確保其安全，每30分鐘為一給付單位。適用於有安全顧慮需要專人陪伴之個案。')"><div class="ms-svc-code">BA18</div><div class="ms-svc-name">安全看視（30分鐘）</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA20','陪伴服務（30分鐘）','提供長照需要者心理支持與社交陪伴，每30分鐘為一給付單位，以維護其心理健康與生活品質。')"><div class="ms-svc-code">BA20</div><div class="ms-svc-name">陪伴服務（30分鐘）</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA22','巡視服務','定期至案家巡視，確認長照需要者狀況，並回報照顧情形，適用於需定期確認安全狀況之個案。')"><div class="ms-svc-code">BA22</div><div class="ms-svc-name">巡視服務</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA23','協助洗頭','協助移位或引導至浴間、穿脫衣服、洗頭、環境之事前準備及事後整理。同一時段不可併同申請BA01及BA07。')"><div class="ms-svc-code">BA23</div><div class="ms-svc-name">協助洗頭</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('BA24','協助排泄','協助一般小便、大便及處理相關排泄物，包含觀察排泄物、尿袋更換、造廔袋清理、人工肛門造口周圍照料等。')"><div class="ms-svc-code">BA24</div><div class="ms-svc-name">協助排泄</div><div class="ms-svc-hint">點擊查看說明</div></div>
-    <div class="ms-svc-item" onclick="openModal('GA09','居家喘息服務（2小時）','為讓家庭照顧者獲得休息空間，由照顧服務員到宅替代家庭照顧者提供照顧服務，以2小時為一給付單位。每年給付額度依個案失能等級核定。')"><div class="ms-svc-code">GA09</div><div class="ms-svc-name">居家喘息服務（2小時）</div><div class="ms-svc-hint">點擊查看說明</div></div>
+<!-- 失能等級（獨立區塊） -->
+<section class="ms-sec ms-sec-alt" id="svc-cms">
+  <span class="ms-tag">Disability Level</span>
+  <h2 class="ms-h2">長照失能等級（CMS）</h2>
+  <p class="ms-lead">政府依個案失能程度分為 1–8 級，等級愈高代表照顧需求愈重，補助額度也愈多。第 1 級無給付，第 2–8 級可申請補助。</p>
+  <div class="ms-cms-wrap">
+    <table class="ms-cms-table">
+      <thead>
+        <tr>
+          <th>等級</th>
+          <th>失能程度</th>
+          <th>說明</th>
+          <th>照顧服務月補助額度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>輕度前期</td><td>失智或衰弱前期，無 ADL 失能</td><td><span class="ms-cms-nopay">無給付（可使用預防延緩服務）</span></td></tr>
+        <tr><td>2</td><td>輕度</td><td>1–2 項 ADL 失能，或僅 IADL 失能獨居者</td><td>10,020 元</td></tr>
+        <tr><td>3</td><td>輕度</td><td>1–2 項 ADL 失能，情況較嚴重</td><td>16,680 元</td></tr>
+        <tr><td>4</td><td>中度</td><td>3–4 項 ADL 失能</td><td>20,040 元</td></tr>
+        <tr><td>5</td><td>中度</td><td>3–4 項 ADL 失能，情況較嚴重</td><td>23,400 元</td></tr>
+        <tr><td>6</td><td>中度</td><td>3–4 項 ADL 失能，需較多協助</td><td>26,760 元</td></tr>
+        <tr><td>7</td><td>重度</td><td>5 項以上 ADL 失能</td><td>30,120 元</td></tr>
+        <tr><td>8</td><td>極重度</td><td>5 項以上 ADL 完全失能</td><td>36,180 元</td></tr>
+      </tbody>
+    </table>
   </div>
+  <p style="font-size:0.8125rem;color:#6a5050;line-height:1.9;margin-top:1rem;">
+    <i class="ti ti-info-circle" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
+    ADL（日常生活活動）包含進食、移位、室內走動、穿衣、洗澡、上廁所等 6 項。補助額度為照顧及專業服務類，實際金額依評估結果及縣市規定為準。資料來源：衛生福利部長照專區。
+  </p>
 </section>
 
-<!-- 服務費用 -->
+<!-- 服務費用（含可點擊的衛服部說明） -->
 <section class="ms-sec" id="svc-fees">
   <span class="ms-tag">Service Fees</span>
   <div class="ms-fee-header">
@@ -168,48 +166,16 @@
       <div class="ms-tooltip">依衛生福利部「長期照顧服務給付及支付基準」規定，居家服務費用由政府依失能等級核定補助額度。一般戶自付16%，中低收入戶自付5%，低收入戶全額補助。實際補助金額依個案評估結果為準。</div>
     </button>
   </div>
-  <p class="ms-lead">依政府公訂價格收費，提供一般戶、中低收入戶及低收入戶補助方案。</p>
-  <!-- 失能分級說明 -->
-  <div style="margin-bottom:2.5rem;">
-    <h3 style="font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:600;margin-bottom:0.8rem;color:#2a1e1e;">長照失能等級（CMS）與照顧服務補助額度</h3>
-    <p style="font-size:0.875rem;line-height:2;color:#6a5050;margin-bottom:1.2rem;">政府依個案失能程度分為 1–8 級，等級愈高代表照顧需求愈重，補助額度也愈多。第 1 級無給付，第 2–8 級可申請補助。</p>
-    <div class="ms-cms-wrap">
-      <table class="ms-cms-table">
-        <thead>
-          <tr>
-            <th>等級</th>
-            <th>失能程度</th>
-            <th>說明</th>
-            <th>照顧服務月補助額度</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>輕度前期</td><td>失智或衰弱前期，無 ADL 失能</td><td><span style="color:#8a7070;font-size:0.8125rem;">無給付（可使用預防延緩服務）</span></td></tr>
-          <tr><td>2</td><td>輕度</td><td>1–2 項 ADL 失能，或僅 IADL 失能獨居者</td><td>10,020 元</td></tr>
-          <tr><td>3</td><td>輕度</td><td>1–2 項 ADL 失能，情況較嚴重</td><td>16,680 元</td></tr>
-          <tr><td>4</td><td>中度</td><td>3–4 項 ADL 失能</td><td>20,040 元</td></tr>
-          <tr><td>5</td><td>中度</td><td>3–4 項 ADL 失能，情況較嚴重</td><td>23,400 元</td></tr>
-          <tr><td>6</td><td>中度</td><td>3–4 項 ADL 失能，需較多協助</td><td>26,760 元</td></tr>
-          <tr><td>7</td><td>重度</td><td>5 項以上 ADL 失能</td><td>30,120 元</td></tr>
-          <tr><td>8</td><td>極重度</td><td>5 項以上 ADL 完全失能</td><td>36,180 元</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="ms-cms-note">
-      <i class="ti ti-info-circle" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
-      ADL（日常生活活動）包含進食、移位、室內走動、穿衣、洗澡、上廁所等 6 項。補助額度為照顧及專業服務類，實際金額依評估結果及縣市規定為準。資料來源：衛生福利部長照專區。
-    </p>
-  </div>
-
+  <p class="ms-lead">依政府公訂價格收費，點擊服務名稱可查看衛服部規範說明。</p>
   <div class="ms-fee-note">
     <i class="ti ti-info-circle" style="font-size:1rem;vertical-align:-2px;margin-right:6px;color:#993556"></i>
-    如無政府補助，我們也提供彈性自費選擇，讓您靈活安排所需服務。低收入戶享有全額補助。
+    如無政府補助，我們也提供彈性自費選擇。低收入戶享有全額補助。
   </div>
   <div class="ms-fee-table-wrap">
     <table class="ms-fee-table">
       <thead>
         <tr>
-          <th style="text-align:left">服務項目</th>
+          <th style="text-align:left">服務項目（點擊查看說明）</th>
           <th>全額自費</th>
           <th>一般戶<br>16%</th>
           <th>中低收入戶<br>5%</th>
@@ -217,27 +183,27 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>BA01 基本身體清潔（擦澡）</td><td>260 元</td><td><span class="ms-fee-subsidized">41 元</span></td><td><span class="ms-fee-subsidized">13 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA02 基本日常照顧（30分鐘）</td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA03 測量生命徵象</td><td>35 元</td><td><span class="ms-fee-subsidized">5 元</span></td><td><span class="ms-fee-subsidized">1 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA04 餵食或灌食</td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA05 餐食照顧（煮飯）</td><td>310 元</td><td><span class="ms-fee-subsidized">49 元</span></td><td><span class="ms-fee-subsidized">15 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA07 協助沐浴及洗頭</td><td>325 元</td><td><span class="ms-fee-subsidized">52 元</span></td><td><span class="ms-fee-subsidized">16 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA08 足部照顧</td><td>500 元</td><td><span class="ms-fee-subsidized">80 元</span></td><td><span class="ms-fee-subsidized">25 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA10 翻身拍背</td><td>155 元</td><td><span class="ms-fee-subsidized">24 元</span></td><td><span class="ms-fee-subsidized">7 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA11 肢體關節活動</td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA12 協助上下樓梯</td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA13 陪同外出（30分鐘）</td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA14 陪同就醫（90分鐘）</td><td>685 元</td><td><span class="ms-fee-subsidized">109 元</span></td><td><span class="ms-fee-subsidized">34 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA15 家務協助（30分鐘）</td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA16 代購服務</td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA17 協助執行輔助性醫療</td><td>65 元</td><td><span class="ms-fee-subsidized">10 元</span></td><td><span class="ms-fee-subsidized">3 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA18 安全看視（30分鐘）</td><td>200 元</td><td><span class="ms-fee-subsidized">32 元</span></td><td><span class="ms-fee-subsidized">10 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA20 陪伴服務（30分鐘）</td><td>175 元</td><td><span class="ms-fee-subsidized">28 元</span></td><td><span class="ms-fee-subsidized">11 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA22 巡視服務</td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA23 協助洗頭</td><td>200 元</td><td><span class="ms-fee-subsidized">32 元</span></td><td><span class="ms-fee-subsidized">10 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>BA24 協助排泄</td><td>220 元</td><td><span class="ms-fee-subsidized">35 元</span></td><td><span class="ms-fee-subsidized">11 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
-        <tr><td>GA09 居家喘息服務（2小時）</td><td>770 元</td><td><span class="ms-fee-subsidized">123 元</span></td><td><span class="ms-fee-subsidized">38 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA01','基本身體清潔（擦澡）','協助進行床上擦澡，包含梳理頭髮、穿脫衣服、排泄物清理（含更換尿片、倒尿袋）等。本組合以1日使用1組合為原則，必要時得早晚各使用1組合。同一時段不可併同申報BA07及BA23。')"><i class="ti ti-info-circle"></i>BA01 基本身體清潔（擦澡）</span></td><td>260 元</td><td><span class="ms-fee-subsidized">41 元</span></td><td><span class="ms-fee-subsidized">13 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA02','基本日常照顧（30分鐘）','協助翻身、移位、上下床、刷牙洗臉、穿脫衣服、如廁、更換尿片、倒尿桶、清洗便桶、刮鬍子、修剪指甲、協助服藥、整理床舖等日常生活照顧。以每30分鐘為1給付單位，1日限使用3小時。')"><i class="ti ti-info-circle"></i>BA02 基本日常照顧（30分鐘）</span></td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA03','測量生命徵象','測量體溫、脈搏、呼吸、血壓等生命徵象。本組合係為獨立於其他服務所提供，若屬於服務提供前後的觀察，則不適用此組合。')"><i class="ti ti-info-circle"></i>BA03 測量生命徵象</span></td><td>35 元</td><td><span class="ms-fee-subsidized">5 元</span></td><td><span class="ms-fee-subsidized">1 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA04','餵食或灌食','協助進食或鼻胃管灌食，包含備餐後的餵食、管灌食品的加熱及灌食等。')"><i class="ti ti-info-circle"></i>BA04 餵食或灌食</span></td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA05','餐食照顧（煮飯）','在案家備餐，包含備餐一次及餐後用具、餐具善後工作及清潔，或準備一日所需之管灌飲食。單純加熱飯菜屬BA04範圍。')"><i class="ti ti-info-circle"></i>BA05 餐食照顧（煮飯）</span></td><td>310 元</td><td><span class="ms-fee-subsidized">49 元</span></td><td><span class="ms-fee-subsidized">15 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA07','協助沐浴及洗頭','協助或引導至浴間、穿脫衣服、全身淋浴、坐浴或盆浴、洗頭、排泄物清理等。本組合已包含BA01及BA23內容，同一時段不可併同申報。')"><i class="ti ti-info-circle"></i>BA07 協助沐浴及洗頭</span></td><td>325 元</td><td><span class="ms-fee-subsidized">52 元</span></td><td><span class="ms-fee-subsidized">16 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA08','足部照顧','評估趾甲及足部皮膚、趾甲及其周圍修剪、足部長繭處之處理、足部按摩及保養、轉介必要之醫療處置及紀錄。本組合服務應由完成衛生福利部認可訓練之人員提供。')"><i class="ti ti-info-circle"></i>BA08 足部照顧</span></td><td>500 元</td><td><span class="ms-fee-subsidized">80 元</span></td><td><span class="ms-fee-subsidized">25 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA10','翻身拍背','包含扣背、震顫、翻身及相關照顧指導，協助長期臥床者預防褥瘡，並視需要協助排痰。')"><i class="ti ti-info-circle"></i>BA10 翻身拍背</span></td><td>155 元</td><td><span class="ms-fee-subsidized">24 元</span></td><td><span class="ms-fee-subsidized">7 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA11','肢體關節活動','協助上肢、下肢被動運動，或督促長照需要者進行主動運動或站立練習，依衛生福利部所定指引執行，以避免關節肌肉攣縮。')"><i class="ti ti-info-circle"></i>BA11 肢體關節活動</span></td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA12','協助上下樓梯','協助上或下樓梯、協助輪椅搬運上或下樓梯，適用於一層樓以上（含）者，包含住家內及2樓以上之家門口至1樓。不適用於使用電梯、爬梯機、樓梯升降椅者。')"><i class="ti ti-info-circle"></i>BA12 協助上下樓梯</span></td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA13','陪同外出（30分鐘）','安排外出工具、陪同外出並注意安全，每30分鐘為一單位。外出目的包括：購物、社交活動、辦理事務、參與宗教活動、用餐、散步、定期復健或洗腎等。')"><i class="ti ti-info-circle"></i>BA13 陪同外出（30分鐘）</span></td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA14','陪同就醫（90分鐘）','協助掛號（含預約）、長照需要者準備、陪同就診、聽取及轉知醫囑與注意事項。以90分鐘為一給付單位。')"><i class="ti ti-info-circle"></i>BA14 陪同就醫（90分鐘）</span></td><td>685 元</td><td><span class="ms-fee-subsidized">109 元</span></td><td><span class="ms-fee-subsidized">34 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA15','家務協助（30分鐘）','協助與長照需要者日常生活相關之家務，如清潔整理等，每30分鐘為一給付單位。服務範圍以長照需要者日常使用之空間為主。')"><i class="ti ti-info-circle"></i>BA15 家務協助（30分鐘）</span></td><td>195 元</td><td><span class="ms-fee-subsidized">31 元</span></td><td><span class="ms-fee-subsidized">9 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA16','代購服務','代購、代領或代送長照需要者物品或辦理事務為主，距離自案家出門起算5公里內適用本組合。若包含長照對象以外家人物品，補助金額僅支付50%。')"><i class="ti ti-info-circle"></i>BA16 代購服務</span></td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA17','協助執行輔助性醫療','協助執行由醫療人員指導之輔助性醫療照護，如協助更換造廔袋、協助執行簡易復健動作等，須經照管中心評估核定。')"><i class="ti ti-info-circle"></i>BA17 協助執行輔助性醫療</span></td><td>65 元</td><td><span class="ms-fee-subsidized">10 元</span></td><td><span class="ms-fee-subsidized">3 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA18','安全看視（30分鐘）','於長照需要者身旁進行安全看視，確保其安全，每30分鐘為一給付單位。適用於有安全顧慮需要專人陪伴之個案。')"><i class="ti ti-info-circle"></i>BA18 安全看視（30分鐘）</span></td><td>200 元</td><td><span class="ms-fee-subsidized">32 元</span></td><td><span class="ms-fee-subsidized">10 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA20','陪伴服務（30分鐘）','提供長照需要者心理支持與社交陪伴，每30分鐘為一給付單位，以維護其心理健康與生活品質。')"><i class="ti ti-info-circle"></i>BA20 陪伴服務（30分鐘）</span></td><td>175 元</td><td><span class="ms-fee-subsidized">28 元</span></td><td><span class="ms-fee-subsidized">11 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA22','巡視服務','定期至案家巡視，確認長照需要者狀況，並回報照顧情形，適用於需定期確認安全狀況之個案。')"><i class="ti ti-info-circle"></i>BA22 巡視服務</span></td><td>130 元</td><td><span class="ms-fee-subsidized">20 元</span></td><td><span class="ms-fee-subsidized">6 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA23','協助洗頭','協助移位或引導至浴間、穿脫衣服、洗頭、環境之事前準備及事後整理。同一時段不可併同申請BA01及BA07。')"><i class="ti ti-info-circle"></i>BA23 協助洗頭</span></td><td>200 元</td><td><span class="ms-fee-subsidized">32 元</span></td><td><span class="ms-fee-subsidized">10 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('BA24','協助排泄','協助一般小便、大便及處理相關排泄物，包含觀察排泄物、尿袋更換、造廔袋清理、人工肛門造口周圍照料等。')"><i class="ti ti-info-circle"></i>BA24 協助排泄</span></td><td>220 元</td><td><span class="ms-fee-subsidized">35 元</span></td><td><span class="ms-fee-subsidized">11 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
+        <tr><td><span class="ms-svc-link" onclick="openModal('GA09','居家喘息服務（2小時）','為讓家庭照顧者獲得休息空間，由照顧服務員到宅替代家庭照顧者提供照顧服務，以2小時為一給付單位。每年給付額度依個案失能等級核定。')"><i class="ti ti-info-circle"></i>GA09 居家喘息服務（2小時）</span></td><td>770 元</td><td><span class="ms-fee-subsidized">123 元</span></td><td><span class="ms-fee-subsidized">38 元</span></td><td><span class="ms-fee-free">全額補助</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -265,7 +231,7 @@
   </div>
 </section>
 
-<!-- 服務項目說明視窗 -->
+<!-- 服務說明 Modal -->
 <div class="ms-svc-modal-overlay" id="svcModal" onclick="closeModalOutside(event)">
   <div class="ms-svc-modal">
     <button class="ms-svc-modal-close" onclick="closeModal()">✕</button>
@@ -279,7 +245,6 @@
 <!-- 頁尾由 common.js 自動載入 -->
 <script src="common.js"></script>
 <script>
-/* 服務項目說明視窗 */
 function openModal(code, title, body) {
   document.getElementById('modalCode').textContent = code;
   document.getElementById('modalTitle').textContent = title;
@@ -294,8 +259,6 @@ function closeModal() {
 function closeModalOutside(e) {
   if (e.target.id === 'svcModal') closeModal();
 }
-
-/* 費用說明懸浮視窗 */
 function toggleTooltip(btn) {
   btn.classList.toggle('active');
   document.addEventListener('click', function closeTooltip(e) {
