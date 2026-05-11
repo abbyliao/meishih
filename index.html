@@ -73,6 +73,33 @@
 .ms-flow-days span { font-size: 0.75rem; /* 12px */ color: #993556; background: #fce8ef; padding: 2px 8px; border-radius: 10px; letter-spacing: 0.04em; }
 .ms-flow-note { margin-top: 1.5rem; border-left: 3px solid #993556; padding: 0.9rem 1.4rem; background: #fdf8f4; font-size: 0.875rem; /* 14px */ color: #6a5050; line-height: 1.9; }
 
+
+/* 家屬心得輪播 */
+.ms-testimonials { padding: 4.5rem 2.5rem; background: #fdf8f4; }
+.ms-carousel { position: relative; overflow: hidden; }
+.ms-carousel-track { display: flex; transition: transform 0.4s ease; gap: 20px; }
+.ms-tcard { flex: 0 0 calc(33.333% - 14px); border: 1px solid #e8e0dc; padding: 2rem; background: #fff; }
+.ms-tcard-quote { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: #f4c0d1; line-height: 0.8; margin-bottom: 0.5rem; }
+.ms-tcard-stars { display: flex; gap: 3px; margin-bottom: 1rem; color: #993556; font-size: 0.875rem; }
+.ms-tcard-text { font-size: 0.875rem; line-height: 2; color: #6a5050; margin-bottom: 1.2rem; font-style: italic; }
+.ms-tcard-author { display: flex; align-items: center; gap: 10px; padding-top: 1rem; border-top: 1px solid #e8e0dc; }
+.ms-tcard-avatar { width: 36px; height: 36px; border-radius: 50%; background: #fce8ef; display: flex; align-items: center; justify-content: center; font-size: 0.8125rem; color: #993556; font-weight: 500; flex-shrink: 0; font-family: 'Noto Serif TC', serif; }
+.ms-tcard-name { font-size: 0.875rem; font-weight: 500; color: #2a1e1e; }
+.ms-tcard-role { font-size: 0.75rem; color: #8a7070; }
+.ms-carousel-controls { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 1.5rem; }
+.ms-carousel-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid #993556; background: transparent; color: #993556; cursor: pointer; font-size: 1.125rem; display: flex; align-items: center; justify-content: center; }
+.ms-carousel-btn:hover { background: #993556; color: #fff; }
+.ms-carousel-dots { display: flex; gap: 6px; }
+.ms-dot { width: 6px; height: 6px; border-radius: 50%; background: #e8d0d8; cursor: pointer; border: none; padding: 0; }
+.ms-dot.active { background: #993556; }
+
+@media (max-width: 768px) {
+  .ms-testimonials { padding: 3rem 1.5rem; }
+  .ms-tcard { flex: 0 0 calc(100% - 0px); }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ms-tcard { flex: 0 0 calc(50% - 10px); }
+}
 /* 手機版流程預設隱藏 */
 .ms-flow-mobile { display: none; }
 
@@ -82,7 +109,7 @@
 .ms-cta-left p { font-size: 0.875rem; /* 14px */ color: #c8a898; line-height: 1.9; }
 .ms-cta-right { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
 .ms-cta-btn { background: #993556; color: #fff; font-size: 0.875rem; /* 14px */ border: none; padding: 13px 32px; cursor: pointer; letter-spacing: 0.08em; font-family: 'Noto Sans TC', sans-serif; white-space: nowrap; }
-.ms-cta-phone { font-size: 0.8125rem; /* 13px */ color: #c8a898; letter-spacing: 0.04em; }
+.ms-cta-phone { font-size: 0.8125rem; /* 13px */ color: #a88070; letter-spacing: 0.04em; }
 
 
 /* 數字動畫 */
@@ -278,6 +305,52 @@
 </div>
 
 <!-- 頁尾由 common.js 自動載入 -->
+
+<script>
+/* 家屬心得輪播 */
+(function() {
+  var track = document.getElementById('msTrack');
+  if (!track) return;
+  var cards = track.querySelectorAll('.ms-tcard');
+  var total = cards.length;
+  var current = 0;
+  var dotsEl = document.getElementById('msDots');
+
+  function getPerView() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  }
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    var pv = getPerView();
+    var count = total - pv + 1;
+    for (var i = 0; i < count; i++) {
+      var d = document.createElement('button');
+      d.className = 'ms-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('data-i', i);
+      d.onclick = function() { goTo(parseInt(this.getAttribute('data-i'))); };
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function goTo(n) {
+    var pv = getPerView();
+    current = Math.max(0, Math.min(n, total - pv));
+    var gap = 20;
+    var w = cards[0].offsetWidth + gap;
+    track.style.transform = 'translateX(-' + (current * w) + 'px)';
+    document.querySelectorAll('.ms-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  window.msMove = function(dir) { goTo(current + dir); };
+  window.addEventListener('resize', function() { buildDots(); goTo(0); });
+  buildDots();
+})();
+</script>
 <script src="common.js"></script>
 
 <script>
