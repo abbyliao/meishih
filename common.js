@@ -1,4 +1,4 @@
-js/* Favicon */
+/* Favicon */
 var favicon = document.createElement('link');
 favicon.rel = 'icon';
 favicon.type = 'image/png';
