@@ -84,6 +84,9 @@
 .ms-cta-btn { background: #993556; color: #fff; font-size: 0.875rem; /* 14px */ border: none; padding: 13px 32px; cursor: pointer; letter-spacing: 0.08em; font-family: 'Noto Sans TC', sans-serif; white-space: nowrap; }
 .ms-cta-phone { font-size: 0.8125rem; /* 13px */ color: #a88070; letter-spacing: 0.04em; }
 
+
+/* 數字動畫 */
+.ms-countup { display: inline-block; transition: opacity 0.3s; }
 /* 手機版 RWD */
 @media (max-width: 768px) {
   .ms-hero { grid-template-columns: 1fr; height: auto; }
@@ -143,8 +146,8 @@
   <div class="ms-hero-right">
     <img class="ms-hero-img" src="assets/hero.webp" alt="居家照護">
     <div class="ms-hero-overlay">
-      <div class="ms-stat"><div class="ms-stat-num">480+</div><div class="ms-stat-label">累積服務家庭</div></div>
-      <div class="ms-stat"><div class="ms-stat-num">五年</div><div class="ms-stat-label">深耕長照服務</div></div>
+      <div class="ms-stat"><div class="ms-stat-num"><span class="ms-countup" data-target="480" data-suffix="+">0</span></div><div class="ms-stat-label">累積服務家庭</div></div>
+      <div class="ms-stat"><div class="ms-stat-num"><span class="ms-countup" data-target="5" data-suffix="年">0</span></div><div class="ms-stat-label">深耕長照服務</div></div>
       <div class="ms-stat"><div class="ms-stat-num">評鑑</div><div class="ms-stat-label">政府評鑑通過</div></div>
     </div>
   </div>
@@ -276,5 +279,44 @@
 
 <!-- 頁尾由 common.js 自動載入 -->
 <script src="common.js"></script>
+
+<script>
+/* 數字滾動動畫 */
+(function() {
+  function animateCount(el) {
+    var target = parseInt(el.getAttribute('data-target'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 1800;
+    var start = null;
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var progress = Math.min((timestamp - start) / duration, 1);
+      /* easeOutQuart */
+      var ease = 1 - Math.pow(1 - progress, 4);
+      var current = Math.floor(ease * target);
+      el.textContent = current + (progress === 1 ? suffix : '');
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* 用 IntersectionObserver 偵測進入畫面才觸發 */
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.ms-countup').forEach(function(el) {
+    observer.observe(el);
+  });
+})();
+</script>
+
 </body>
 </html>
