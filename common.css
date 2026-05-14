@@ -240,7 +240,7 @@ body {
 @media (max-width: 768px) {
 
   /* 手機基準字體：18px = 1rem，全站自動放大 */
-  body { font-size: 21px; }
+  body { font-size: 23px; }
 
   /* 隱藏桌機版導覽連結和按鈕 */
   .ms-nav-links { display: none; }
