@@ -27,12 +27,12 @@
    2. 基本設定
    ================== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 20px !important; }
+html { font-size: 19px !important; }
 body {
   font-family: 'Noto Sans TC', sans-serif;
   color: #2a1e1e;
   background: #fff;
-  font-size: 20 px !important; /* 桌機基準：19px = 1rem */
+  font-size: 19 px !important; /* 桌機基準：19px = 1rem */
   line-height: 1.8;
 
 }
@@ -239,9 +239,9 @@ body {
 /* 手機（寬度小於 768px） */
 @media (max-width: 768px) {
 
-  /* 手機基準字體：18px = 1rem，全站自動放大 */
-  html { font-size: 23px !important; }
-  body { font-size: 23px; }
+  /* 手機基準字體：21px = 1rem，全站自動放大 */
+  html { font-size: 21px !important; }
+  body { font-size: 21px; }
 
   /* 隱藏桌機版導覽連結和按鈕 */
   .ms-nav-links { display: none; }
