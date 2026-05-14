@@ -13,7 +13,7 @@
    ================== */
 
 /* Hero 主視覺區 */
-.ms-hero { display: grid; grid-template-columns: 1fr 1fr; height: 640px; }
+.ms-hero { display: grid; grid-template-columns: 1fr 1fr; height: 560px; }
 .ms-hero-left { padding: 5rem 3.5rem; display: flex; flex-direction: column; justify-content: center; background: #fdf8f4; }
 
 /* 英文小標籤 */
@@ -43,7 +43,7 @@
 .ms-stat-label { font-size: 0.6875rem; /* 11px */ color: rgba(255,255,255,0.75); letter-spacing: 0.05em; }
 
 /* 各區塊共用 */
-.ms-sec { padding: 4rem 2.5rem; }
+.ms-sec { padding: 4.5rem 2.5rem; }
 .ms-sec-warm { background: #fdf8f4; }
 .ms-tag { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; /* 11px */ letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
 .ms-h2 { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.8rem; }
@@ -75,7 +75,7 @@
 
 
 /* 家屬心得輪播 */
-.ms-testimonials { padding: 4.5rem 2.5rem; background: #fdf8f4; }
+.ms-testimonials { padding: 4.5rem 2.5rem; background: #fff; }
 .ms-carousel { position: relative; overflow: hidden; }
 .ms-carousel-track { display: flex; transition: transform 0.4s ease; gap: 20px; }
 .ms-tcard { flex: 0 0 calc(33.333% - 14px); border: 1px solid #e8e0dc; padding: 2rem; background: #fff; }
@@ -180,7 +180,7 @@
   </div>
 </section>
 
-<section class="ms-sec ms-sec-warm">
+<section class="ms-sec">
   <span class="ms-tag">Why Choose Us</span>
   <h2 class="ms-h2">選擇美事的理由</h2>
   <p class="ms-lead">好的居家照護不只是完成任務——而是讓家屬放心、讓長輩安心。每一個細節，都是我們對這份承諾的落實。</p>
@@ -208,7 +208,7 @@
   </div>
 </section>
 
-<section class="ms-sec">
+<section class="ms-sec ms-sec-warm">
   <span class="ms-tag">How to Apply</span>
   <h2 class="ms-h2">六步驟，讓照顧從容開始</h2>
   <p class="ms-lead">從第一次聯繫到服務正式開始，我們全程陪伴您走過每一個環節。</p>
@@ -292,57 +292,6 @@
     政府長照申請亦可撥打 <strong>1966</strong> 長照專線。歡迎直接聯繫美事，由我們協助引導後續所有流程。
   </div>
 </section>
-<!-- 家屬心得輪播 -->
-<section class="ms-testimonials">
-  <span class="ms-tag">Testimonials</span>
-  <h2 class="ms-h2">家屬這樣說</h2>
-  <p class="ms-lead">真實的照護故事，是我們最珍視的回饋。</p>
-  <div class="ms-carousel">
-    <div class="ms-carousel-track" id="msTrack">
-      <div class="ms-tcard">
-        <div class="ms-tcard-quote">"</div>
-        <div class="ms-tcard-stars">★★★★★</div>
-        <p class="ms-tcard-text">照服員每次來都很細心，媽媽很喜歡她。我在外地工作不用再擔心，知道有人陪著媽媽真的放心很多。</p>
-        <div class="ms-tcard-author">
-          <div class="ms-tcard-avatar">陳</div>
-          <div><div class="ms-tcard-name">陳小姐</div><div class="ms-tcard-role">家屬・服務地區：蘆洲</div></div>
-        </div>
-      </div>
-      <div class="ms-tcard">
-        <div class="ms-tcard-quote">"</div>
-        <div class="ms-tcard-stars">★★★★★</div>
-        <p class="ms-tcard-text">申請過程我完全不懂，美事的人幫我們一步一步弄好，連衛生局家訪都有人說明，真的省了很多力氣。</p>
-        <div class="ms-tcard-author">
-          <div class="ms-tcard-avatar">林</div>
-          <div><div class="ms-tcard-name">林先生</div><div class="ms-tcard-role">家屬・服務地區：三重</div></div>
-        </div>
-      </div>
-      <div class="ms-tcard">
-        <div class="ms-tcard-quote">"</div>
-        <div class="ms-tcard-stars">★★★★★</div>
-        <p class="ms-tcard-text">爸爸一開始很排斥讓陌生人進家門，但照服員很有耐心，現在每次服務完爸爸都說很好。</p>
-        <div class="ms-tcard-author">
-          <div class="ms-tcard-avatar">張</div>
-          <div><div class="ms-tcard-name">張小姐</div><div class="ms-tcard-role">家屬・服務地區：新莊</div></div>
-        </div>
-      </div>
-      <div class="ms-tcard">
-        <div class="ms-tcard-quote">"</div>
-        <div class="ms-tcard-stars">★★★★★</div>
-        <p class="ms-tcard-text">督導很負責，有問題馬上回覆，照服員也很專業。服務這麼久了，從來沒讓我失望過。</p>
-        <div class="ms-tcard-author">
-          <div class="ms-tcard-avatar">王</div>
-          <div><div class="ms-tcard-name">王媽媽</div><div class="ms-tcard-role">家屬・服務地區：五股</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="ms-carousel-controls">
-    <button class="ms-carousel-btn" onclick="msMove(-1)">‹</button>
-    <div class="ms-carousel-dots" id="msDots"></div>
-    <button class="ms-carousel-btn" onclick="msMove(1)">›</button>
-  </div>
-</section>
 
 <div class="ms-cta">
   <div class="ms-cta-left">
@@ -400,13 +349,6 @@
   window.msMove = function(dir) { goTo(current + dir); };
   window.addEventListener('resize', function() { buildDots(); goTo(0); });
   buildDots();
-   /* 自動輪播，每 4 秒換一張 */
-setInterval(function() {
-  var pv = getPerView();
-  var next = current + 1;
-  if (next > total - pv) next = 0;
-  goTo(next);
-}, 4000);
 })();
 </script>
 <script src="common.js"></script>
