@@ -400,6 +400,13 @@
   window.msMove = function(dir) { goTo(current + dir); };
   window.addEventListener('resize', function() { buildDots(); goTo(0); });
   buildDots();
+   /* 自動輪播，每 4 秒換一張 */
+setInterval(function() {
+  var pv = getPerView();
+  var next = current + 1;
+  if (next > total - pv) next = 0;
+  goTo(next);
+}, 4000);
 })();
 </script>
 <script src="common.js"></script>
