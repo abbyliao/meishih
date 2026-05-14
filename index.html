@@ -155,7 +155,7 @@
     <img class="ms-hero-img" src="assets/hero.webp" alt="居家照護">
     <div class="ms-hero-overlay">
       <div class="ms-stat"><div class="ms-stat-num"><span class="ms-countup" data-target="480" data-suffix="">0</span>+</div><div class="ms-stat-label">累積服務家庭</div></div>
-      <div class="ms-stat"><div class="ms-stat-num"><span class="ms-countup" data-target="5" data-suffix="">0</span>年</div><div class="ms-stat-label">深耕長照服務</div></div>
+      <div class="ms-stat"><div class="ms-stat-num">5年</div><div class="ms-stat-label">深耕長照服務</div></div>
       <div class="ms-stat"><div class="ms-stat-num">評鑑</div><div class="ms-stat-label">政府評鑑通過</div></div>
     </div>
   </div>
@@ -402,12 +402,12 @@
   function animateCount(el) {
     var target = parseInt(el.getAttribute('data-target'));
     var suffix = el.getAttribute('data-suffix') || '';
-    var duration = 1800;
+    var duration = 2500;
     var start = null;
     function step(timestamp) {
       if (!start) start = timestamp;
       var progress = Math.min((timestamp - start) / duration, 1);
-      var ease = 1 - Math.pow(1 - progress, 4);
+      var ease = Math.sin((progress * Math.PI) / 2);
       var current = Math.floor(ease * target);
       el.textContent = current + (progress === 1 ? suffix : '');
       if (progress < 1) requestAnimationFrame(step);
