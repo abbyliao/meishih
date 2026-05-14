@@ -11,8 +11,8 @@
    
    字體單位說明：
    全站使用 rem 單位，基準為 body font-size。
-   桌機：16px = 1rem
-   手機：18px = 1rem（手機版自動放大）
+   桌機：19px = 1rem
+   手機：21px = 1rem（手機版自動放大）
    只要調整 body font-size，全站字體同步縮放。
    ========================================== */
 
@@ -32,7 +32,9 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   color: #2a1e1e;
   background: #fff;
-  font-size: 18px; /* 桌機基準：18px = 1rem */
+  font-size: 19px; /* 桌機基準：19px = 1rem */
+  line-height: 1.8;
+
 }
 
 
@@ -238,7 +240,7 @@ body {
 @media (max-width: 768px) {
 
   /* 手機基準字體：18px = 1rem，全站自動放大 */
-  body { font-size: 19px; }
+  body { font-size: 21px; }
 
   /* 隱藏桌機版導覽連結和按鈕 */
   .ms-nav-links { display: none; }
