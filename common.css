@@ -10,7 +10,7 @@
    5. 響應式設計（RWD）
    
    字體單位說明：
-   全站使用 rem 單位，基準為 body font-size。
+   全站使用 rem 單位，基準為 body 。
    桌機：19px = 1rem
    手機：21px = 1rem（手機版自動放大）
    只要調整 body font-size，全站字體同步縮放。
@@ -32,7 +32,7 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   color: #2a1e1e;
   background: #fff;
-  font-size: 19 px !important; /* 桌機基準：19px = 1rem */
+  font-size: 19px !important; /* 桌機基準：19px = 1rem */
   line-height: 1.8;
 
 }
