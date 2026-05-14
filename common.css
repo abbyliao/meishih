@@ -27,7 +27,7 @@
    2. 基本設定
    ================== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
+html { font-size: 26px !important; }
 body {
   font-family: 'Noto Sans TC', sans-serif;
   color: #2a1e1e;
@@ -240,6 +240,7 @@ body {
 @media (max-width: 768px) {
 
   /* 手機基準字體：18px = 1rem，全站自動放大 */
+  html { font-size: 23px !important; }
   body { font-size: 23px; }
 
   /* 隱藏桌機版導覽連結和按鈕 */
