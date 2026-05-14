@@ -292,6 +292,57 @@
     政府長照申請亦可撥打 <strong>1966</strong> 長照專線。歡迎直接聯繫美事，由我們協助引導後續所有流程。
   </div>
 </section>
+<!-- 家屬心得輪播 -->
+<section class="ms-testimonials">
+  <span class="ms-tag">Testimonials</span>
+  <h2 class="ms-h2">家屬這樣說</h2>
+  <p class="ms-lead">真實的照護故事，是我們最珍視的回饋。</p>
+  <div class="ms-carousel">
+    <div class="ms-carousel-track" id="msTrack">
+      <div class="ms-tcard">
+        <div class="ms-tcard-quote">"</div>
+        <div class="ms-tcard-stars">★★★★★</div>
+        <p class="ms-tcard-text">照服員每次來都很細心，媽媽很喜歡她。我在外地工作不用再擔心，知道有人陪著媽媽真的放心很多。</p>
+        <div class="ms-tcard-author">
+          <div class="ms-tcard-avatar">陳</div>
+          <div><div class="ms-tcard-name">陳小姐</div><div class="ms-tcard-role">家屬・服務地區：蘆洲</div></div>
+        </div>
+      </div>
+      <div class="ms-tcard">
+        <div class="ms-tcard-quote">"</div>
+        <div class="ms-tcard-stars">★★★★★</div>
+        <p class="ms-tcard-text">申請過程我完全不懂，美事的人幫我們一步一步弄好，連衛生局家訪都有人說明，真的省了很多力氣。</p>
+        <div class="ms-tcard-author">
+          <div class="ms-tcard-avatar">林</div>
+          <div><div class="ms-tcard-name">林先生</div><div class="ms-tcard-role">家屬・服務地區：三重</div></div>
+        </div>
+      </div>
+      <div class="ms-tcard">
+        <div class="ms-tcard-quote">"</div>
+        <div class="ms-tcard-stars">★★★★★</div>
+        <p class="ms-tcard-text">爸爸一開始很排斥讓陌生人進家門，但照服員很有耐心，現在每次服務完爸爸都說很好。</p>
+        <div class="ms-tcard-author">
+          <div class="ms-tcard-avatar">張</div>
+          <div><div class="ms-tcard-name">張小姐</div><div class="ms-tcard-role">家屬・服務地區：新莊</div></div>
+        </div>
+      </div>
+      <div class="ms-tcard">
+        <div class="ms-tcard-quote">"</div>
+        <div class="ms-tcard-stars">★★★★★</div>
+        <p class="ms-tcard-text">督導很負責，有問題馬上回覆，照服員也很專業。服務這麼久了，從來沒讓我失望過。</p>
+        <div class="ms-tcard-author">
+          <div class="ms-tcard-avatar">王</div>
+          <div><div class="ms-tcard-name">王媽媽</div><div class="ms-tcard-role">家屬・服務地區：五股</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ms-carousel-controls">
+    <button class="ms-carousel-btn" onclick="msMove(-1)">‹</button>
+    <div class="ms-carousel-dots" id="msDots"></div>
+    <button class="ms-carousel-btn" onclick="msMove(1)">›</button>
+  </div>
+</section>
 
 <div class="ms-cta">
   <div class="ms-cta-left">
