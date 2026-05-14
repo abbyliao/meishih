@@ -9,45 +9,32 @@
 <style>
 /* ==================
    首頁專屬樣式
-   rem換算基準：桌機16px、手機18px
    ================== */
 
 /* Hero 主視覺區 */
 .ms-hero { display: grid; grid-template-columns: 1fr 1fr; height: 560px; }
 .ms-hero-left { padding: 5rem 3.5rem; display: flex; flex-direction: column; justify-content: center; background: #fdf8f4; }
-
-/* 英文小標籤 */
-.ms-hero-en { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; /* 11px */ letter-spacing: 0.22em; color: #993556; text-transform: uppercase; margin-bottom: 1.6rem; display: block; }
-
-/* Slogan */
-.ms-hero-slogan { font-family: 'Noto Serif TC', serif; font-size: 0.9375rem; /* 15px */ color: #8a6a6a; letter-spacing: 0.14em; margin-bottom: 0.7rem; }
-
-/* 主標題 */
+.ms-hero-en { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; margin-bottom: 1.6rem; display: block; }
+.ms-hero-slogan { font-family: 'Noto Serif TC', serif; font-size: 0.9375rem; color: #8a6a6a; letter-spacing: 0.14em; margin-bottom: 0.7rem; }
 .ms-hero h1 { font-family: 'Noto Serif TC', serif; font-size: 2.3rem; font-weight: 700; line-height: 1.5; color: #2a1e1e; margin-bottom: 1.4rem; }
 .ms-hero h1 em { color: #993556; font-style: normal; }
-
-/* 說明文字 */
-.ms-hero-body { font-size: 0.9375rem; /* 15px */ line-height: 2; color: #6a5050; max-width: 340px; margin-bottom: 2.5rem; }
-
-/* 按鈕群組 */
+.ms-hero-body { font-size: 0.9375rem; line-height: 2; color: #6a5050; max-width: 340px; margin-bottom: 2.5rem; }
 .ms-hero-btns { display: flex; gap: 12px; }
-.ms-btn-fill { background: #2a1e1e; color: #fff; font-size: 0.875rem; /* 14px */ border: none; padding: 13px 28px; cursor: pointer; letter-spacing: 0.06em; font-family: 'Noto Sans TC', sans-serif; }
-.ms-btn-ghost { background: transparent; color: #2a1e1e; font-size: 0.875rem; /* 14px */ border: 1px solid #2a1e1e; padding: 13px 28px; cursor: pointer; letter-spacing: 0.06em; font-family: 'Noto Sans TC', sans-serif; }
-
-/* 右側照片區 */
+.ms-btn-fill { background: #2a1e1e; color: #fff; font-size: 0.875rem; border: none; padding: 13px 28px; cursor: pointer; letter-spacing: 0.06em; font-family: 'Noto Sans TC', sans-serif; }
+.ms-btn-ghost { background: transparent; color: #2a1e1e; font-size: 0.875rem; border: 1px solid #2a1e1e; padding: 13px 28px; cursor: pointer; letter-spacing: 0.06em; font-family: 'Noto Sans TC', sans-serif; }
 .ms-hero-right { position: relative; overflow: hidden; background: #c8b0a8; }
 .ms-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.85); }
 .ms-hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(20,10,10,0.65)); padding: 2rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
 .ms-stat { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); padding: 1rem 1.2rem; }
 .ms-stat-num { font-family: 'DM Serif Display', serif; font-size: 1.7rem; color: #fff; line-height: 1; margin-bottom: 3px; }
-.ms-stat-label { font-size: 0.6875rem; /* 11px */ color: rgba(255,255,255,0.75); letter-spacing: 0.05em; }
+.ms-stat-label { font-size: 0.6875rem; color: rgba(255,255,255,0.75); letter-spacing: 0.05em; }
 
 /* 各區塊共用 */
-.ms-sec { padding: 4.5rem 2.5rem; }
+.ms-sec { padding: 6rem 2.5rem; }
 .ms-sec-warm { background: #fdf8f4; }
-.ms-tag { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; /* 11px */ letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+.ms-tag { font-family: 'DM Serif Display', serif; font-size: 0.6875rem; letter-spacing: 0.22em; color: #993556; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
 .ms-h2 { font-family: 'Noto Serif TC', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.8rem; }
-.ms-lead { font-size: 0.9375rem; /* 15px */ line-height: 2; color: #6a5050; max-width: 540px; margin-bottom: 2.5rem; }
+.ms-lead { font-size: 0.9375rem; line-height: 2; color: #6a5050; max-width: 540px; margin-bottom: 2.5rem; }
 
 /* 選擇我們的理由四格 */
 .ms-why { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #e8e0dc; }
@@ -55,27 +42,27 @@
 .ms-why-item:nth-child(2n) { border-right: none; }
 .ms-why-item:nth-last-child(-n+2) { border-bottom: none; }
 .ms-why-num { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: #e8d0d8; line-height: 1; margin-bottom: 0.8rem; }
-.ms-why-item h3 { font-size: 1rem; /* 16px */ font-weight: 500; margin-bottom: 6px; }
-.ms-why-item p { font-size: 0.875rem; /* 14px */ color: #6a5050; line-height: 1.9; }
+.ms-why-item h3 { font-size: 1rem; font-weight: 500; margin-bottom: 6px; }
+.ms-why-item p { font-size: 0.875rem; color: #6a5050; line-height: 1.9; }
 
 /* 申請流程六步驟 */
 .ms-flow-wrap { position: relative; display: flex; justify-content: space-between; align-items: flex-start; padding: 0 1rem; }
 .ms-flow-line { position: absolute; top: 2.2rem; left: 3rem; right: 3rem; height: 1px; background: #f4c0d1; z-index: 0; }
 .ms-flow-item { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1; padding: 0 0.5rem; }
 .ms-flow-icon { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 1.5px solid #993556; display: flex; align-items: center; justify-content: center; margin-bottom: 0.6rem; }
-.ms-flow-icon i { font-size: 1.25rem; /* 20px */ color: #993556; }
+.ms-flow-icon i { font-size: 1.25rem; color: #993556; }
 .ms-flow-icon.active { background: #993556; border-color: #993556; }
 .ms-flow-icon.active i { color: #fff; }
 .ms-flow-num { font-family: 'DM Serif Display', serif; font-size: 0.9rem; color: #c8a0b0; margin-bottom: 4px; }
-.ms-flow-t { font-size: 0.875rem; /* 14px */ font-weight: 500; color: #2a1e1e; text-align: center; margin-bottom: 4px; }
-.ms-flow-d { font-size: 0.8125rem; /* 13px */ color: #6a5050; line-height: 1.6; text-align: center; }
+.ms-flow-t { font-size: 0.875rem; font-weight: 500; color: #2a1e1e; text-align: center; margin-bottom: 4px; }
+.ms-flow-d { font-size: 0.8125rem; color: #6a5050; line-height: 1.6; text-align: center; }
 .ms-flow-days { position: absolute; top: -1.8rem; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-.ms-flow-days span { font-size: 0.75rem; /* 12px */ color: #993556; background: #fce8ef; padding: 2px 8px; border-radius: 10px; letter-spacing: 0.04em; }
-.ms-flow-note { margin-top: 1.5rem; border-left: 3px solid #993556; padding: 0.9rem 1.4rem; background: #fdf8f4; font-size: 0.875rem; /* 14px */ color: #6a5050; line-height: 1.9; }
-
+.ms-flow-days span { font-size: 0.75rem; color: #993556; background: #fce8ef; padding: 2px 8px; border-radius: 10px; letter-spacing: 0.04em; }
+.ms-flow-note { margin-top: 1.5rem; border-left: 3px solid #993556; padding: 0.9rem 1.4rem; background: #fdf8f4; font-size: 0.875rem; color: #6a5050; line-height: 1.9; }
+.ms-flow-mobile { display: none; }
 
 /* 家屬心得輪播 */
-.ms-testimonials { padding: 4.5rem 2.5rem; background: #fff; }
+.ms-testimonials { padding: 6rem 2.5rem; background: #fff; }
 .ms-carousel { position: relative; overflow: hidden; }
 .ms-carousel-track { display: flex; transition: transform 0.4s ease; gap: 20px; }
 .ms-tcard { flex: 0 0 calc(33.333% - 14px); border: 1px solid #e8e0dc; padding: 2rem; background: #fff; }
@@ -93,27 +80,17 @@
 .ms-dot { width: 6px; height: 6px; border-radius: 50%; background: #e8d0d8; cursor: pointer; border: none; padding: 0; }
 .ms-dot.active { background: #993556; }
 
-@media (max-width: 768px) {
-  .ms-testimonials { padding: 3rem 1.5rem; }
-  .ms-tcard { flex: 0 0 calc(100% - 0px); }
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  .ms-tcard { flex: 0 0 calc(50% - 10px); }
-}
-/* 手機版流程預設隱藏 */
-.ms-flow-mobile { display: none; }
-
 /* 底部 CTA */
 .ms-cta { background: #4a3328; padding: 4rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
 .ms-cta-left h2 { font-family: 'Noto Serif TC', serif; font-size: 1.5rem; font-weight: 600; color: #f0e0d8; margin-bottom: 0.5rem; }
-.ms-cta-left p { font-size: 0.875rem; /* 14px */ color: #c8a898; line-height: 1.9; }
+.ms-cta-left p { font-size: 0.875rem; color: #c8a898; line-height: 1.9; }
 .ms-cta-right { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
-.ms-cta-btn { background: #993556; color: #fff; font-size: 0.875rem; /* 14px */ border: none; padding: 13px 32px; cursor: pointer; letter-spacing: 0.08em; font-family: 'Noto Sans TC', sans-serif; white-space: nowrap; }
-.ms-cta-phone { font-size: 0.8125rem; /* 13px */ color: #a88070; letter-spacing: 0.04em; }
-
+.ms-cta-btn { background: #993556; color: #fff; font-size: 0.875rem; border: none; padding: 13px 32px; cursor: pointer; letter-spacing: 0.08em; font-family: 'Noto Sans TC', sans-serif; white-space: nowrap; }
+.ms-cta-phone { font-size: 0.8125rem; color: #c8a898; letter-spacing: 0.04em; }
 
 /* 數字動畫 */
 .ms-countup { display: inline-block; transition: opacity 0.3s; }
+
 /* 手機版 RWD */
 @media (max-width: 768px) {
   .ms-hero { grid-template-columns: 1fr; height: auto; }
@@ -123,6 +100,8 @@
   .ms-hero-overlay { grid-template-columns: repeat(3,1fr); padding: 1rem; gap: 6px; }
   .ms-stat-num { font-size: 1.3rem; }
   .ms-sec { padding: 3rem 1.5rem; }
+  .ms-testimonials { padding: 3rem 1.5rem; }
+  .ms-tcard { flex: 0 0 100%; }
   .ms-why { grid-template-columns: 1fr; }
   .ms-why-item { border-right: none; }
   .ms-why-item:nth-last-child(-n+2) { border-bottom: 1px solid #e8e0dc; }
@@ -133,7 +112,7 @@
   .ms-flow-mobile-item { display: grid; grid-template-columns: 80px 44px 1fr; gap: 8px; align-items: flex-start; padding-bottom: 2rem; position: relative; }
   .ms-flow-mobile-item:last-child { padding-bottom: 0; }
   .ms-flow-mobile-days { text-align: right; padding-top: 12px; padding-right: 4px; }
-  .ms-flow-mobile-days span { font-size: 0.6875rem; /* 手機11px≈約12px */ color: #993556; background: #fce8ef; padding: 2px 6px; border-radius: 8px; display: inline-block; line-height: 1.5; text-align: center; }
+  .ms-flow-mobile-days span { font-size: 0.6875rem; color: #993556; background: #fce8ef; padding: 2px 6px; border-radius: 8px; display: inline-block; line-height: 1.5; text-align: center; }
   .ms-flow-mobile-days.empty { height: 44px; }
   .ms-flow-mobile-icon { display: flex; justify-content: center; position: relative; z-index: 1; }
   .ms-flow-mobile-icon-wrap { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 1.5px solid #993556; display: flex; align-items: center; justify-content: center; }
@@ -142,8 +121,8 @@
   .ms-flow-mobile-icon-wrap.active i { color: #fff; }
   .ms-flow-mobile-content { padding-left: 8px; padding-top: 10px; }
   .ms-flow-mobile-num { font-family: 'DM Serif Display', serif; font-size: 0.85rem; color: #c8a0b0; margin-bottom: 3px; }
-  .ms-flow-mobile-t { font-size: 0.875rem; /* 手機約16px */ font-weight: 500; color: #2a1e1e; margin-bottom: 3px; }
-  .ms-flow-mobile-d { font-size: 0.8125rem; /* 手機約15px */ color: #6a5050; line-height: 1.6; }
+  .ms-flow-mobile-t { font-size: 0.875rem; font-weight: 500; color: #2a1e1e; margin-bottom: 3px; }
+  .ms-flow-mobile-d { font-size: 0.8125rem; color: #6a5050; line-height: 1.6; }
   .ms-cta { flex-direction: column; gap: 2rem; text-align: center; padding: 3rem 1.5rem; }
   .ms-cta-right { align-items: center; }
 }
@@ -152,6 +131,7 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .ms-hero-left { padding: 3rem 2rem; }
   .ms-hero h1 { font-size: 2rem; }
+  .ms-tcard { flex: 0 0 calc(50% - 10px); }
 }
 </style>
 </head>
@@ -159,6 +139,7 @@
 
 <!-- 導覽列由 common.js 自動載入 -->
 
+<!-- Hero 主視覺區 -->
 <section class="ms-hero">
   <div class="ms-hero-left">
     <span class="ms-hero-en">Meishih Long-Term Care · Since 2021</span>
@@ -173,14 +154,15 @@
   <div class="ms-hero-right">
     <img class="ms-hero-img" src="assets/hero.webp" alt="居家照護">
     <div class="ms-hero-overlay">
-      <div class="ms-stat"><div class="ms-stat-num"><span class="ms-countup" data-target="480" data-suffix="+">0</span></div><div class="ms-stat-label">累積服務家庭</div></div>
-      <div class="ms-stat"><div class="ms-stat-num"><span class="ms-countup" data-target="5" data-suffix="年">0</span></div><div class="ms-stat-label">深耕長照服務</div></div>
+      <div class="ms-stat"><div class="ms-stat-num"><span class="ms-countup" data-target="480" data-suffix="">0</span>+</div><div class="ms-stat-label">累積服務家庭</div></div>
+      <div class="ms-stat"><div class="ms-stat-num"><span class="ms-countup" data-target="5" data-suffix="">0</span>年</div><div class="ms-stat-label">深耕長照服務</div></div>
       <div class="ms-stat"><div class="ms-stat-num">評鑑</div><div class="ms-stat-label">政府評鑑通過</div></div>
     </div>
   </div>
 </section>
 
-<section class="ms-sec"style="padding-top: 6rem;">
+<!-- 選擇美事的理由（白色背景） -->
+<section class="ms-sec">
   <span class="ms-tag">Why Choose Us</span>
   <h2 class="ms-h2">選擇美事的理由</h2>
   <p class="ms-lead">好的居家照護不只是完成任務——而是讓家屬放心、讓長輩安心。每一個細節，都是我們對這份承諾的落實。</p>
@@ -208,6 +190,7 @@
   </div>
 </section>
 
+<!-- 申請流程六步驟（米白背景） -->
 <section class="ms-sec ms-sec-warm">
   <span class="ms-tag">How to Apply</span>
   <h2 class="ms-h2">六步驟，讓照顧從容開始</h2>
@@ -293,7 +276,7 @@
   </div>
 </section>
 
-<!-- 家屬心得輪播 -->
+<!-- 家屬心得輪播（白色背景） -->
 <section class="ms-testimonials">
   <span class="ms-tag">Testimonials</span>
   <h2 class="ms-h2">家屬這樣說</h2>
@@ -345,6 +328,7 @@
   </div>
 </section>
 
+<!-- 底部呼籲區塊 -->
 <div class="ms-cta">
   <div class="ms-cta-left">
     <h2>準備好開始了嗎？</h2>
@@ -401,10 +385,17 @@
   window.msMove = function(dir) { goTo(current + dir); };
   window.addEventListener('resize', function() { buildDots(); goTo(0); });
   buildDots();
+
+  /* 自動輪播，每 4 秒換一張 */
+  setInterval(function() {
+    var pv = getPerView();
+    var next = current + 1;
+    if (next > total - pv) next = 0;
+    goTo(next);
+  }, 4000);
 })();
 </script>
 <script src="common.js"></script>
-
 <script>
 /* 數字滾動動畫 */
 (function() {
@@ -416,18 +407,13 @@
     function step(timestamp) {
       if (!start) start = timestamp;
       var progress = Math.min((timestamp - start) / duration, 1);
-      /* easeOutQuart */
       var ease = 1 - Math.pow(1 - progress, 4);
       var current = Math.floor(ease * target);
       el.textContent = current + (progress === 1 ? suffix : '');
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
+      if (progress < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
-
-  /* 用 IntersectionObserver 偵測進入畫面才觸發 */
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
@@ -436,12 +422,10 @@
       }
     });
   }, { threshold: 0.5 });
-
   document.querySelectorAll('.ms-countup').forEach(function(el) {
     observer.observe(el);
   });
 })();
 </script>
-
 </body>
 </html>
