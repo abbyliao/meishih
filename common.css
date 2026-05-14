@@ -27,12 +27,12 @@
    2. 基本設定
    ================== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 26px !important; }
+html { font-size: 20px !important; }
 body {
   font-family: 'Noto Sans TC', sans-serif;
   color: #2a1e1e;
   background: #fff;
-  font-size: 26px !important; /* 桌機基準：19px = 1rem */
+  font-size: 20 px !important; /* 桌機基準：19px = 1rem */
   line-height: 1.8;
 
 }
